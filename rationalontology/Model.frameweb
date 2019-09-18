@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <compose xsi:type="frameweb:PersistenceModel" name="Persistence Model">
+    <packagedElement xsi:type="frameweb:PersistencePackage" name="br.ufes.informatica.rationalontology.core.persistence">
+      <packagedElement xsi:type="frameweb:DAOInterface" name="UserDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="UserJPADAO">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverUserLogin">
+          <ownedParameter name="login">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <methodType xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/User"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/UserJPADAO" supplier="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/UserDAO"/>
+    </packagedElement>
+  </compose>
+</frameweb:FramewebProject>
