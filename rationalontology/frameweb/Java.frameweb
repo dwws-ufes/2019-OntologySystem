@@ -30,7 +30,7 @@
     <packagedElement xsi:type="uml:Class" name="SortedMap"/>
     <packagedElement xsi:type="uml:Class" name="BigDecimal"/>
     <packagedElement xsi:type="uml:Class" name="BigInteger"/>
-    <packagedElement xsi:type="frameweb:DomainPackage" name="br.ufes.informatica.rationalontology.core.domain">
+    <packagedElement xsi:type="frameweb:DomainPackage" name="br.ufes.informatica.rationalontology.core.domain.storageDomain">
       <packagedElement xsi:type="frameweb:DomainClass" name="User">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name" visibility="private" type="//@compose.0/String" size="100"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="email" visibility="private" type="//@compose.0/String" size="50"/>
@@ -41,12 +41,12 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="accessType" visibility="private" type="//@compose.0/Short"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="canceledData" visibility="private" type="//@compose.0/Date" isNull="true"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/User" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has">
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/User" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/Access" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
@@ -57,14 +57,14 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="domainDescription" visibility="private" type="//@compose.0/String" size="1000" isNull="true"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nickname" visibility="private" type="//@compose.0/String" size="15"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="doChanges" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges">
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="doChanges" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/Access" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges">
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/Ontology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/doChanges">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
         </ownedEnd>
       </packagedElement>
@@ -73,12 +73,12 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="shortDescription" visibility="private" type="//@compose.0/String" size="200" isNull="true"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="fullDescription" visibility="private" type="//@compose.0/String" size="1000" isNull="true"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/SubOntology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1">
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/Ontology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/SubOntology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.1">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
@@ -87,12 +87,12 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="definition" visibility="private" type="//@compose.0/String" size="200"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="source" visibility="private" type="//@compose.0/String" size="500"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/DataDictionary" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2">
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/Ontology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/DataDictionary" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.2">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
@@ -100,12 +100,12 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="identificator" visibility="private" type="//@compose.0/String" size="6"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="description" visibility="private" type="//@compose.0/String" size="500"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/SubOntology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3">
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/SubOntology" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/CompetenceQuestion" association="//@compose.0/br.ufes.informatica.rationalontology.core.domain.storageDomain/has.3">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
