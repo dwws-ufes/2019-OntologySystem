@@ -14,6 +14,20 @@
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+			<id>br.ufes.inf.nemo</id>
+			<name>Nemo Maven Repository</name>
+			<url>http://dev.nemo.inf.ufes.br/maven2</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>12</maven.compiler.source>
@@ -33,6 +47,12 @@
 			<artifactId>javaee-api</artifactId>
 			<version>8.0</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>br.ufes.inf.nemo</groupId>
+			<artifactId>jbutler-wp</artifactId>
+			<version>1.2.7</version>
 		</dependency>
 
 	</dependencies>
