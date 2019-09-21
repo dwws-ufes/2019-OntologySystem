@@ -4428,7 +4428,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_SZPg4tyFEemunoDI_b-rnA" type="4001" element="_SYAx0tyFEemunoDI_b-rnA" source="_SY3GYNyFEemunoDI_b-rnA" target="_SYujg9yFEemunoDI_b-rnA">
           <children xmi:type="notation:Node" xmi:id="_SZQH8NyFEemunoDI_b-rnA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZQH8dyFEemunoDI_b-rnA" x="18" y="9" width="233" height="13"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZQH8dyFEemunoDI_b-rnA" x="8" y="9" width="233" height="13"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_SZQH8tyFEemunoDI_b-rnA" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZQH89yFEemunoDI_b-rnA" x="36" y="-67"/>
