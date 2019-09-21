@@ -39,7 +39,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Access">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="accessType" visibility="private" type="//@compose.0/Short"/>
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="canceledData" visibility="private" type="//@compose.0/Date"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="canceledData" visibility="private" type="//@compose.0/Date" isNull="true"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has/Source"/>
@@ -51,10 +51,11 @@
         </ownedEnd>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Ontology">
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name" visibility="private" type="//@compose.0/boolean" size="100"/>
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="description" visibility="private" type="//@compose.0/String" size="500"/>
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="intendedUse" visibility="private" type="//@compose.0/String" size="1000"/>
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="domainDescription" visibility="private" type="//@compose.0/String" size="1000"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name" visibility="private" type="//@compose.0/String" isUnique="false" size="100"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="description" visibility="private" type="//@compose.0/String" isUnique="false" size="500" isNull="true"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="intendedUse" visibility="private" type="//@compose.0/String" size="1000" isNull="true"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="domainDescription" visibility="private" type="//@compose.0/String" size="1000" isNull="true"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nickname" visibility="private" type="//@compose.0/String" size="15"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="doChanges" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/doChanges/Source"/>
@@ -69,8 +70,8 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="SubOntology">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name" visibility="private" type="//@compose.0/String" size="100"/>
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="shortDescription" visibility="private" type="//@compose.0/String" size="200"/>
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="fullDescription" visibility="private" type="//@compose.0/String" size="1000"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="shortDescription" visibility="private" type="//@compose.0/String" size="200" isNull="true"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="fullDescription" visibility="private" type="//@compose.0/String" size="1000" isNull="true"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="has" memberEnd="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Source //@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Source"/>

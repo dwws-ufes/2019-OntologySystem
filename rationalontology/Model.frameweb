@@ -5,7 +5,7 @@
       <packagedElement xsi:type="frameweb:DAOInterface" name="UserDAO"/>
       <packagedElement xsi:type="frameweb:DAOClass" name="UserJPADAO">
         <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverUserLogin">
-          <ownedParameter name="login">
+          <ownedParameter name="email">
             <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
           </ownedParameter>
           <methodType xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/User"/>
@@ -18,7 +18,7 @@
       <packagedElement xsi:type="frameweb:DAOInterface" name="DataDictonaryDAO"/>
       <packagedElement xsi:type="frameweb:DAOInterface" name="CompetenceQuestionDAO"/>
       <packagedElement xsi:type="frameweb:DAOClass" name="DataDictionaryJPADAO">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverDataDictionary">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="findDataDictionary">
           <ownedParameter name="ontology">
             <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
           </ownedParameter>
@@ -26,29 +26,44 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DAOClass" name="OntologyJPADAO">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverOntology">
-          <ownedParameter name="name">
-            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
-          </ownedParameter>
-          <methodType xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
-        </ownedOperation>
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverOntologies">
-          <ownedParameter name="name">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="findOntologiByName">
+          <ownedParameter name="ontoName">
             <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
           </ownedParameter>
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
         </ownedOperation>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:DAOClass" name="AccessJPADAO">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverAcces">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="findUserOntologies">
           <ownedParameter name="user">
             <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/User"/>
           </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="getOntology">
+          <ownedParameter name="nickname">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <methodType xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOClass" name="AccessJPADAO">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="findRequests">
+          <ownedParameter name="email">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
           <methodType xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="requestParticipation">
+          <ownedParameter name="ontoName">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <ownedParameter name="email">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DAOClass" name="SubOntologyJPADAO">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverSubOntoogies">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="findSubOntoogies">
           <ownedParameter name="ontology">
             <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
           </ownedParameter>
@@ -56,7 +71,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DAOClass" name="CompetenceQuestionJPADAO">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="recoverCompeteceQuestions">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="findCQ">
           <ownedParameter name="subOntology">
             <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/SubOntology"/>
           </ownedParameter>
@@ -70,56 +85,43 @@
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO" supplier="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyDAO"/>
     </packagedElement>
   </compose>
-  <compose xsi:type="frameweb:NavigationModel" name="User Registration Controler">
-    <packagedElement xsi:type="frameweb:ViewPackage" name="\core\registration">
+  <compose xsi:type="frameweb:NavigationModel" name="User Registration Controller">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="registration">
       <packagedElement xsi:type="frameweb:Page" name="index">
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/%5Ccore%5Cregistration/loginForm" association="//@compose.1/%5Ccore%5Cregistration/@packagedElement.6"/>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/%5Ccore%5Cregistration/registrationPage" association="//@compose.1/%5Ccore%5Cregistration/@packagedElement.7"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/registration/loginForm" association="//@compose.1/registration/@packagedElement.4"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/registration/registrationPage"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="home"/>
       <packagedElement xsi:type="frameweb:UIComponent" name="loginForm">
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.email" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.password">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/password"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="registrationPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.name" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.institution" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.email" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.password" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/password"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/%5Ccore%5Cregistration/index"/>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:Page" name="home"/>
-      <packagedElement xsi:type="frameweb:NavigationAssociation">
-        <ownedEnd xsi:type="frameweb:NavigationCompositionPart"/>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:Page" name="registrationPage">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.name">
-          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
-        </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.institution">
-          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
-        </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.email">
-          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
-        </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="user.password">
-          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/password"/>
-        </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="repeatPassword">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="repeatPassword" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/password"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:NavigationAssociation">
-        <ownedEnd xsi:type="frameweb:NavigationCompositionPart"/>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/%5Ccore%5Cregistration/@packagedElement.6/@ownedEnd.0 //@compose.1/%5Ccore%5Cregistration/index/@ownedAttribute.2">
-        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.1/%5Ccore%5Cregistration/index" association="//@compose.1/%5Ccore%5Cregistration/@packagedElement.6"/>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/%5Ccore%5Cregistration/@packagedElement.7/@ownedEnd.0 //@compose.1/%5Ccore%5Cregistration/index/@ownedAttribute.3">
-        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.1/%5Ccore%5Cregistration/index" association="//@compose.1/%5Ccore%5Cregistration/@packagedElement.7"/>
+      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/registration/@packagedElement.4/@ownedEnd.0 //@compose.1/registration/index/@ownedAttribute.0">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.1/registration/index" association="//@compose.1/registration/@packagedElement.4"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ControllerPackage" name="br.ufes.informatica.rationalontology.core.controler">
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="registrationController">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="RegistrationController">
         <ownedAttribute xsi:type="frameweb:IOParameter" name="user" visibility="private">
           <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/User"/>
@@ -134,57 +136,50 @@
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.1/registrationController/@packagedElement.1/Source //@compose.1/registrationController/@packagedElement.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.1/registrationController/@packagedElement.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.1/registrationController/@packagedElement.1/Target"/>
+        <ownedEnd name="Source" type="//@compose.1/registrationController/RegistrationController" association="//@compose.1/registrationController/@packagedElement.1"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/RegistrationService" association="//@compose.1/registrationController/@packagedElement.1"/>
+      </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" supplier="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" method="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/getAccess"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/getAccess">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/registration/loginForm" supplier="//@compose.1/registrationController/RegistrationController" method="//@compose.1/registrationController/RegistrationController/getAccess"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/registrationController/RegistrationController" supplier="//@compose.1/registration/index" resultMethod="//@compose.1/registrationController/RegistrationController/getAccess">
       <resultDependencyConstraint ajax="true" result="String"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/getAccess">
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/registrationController/RegistrationController" supplier="//@compose.1/registration/home" resultMethod="//@compose.1/registrationController/RegistrationController/getAccess">
       <resultDependencyConstraint result="home.xhtml"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" supplier="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" method="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/register"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/register">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/registration/registrationPage" supplier="//@compose.1/registrationController/RegistrationController" method="//@compose.1/registrationController/RegistrationController/register"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/registrationController/RegistrationController" supplier="//@compose.1/registration/registrationPage" resultMethod="//@compose.1/registrationController/RegistrationController/register">
+      <resultDependencyConstraint ajax="true" result="Sring"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/registrationController/RegistrationController" supplier="//@compose.1/registration/home" resultMethod="//@compose.1/registrationController/RegistrationController/register">
       <resultDependencyConstraint result="home.xhtml"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/register">
-      <resultDependencyConstraint ajax="true" result="string"/>
-    </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/%5Ccore%5Cregistration/loginForm" supplier="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" method="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/getAccess"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" supplier="//@compose.1/%5Ccore%5Cregistration/index" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/getAccess">
-      <resultDependencyConstraint ajax="true" result="String"/>
-    </packagedElement>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" supplier="//@compose.1/%5Ccore%5Cregistration/home" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/getAccess">
-      <resultDependencyConstraint result="home.xhtml"/>
-    </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/%5Ccore%5Cregistration/registrationPage" supplier="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" method="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/register"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" supplier="//@compose.1/%5Ccore%5Cregistration/registrationPage" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/register">
-      <resultDependencyConstraint ajax="true" result="String"/>
-    </packagedElement>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController" supplier="//@compose.1/%5Ccore%5Cregistration/home" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controler/RegistrationController/register">
-      <resultDependencyConstraint result="home.xhtml"/>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.1/registration/index" supplier="//@compose.1/registration/registrationPage">
+      <pageDependencyConstraint/>
     </packagedElement>
   </compose>
-  <compose xsi:type="frameweb:NavigationModel" name="Ontology Develpment Controler"/>
-  <compose xsi:type="frameweb:NavigationModel" name="Request Participation Controler">
-    <packagedElement xsi:type="frameweb:ViewPackage" name="\core\participation">
-      <packagedElement xsi:type="frameweb:Page" name="requestParticipation">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nameOntology" visibility="private">
+  <compose xsi:type="frameweb:NavigationModel" name="Request Participation Controller">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="requestParticipation">
+      <packagedElement xsi:type="frameweb:Page" name="requestParticipationPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontologyName" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nameOntologies" visibility="private">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontologies" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataGrid"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="requestDescription" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/textEditor"/>
         </ownedAttribute>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:NavigationAssociation">
-        <ownedEnd xsi:type="frameweb:NavigationCompositionPart"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="requests" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
       </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ControllerPackage" name="RequestParticipationController">
-      <packagedElement xsi:type="frameweb:FrontControllerClass" name="ParticipationController">
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="requestParticipationController">
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="RequestParticipationController">
         <ownedAttribute xsi:type="frameweb:IOParameter" name="access" visibility="private">
           <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access"/>
         </ownedAttribute>
@@ -194,70 +189,472 @@
         <ownedAttribute xsi:type="frameweb:IOParameter" name="requestDescription" visibility="private">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="ontologyName" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="requests" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="findOntologyByName">
-          <ownedParameter name="name">
-            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
-          </ownedParameter>
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
         </ownedOperation>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="requestParticipation">
-          <ownedParameter name="name">
-            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
-          </ownedParameter>
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedOperation>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="findRequests">
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
         </ownedOperation>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="sendEMail" visibility="private"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.2/requestParticipationController/@packagedElement.1/Source //@compose.2/requestParticipationController/@packagedElement.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.2/requestParticipationController/@packagedElement.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.2/requestParticipationController/@packagedElement.1/Target"/>
+        <ownedEnd name="Source" type="//@compose.2/requestParticipationController/RequestParticipationController" association="//@compose.2/requestParticipationController/@packagedElement.1"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/RequestParticipation" association="//@compose.2/requestParticipationController/@packagedElement.1"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" supplier="//@compose.3/RequestParticipationController/ParticipationController" method="//@compose.3/RequestParticipationController/ParticipationController/findOntologyByName"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/RequestParticipationController/ParticipationController" resultMethod="//@compose.3/RequestParticipationController/ParticipationController/findOntologyByName">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.2/requestParticipation/requestParticipationPage" supplier="//@compose.2/requestParticipationController/RequestParticipationController" method="//@compose.2/requestParticipationController/RequestParticipationController/findRequests"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/requestParticipationController/RequestParticipationController" supplier="//@compose.2/requestParticipation/requestParticipationPage" resultMethod="//@compose.2/requestParticipationController/RequestParticipationController/findRequests">
       <resultDependencyConstraint ajax="true" result="List"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" supplier="//@compose.3/RequestParticipationController/ParticipationController" method="//@compose.3/RequestParticipationController/ParticipationController/requestParticipation"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/RequestParticipationController/ParticipationController" resultMethod="//@compose.3/RequestParticipationController/ParticipationController/requestParticipation">
-      <resultDependencyConstraint ajax="true" result="String"/>
-    </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/%5Ccore%5Cparticipation/requestParticipation" supplier="//@compose.3/RequestParticipationController/ParticipationController" method="//@compose.3/RequestParticipationController/ParticipationController/findOntologyByName"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/RequestParticipationController/ParticipationController" supplier="//@compose.3/%5Ccore%5Cparticipation/requestParticipation" resultMethod="//@compose.3/RequestParticipationController/ParticipationController/findOntologyByName">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.2/requestParticipation/requestParticipationPage" supplier="//@compose.2/requestParticipationController/RequestParticipationController" method="//@compose.2/requestParticipationController/RequestParticipationController/findOntologyByName"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/requestParticipationController/RequestParticipationController" supplier="//@compose.2/requestParticipation/requestParticipationPage" resultMethod="//@compose.2/requestParticipationController/RequestParticipationController/findOntologyByName">
       <resultDependencyConstraint ajax="true" result="List"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/%5Ccore%5Cparticipation/requestParticipation" supplier="//@compose.3/RequestParticipationController/ParticipationController" method="//@compose.3/RequestParticipationController/ParticipationController/findRequests"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/RequestParticipationController/ParticipationController" supplier="//@compose.3/%5Ccore%5Cparticipation/requestParticipation" resultMethod="//@compose.3/RequestParticipationController/ParticipationController/findRequests">
-      <resultDependencyConstraint ajax="true" result="List"/>
-    </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/%5Ccore%5Cparticipation/requestParticipation" supplier="//@compose.3/RequestParticipationController/ParticipationController" method="//@compose.3/RequestParticipationController/ParticipationController/requestParticipation"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/RequestParticipationController/ParticipationController" supplier="//@compose.3/%5Ccore%5Cparticipation/requestParticipation" resultMethod="//@compose.3/RequestParticipationController/ParticipationController/requestParticipation">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.2/requestParticipation/requestParticipationPage" supplier="//@compose.2/requestParticipationController/RequestParticipationController" method="//@compose.2/requestParticipationController/RequestParticipationController/requestParticipation"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/requestParticipationController/RequestParticipationController" supplier="//@compose.2/requestParticipation/requestParticipationPage" resultMethod="//@compose.2/requestParticipationController/RequestParticipationController/requestParticipation">
       <resultDependencyConstraint ajax="true" result="String"/>
     </packagedElement>
   </compose>
-  <compose xsi:type="frameweb:NavigationModel" name="Ontology Registration Controler"/>
-  <compose xsi:type="frameweb:NavigationModel" name="Grant Participation">
-    <packagedElement xsi:type="frameweb:ViewPackage" name="View Package">
-      <packagedElement xsi:type="frameweb:Page" name="GrantParticipation">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="requests">
-          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/FrontControllerTemplate_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataGrid"/>
+  <compose xsi:type="frameweb:NavigationModel" name="Grant Participation Controller">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="grantParticipation">
+      <packagedElement xsi:type="frameweb:Page" name="grantParticipationPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="requests" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataTable"/>
         </ownedAttribute>
       </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package">
-      <packagedElement xsi:type="frameweb:FrontControllerClass" name="ManegeParticipationController">
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="access" visibility="private">
-          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access"/>
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="GrantParticipationController">
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="GrantParticipationController">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="requests" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
         </ownedAttribute>
-        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="getRequests">
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="findRequests">
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
         </ownedOperation>
-        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="granParticipation"/>
-        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="revoqueParticipation"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="grantParticipation">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="revoqueParticipation">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.3/GrantParticipationController/@packagedElement.1/Source //@compose.3/GrantParticipationController/@packagedElement.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.3/GrantParticipationController/@packagedElement.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.3/GrantParticipationController/@packagedElement.1/Target"/>
+        <ownedEnd name="Source" type="//@compose.3/GrantParticipationController/GrantParticipationController" association="//@compose.3/GrantParticipationController/@packagedElement.1"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/GrantParticipation" association="//@compose.3/GrantParticipationController/@packagedElement.1"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.5/View%20Package/GrantParticipation" supplier="//@compose.5/Controller%20Package/ManegeParticipationController" method="//@compose.5/Controller%20Package/ManegeParticipationController/getRequests"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.5/Controller%20Package/ManegeParticipationController" supplier="//@compose.5/View%20Package/GrantParticipation" resultMethod="//@compose.5/Controller%20Package/ManegeParticipationController/getRequests">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.3/grantParticipation/grantParticipationPage" supplier="//@compose.3/GrantParticipationController/GrantParticipationController" method="//@compose.3/GrantParticipationController/GrantParticipationController/findRequests"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/GrantParticipationController/GrantParticipationController" supplier="//@compose.3/grantParticipation/grantParticipationPage" resultMethod="//@compose.3/GrantParticipationController/GrantParticipationController/findRequests">
+      <resultDependencyConstraint ajax="true" result="Llist"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/grantParticipation/grantParticipationPage" supplier="//@compose.3/GrantParticipationController/GrantParticipationController" method="//@compose.3/GrantParticipationController/GrantParticipationController/grantParticipation"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/GrantParticipationController/GrantParticipationController" supplier="//@compose.3/grantParticipation/grantParticipationPage" resultMethod="//@compose.3/GrantParticipationController/GrantParticipationController/grantParticipation">
+      <resultDependencyConstraint ajax="true" result="String"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/grantParticipation/grantParticipationPage" supplier="//@compose.3/GrantParticipationController/GrantParticipationController" method="//@compose.3/GrantParticipationController/GrantParticipationController/revoqueParticipation"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/GrantParticipationController/GrantParticipationController" supplier="//@compose.3/grantParticipation/grantParticipationPage" resultMethod="//@compose.3/GrantParticipationController/GrantParticipationController/revoqueParticipation">
+      <resultDependencyConstraint ajax="true" result="String"/>
+    </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:NavigationModel" name="Ontology Registration Controlelr">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="ontologyRegistration">
+      <packagedElement xsi:type="frameweb:Page" name="ontologyRegistrationPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontologies" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataGrid"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.4/ontologyRegistration/ontologyDevelopmentPage"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.4/ontologyRegistration/subOntologyDevelpmentPage"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="ontologyDevelopmentPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontology.name" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/JSF-HTML/outputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontology.description" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/textEditor"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontology.IntendedUse" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/textEditor"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontology.domainDescription" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/textEditor"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="subOntologiesList" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataTable"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.4/ontologyRegistration/subOntologyDevelpmentPage"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ontology.nickname" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="subOntologyDevelpmentPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="subOntology.name" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="subOntology.shortDescription" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/textEditor"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="subOntology.fullDescription" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/textEditor"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="dictionaryPage">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="disctionary.concept" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="dictionary.definition" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="dictionary.source" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="dataList" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataTable"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="competenceQuestionForm">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="competenceQuestion.identificator" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="competenceQuestion.desctiption" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="competenceQuestionList" visibility="private">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataTable"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="OntologyRegistrationController">
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="OntologyController">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="ontologies" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="ontology" visibility="private">
+          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
+        </ownedAttribute>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="findUserOntologies">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="generatePDF"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="SubOntologyDevelpmentController">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="subOntology" visibility="private">
+          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/SubOntology"/>
+        </ownedAttribute>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="saveSubOntolgoy">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="OntologyDevelopmentControler">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="ontology" visibility="private">
+          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="subOntology" visibility="private">
+          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/SubOntology"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="subOntologiesList" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="saveOntology">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="DictionaryContoller">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="dictionary" visibility="private">
+          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/DataDictionary"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="dataList" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="saveDictionary">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="findDataDictionary">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="CompetenceQuestionController">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="competenceQuestion" visibility="private">
+          <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="competenceQuestionList" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="saveCQ">
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="findCompetenceQuestion"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.4/OntologyRegistrationController/@packagedElement.5/Source //@compose.4/OntologyRegistrationController/@packagedElement.5/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.5/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.5/Target"/>
+        <ownedEnd name="Source" type="//@compose.4/OntologyRegistrationController/OntologyController" association="//@compose.4/OntologyRegistrationController/@packagedElement.5"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyController" association="//@compose.4/OntologyRegistrationController/@packagedElement.5"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.4/OntologyRegistrationController/@packagedElement.6/Source //@compose.4/OntologyRegistrationController/@packagedElement.6/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.6/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.6/Target"/>
+        <ownedEnd name="Source" type="//@compose.4/OntologyRegistrationController/OntologyDevelopmentControler" association="//@compose.4/OntologyRegistrationController/@packagedElement.6"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentController" association="//@compose.4/OntologyRegistrationController/@packagedElement.6"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.4/OntologyRegistrationController/@packagedElement.7/Source //@compose.4/OntologyRegistrationController/@packagedElement.7/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.7/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.7/Target"/>
+        <ownedEnd name="Source" type="//@compose.4/OntologyRegistrationController/DictionaryContoller" association="//@compose.4/OntologyRegistrationController/@packagedElement.7"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/DictionaryController" association="//@compose.4/OntologyRegistrationController/@packagedElement.7"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.4/OntologyRegistrationController/@packagedElement.8/Source //@compose.4/OntologyRegistrationController/@packagedElement.8/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.8/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.8/Target"/>
+        <ownedEnd name="Source" type="//@compose.4/OntologyRegistrationController/SubOntologyDevelpmentController" association="//@compose.4/OntologyRegistrationController/@packagedElement.8"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/SubOntologyDevelopmentController" association="//@compose.4/OntologyRegistrationController/@packagedElement.8"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.4/OntologyRegistrationController/@packagedElement.9/Source //@compose.4/OntologyRegistrationController/@packagedElement.9/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.9/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.4/OntologyRegistrationController/@packagedElement.9/Target"/>
+        <ownedEnd name="Source" type="//@compose.4/OntologyRegistrationController/CompetenceQuestionController" association="//@compose.4/OntologyRegistrationController/@packagedElement.9"/>
+        <ownedEnd name="Target" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionController" association="//@compose.4/OntologyRegistrationController/@packagedElement.9"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.4/ontologyRegistration/ontologyRegistrationPage" supplier="//@compose.4/OntologyRegistrationController/OntologyController" method="//@compose.4/OntologyRegistrationController/OntologyController/findUserOntologies"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.4/ontologyRegistration/ontologyDevelopmentPage" supplier="//@compose.4/OntologyRegistrationController/OntologyDevelopmentControler" method="//@compose.4/OntologyRegistrationController/OntologyDevelopmentControler/saveOntology"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.4/OntologyRegistrationController/OntologyDevelopmentControler" supplier="//@compose.4/ontologyRegistration/ontologyDevelopmentPage" resultMethod="//@compose.4/OntologyRegistrationController/OntologyDevelopmentControler/saveOntology">
+      <resultDependencyConstraint ajax="true" result="Sring"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" supplier="//@compose.4/OntologyRegistrationController/DictionaryContoller" method="//@compose.4/OntologyRegistrationController/DictionaryContoller/saveDictionary"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.4/ontologyRegistration/subOntologyDevelpmentPage" supplier="//@compose.4/OntologyRegistrationController/SubOntologyDevelpmentController" method="//@compose.4/OntologyRegistrationController/SubOntologyDevelpmentController/saveSubOntolgoy"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.4/OntologyRegistrationController/SubOntologyDevelpmentController" supplier="//@compose.4/ontologyRegistration/subOntologyDevelpmentPage" resultMethod="//@compose.4/OntologyRegistrationController/SubOntologyDevelpmentController/saveSubOntolgoy">
+      <resultDependencyConstraint ajax="true" result="String"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.4/ontologyRegistration/ontologyRegistrationPage" supplier="//@compose.4/ontologyRegistration/ontologyDevelopmentPage">
+      <pageDependencyConstraint/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.4/OntologyRegistrationController/OntologyController" supplier="//@compose.4/ontologyRegistration/ontologyRegistrationPage" resultMethod="//@compose.4/OntologyRegistrationController/OntologyController/findUserOntologies">
       <resultDependencyConstraint ajax="true" result="List"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.5/View%20Package/GrantParticipation" supplier="//@compose.5/Controller%20Package/ManegeParticipationController" method="//@compose.5/Controller%20Package/ManegeParticipationController/granParticipation"/>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.5/View%20Package/GrantParticipation" supplier="//@compose.5/Controller%20Package/ManegeParticipationController" method="//@compose.5/Controller%20Package/ManegeParticipationController/revoqueParticipation"/>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.4/ontologyRegistration/ontologyDevelopmentPage" supplier="//@compose.4/ontologyRegistration/subOntologyDevelpmentPage">
+      <pageDependencyConstraint/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.4/ontologyRegistration/ontologyDevelopmentPage" supplier="//@compose.4/ontologyRegistration/dictionaryPage">
+      <pageDependencyConstraint/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.4/ontologyRegistration/dictionaryPage" supplier="//@compose.4/OntologyRegistrationController/DictionaryContoller" method="//@compose.4/OntologyRegistrationController/DictionaryContoller/saveDictionary"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.4/OntologyRegistrationController/DictionaryContoller" supplier="//@compose.4/ontologyRegistration/dictionaryPage" resultMethod="//@compose.4/OntologyRegistrationController/DictionaryContoller/saveDictionary">
+      <resultDependencyConstraint ajax="true" result="String"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.4/ontologyRegistration/subOntologyDevelpmentPage" supplier="//@compose.4/ontologyRegistration/competenceQuestionForm">
+      <pageDependencyConstraint/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.4/ontologyRegistration/competenceQuestionForm" supplier="//@compose.4/OntologyRegistrationController/CompetenceQuestionController" method="//@compose.4/OntologyRegistrationController/CompetenceQuestionController/saveCQ"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.4/OntologyRegistrationController/CompetenceQuestionController" supplier="//@compose.4/ontologyRegistration/competenceQuestionForm" resultMethod="//@compose.4/OntologyRegistrationController/CompetenceQuestionController/saveCQ">
+      <resultDependencyConstraint ajax="true" result="String"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.4/ontologyRegistration/ontologyRegistrationPage">
+      <pageDependencyConstraint/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.4/ontologyRegistration/ontologyRegistrationPage" supplier="//@compose.4/OntologyRegistrationController/OntologyController" method="//@compose.4/OntologyRegistrationController/OntologyController/generatePDF"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.4/OntologyRegistrationController/OntologyController" supplier="//@compose.4/ontologyRegistration/ontologyRegistrationPage" resultMethod="//@compose.4/OntologyRegistrationController/OntologyController/generatePDF">
+      <resultDependencyConstraint ajax="true" result="LinkDownload"/>
+    </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:ApplicationModel" name="Application Model">
+    <packagedElement xsi:type="frameweb:ApplicationPackage" name="br.ufes.informatica.rationalontology.core.application">
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="RegistrationService"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="RegistrationServiceBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="getAccess">
+          <ownedParameter name="email">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="register">
+          <ownedParameter name="user">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/User"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/RegistrationService"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.3/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.3/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.3/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.3/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.3"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/UserDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.3"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="RequestParticipation"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="RequestParticipationBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="findOntologyByName">
+          <ownedParameter name="name">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="requestParticipation">
+          <ownedParameter name="access">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="findRequests">
+          <ownedParameter name="email">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/RequestParticipationBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/RequestParticipation"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.7/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.7/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.7/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.7/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/RequestParticipationBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.7"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.7"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.8/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.8/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.8/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.8/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/RequestParticipationBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.8"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.8"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="GrantParticipation"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="GrantParticipationBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="findRequests">
+          <ownedParameter name="email">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="grantParticipation">
+          <ownedParameter name="access">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="revoqueParticipation">
+          <ownedParameter name="access">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Access"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/GrantParticipationBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/GrantParticipation"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.12/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.12/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.12/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.12/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/GrantParticipationBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.12"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.12"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="OntologyController"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="OntologyControllerBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="findUserOntologies">
+          <ownedParameter name="user">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/User"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="generatePDF">
+          <ownedParameter name="onto">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyController"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.16/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.16/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.16/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.16/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.16"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.16"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="OntologyDevelopmentController"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="OntologyDevelopmentControllerBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="saveOntology">
+          <ownedParameter name="onto">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/Ontology"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentControllerBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentController"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.20/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.20/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.20/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.20/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.20"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.20"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="DictionaryController"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="DictionaryControllerBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="saveDictionary">
+          <ownedParameter name="dic">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/DataDictionary"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/DictionaryControllerBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/DictionaryController"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.24/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.24/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.24/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.24/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/DictionaryControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.24"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/DataDictonaryDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.24"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="SubOntologyDevelopmentController"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="SubOntologyDevelopmentControllerBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="saveSubOntology">
+          <ownedParameter name="subOnt">
+            <type xsi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/SubOntology"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/SubOntologyDevelopmentControllerBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/SubOntologyDevelopmentController"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.28/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.28/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.28/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.28/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/SubOntologyDevelopmentControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.28"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.28"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="CompetenceQuestionController"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="CompetenceQuestionControllerBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="saveCQ"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionControllerBean" supplier="//@compose.5/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionController"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.32/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.32/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.32/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.32/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.32"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetenceQuestionDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.32"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.33/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.33/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.33/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.33/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.33"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/DataDictonaryDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.33"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.34/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.34/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.34/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.34/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.34"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.34"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.35/Source //@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.35/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.35/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.35/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.35"/>
+        <ownedEnd name="Target" type="//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetenceQuestionDAO" association="//@compose.5/br.ufes.informatica.rationalontology.core.application/@packagedElement.35"/>
+      </packagedElement>
+    </packagedElement>
   </compose>
 </frameweb:FramewebProject>
