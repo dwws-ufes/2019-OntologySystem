@@ -143,7 +143,7 @@
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/dataTable"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:Page" name="competenceQuestionForm">
+      <packagedElement xsi:type="frameweb:Page" name="competenceQuestionPage">
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="competenceQuestion.identificator" visibility="private">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/PrimeFaces/inputText"/>
         </ownedAttribute>
@@ -273,11 +273,11 @@
     <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controller/DictionaryContoller" supplier="//@compose.1/ontologyRegistration/dictionaryPage" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controller/DictionaryContoller/saveDictionary">
       <resultDependencyConstraint ajax="true" result="String"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.1/ontologyRegistration/subOntologyDevelpmentPage" supplier="//@compose.1/ontologyRegistration/competenceQuestionForm">
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.1/ontologyRegistration/subOntologyDevelpmentPage" supplier="//@compose.1/ontologyRegistration/competenceQuestionPage">
       <pageDependencyConstraint/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/ontologyRegistration/competenceQuestionForm" supplier="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController" method="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/saveCQ"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController" supplier="//@compose.1/ontologyRegistration/competenceQuestionForm" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/saveCQ">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/ontologyRegistration/competenceQuestionPage" supplier="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController" method="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/saveCQ"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController" supplier="//@compose.1/ontologyRegistration/competenceQuestionPage" resultMethod="//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/saveCQ">
       <resultDependencyConstraint ajax="true" result="String"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.1/ontologyRegistration/ontologyRegistrationPage">

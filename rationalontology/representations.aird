@@ -3652,7 +3652,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_7f4mwtvEEemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_7f2xkdvEEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7f2xktvEEemOKrHuziDMmg" x="100" y="49" width="158" height="88"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7f2xktvEEemOKrHuziDMmg" x="83" y="49" width="158" height="88"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_2saJZtvHEemOKrHuziDMmg" type="3009" element="_2sC88NvHEemOKrHuziDMmg">
               <children xmi:type="notation:Node" xmi:id="_2saJadvHEemOKrHuziDMmg" type="5004"/>
@@ -3685,7 +3685,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_2saJbNvHEemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_2saJZ9vHEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2saJaNvHEemOKrHuziDMmg" x="34" y="179" width="238" height="133"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2saJaNvHEemOKrHuziDMmg" x="17" y="179" width="238" height="133"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_O5qFptvKEemOKrHuziDMmg" type="3009" element="_O4_-QNvKEemOKrHuziDMmg">
               <children xmi:type="notation:Node" xmi:id="_O5qFqdvKEemOKrHuziDMmg" type="5004"/>
@@ -3706,7 +3706,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_O5qFrNvKEemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_O5qFp9vKEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O5qFqNvKEemOKrHuziDMmg" x="31" y="479" width="243" height="88"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O5qFqNvKEemOKrHuziDMmg" x="14" y="479" width="243" height="88"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_mSrZy9v6EemOKrHuziDMmg" type="3009" element="_mR7ywNv6EemOKrHuziDMmg">
               <children xmi:type="notation:Node" xmi:id="_mSrZztv6EemOKrHuziDMmg" type="5004"/>
@@ -3731,7 +3731,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_mSrZ0dv6EemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_mSrZzNv6EemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mSrZzdv6EemOKrHuziDMmg" x="86" y="354" width="198" height="103"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mSrZzdv6EemOKrHuziDMmg" x="69" y="354" width="198" height="103"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_HvUIyNv7EemOKrHuziDMmg" type="3009" element="_HuuSoNv7EemOKrHuziDMmg">
               <children xmi:type="notation:Node" xmi:id="_HvUIy9v7EemOKrHuziDMmg" type="5004"/>
@@ -3752,13 +3752,13 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_HvUIztv7EemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_HvUIydv7EemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HvUIytv7EemOKrHuziDMmg" x="21" y="594" width="263" height="88"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HvUIytv7EemOKrHuziDMmg" x="4" y="594" width="263" height="88"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_uVGAcdvEEemOKrHuziDMmg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_uVGActvEEemOKrHuziDMmg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_uVDkMdvEEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVDkMtvEEemOKrHuziDMmg" x="1143" y="400" width="308" height="708"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVDkMtvEEemOKrHuziDMmg" x="1160" y="400" width="291" height="708"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_xo1pINvEEemOKrHuziDMmg" type="2002" element="_xofD0NvEEemOKrHuziDMmg">
           <children xmi:type="notation:Node" xmi:id="_xo23QNvEEemOKrHuziDMmg" type="5006"/>
@@ -4886,9 +4886,9 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_HuuSoNv7EemOKrHuziDMmg" name="&lt;&lt;page>>&#xA;competenceQuestionForm" outgoingEdges="_V_is8Nv7EemOKrHuziDMmg" incomingEdges="_TUCI7Nv7EemOKrHuziDMmg _YmlAoNv7EemOKrHuziDMmg">
-        <target xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm"/>
-        <semanticElements xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_HuuSoNv7EemOKrHuziDMmg" name="&lt;&lt;page>>&#xA;competenceQuestionPage" outgoingEdges="_V_is8Nv7EemOKrHuziDMmg" incomingEdges="_TUCI7Nv7EemOKrHuziDMmg _YmlAoNv7EemOKrHuziDMmg">
+        <target xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage"/>
+        <semanticElements xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -4898,24 +4898,24 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_LFSl79v7EemOKrHuziDMmg" name=" - competenceQuestion.identificator : inputText">
-          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm/competenceQuestion.identificator"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm/competenceQuestion.identificator"/>
+          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.identificator"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.identificator"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_LFSl8Nv7EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_Loc9YNv7EemOKrHuziDMmg" name=" - competenceQuestion.desctiption : inputText">
-          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm/competenceQuestion.desctiption"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm/competenceQuestion.desctiption"/>
+          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.desctiption"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.desctiption"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_Loc9Ydv7EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_MTEnsdv7EemOKrHuziDMmg" name=" - competenceQuestionList : dataTable">
-          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm/competenceQuestionList"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionForm/competenceQuestionList"/>
+          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestionList"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestionList"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_MTEnstv7EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
