@@ -3,7 +3,6 @@ package br.ufes.informatica.rationalontology.core.persistence;
 import java.util.List;
 
 import javax.ejb.Local;
-
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.User;
@@ -17,5 +16,5 @@ public interface OntologyDAO extends BaseDAO<Ontology> {
 	List findUserOntologies(User user);
 
 	Ontology getOntology(String nickname);
-
+	
 }

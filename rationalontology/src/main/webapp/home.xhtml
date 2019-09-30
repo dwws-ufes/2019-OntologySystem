@@ -6,19 +6,17 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:adm="http://github.com/adminfaces"
     template="/WEB-INF/templates/template.xhtml">
-
 	
 
     <ui:define name="title">
-        <h:outputText value="#{msgsCore['myJSFController.title']}" />
+        <h:outputText value="#{msgsCore['registration.title']}" />
     </ui:define>
 
     <ui:define name="description">
-        <h:outputText value="#{msgsCore['myJSFController.title.description']}" />
+        <h:outputText value="#{msgsCore['registration.title.description']}" />
     </ui:define>
 
     <ui:define name="body">
-		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['myJSFController.title']}" />
-	
+		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['registration.title']}" />
     </ui:define>
 </ui:composition>

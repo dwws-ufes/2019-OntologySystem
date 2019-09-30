@@ -3,7 +3,6 @@ package br.ufes.informatica.rationalontology.core.persistence;
 import java.util.List;
 
 import javax.ejb.Local;
-
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
 import br.ufes.informatica.rationalontology.core.domain.CompetenceQuestion;
 import br.ufes.informatica.rationalontology.core.domain.SubOntology;
@@ -13,5 +12,5 @@ import br.ufes.informatica.rationalontology.core.domain.SubOntology;
 public interface CompetenceQuestionDAO extends BaseDAO<CompetenceQuestion> {
 
 	List findCQ(SubOntology subOntology);
-
+	
 }
