@@ -22,5 +22,10 @@
 			<supported-locale>en_US</supported-locale>
 		</locale-config>
 		
+		<resource-bundle>
+			<base-name>br.ufes.informatica.rationalontology.core.view.messages</base-name>
+			<var>msgsCore</var>
+		</resource-bundle>
+		
 	</application>
 </faces-config>

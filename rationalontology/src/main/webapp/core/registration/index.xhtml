@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:adm="http://github.com/adminfaces"
+	template="/WEB-INF/templates/templateRegister.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="#{msgs['registration.title']}" />
+	</ui:define>
+
+	<ui:define name="description">
+		<h:outputText value="#{msgs['registration.description']}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<adm:breadcrumb link="/core/manageWorkshops/index"
+			title="#{msgs['registration.title']}" />
+		<h:form id="listingForm">
+
+
+			<h:panelGroup id="buttonsGroup">
+				<p:commandButton action="#{registrationController.create()}"
+					icon="fa fa-plus" value="#{msgs['registration.register']}" />
+
+
+			</h:panelGroup>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

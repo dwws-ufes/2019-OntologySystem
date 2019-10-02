@@ -52,7 +52,7 @@
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" value="#{registrationController.email}" />
+						<input class="input100" type="text" name="email" value= "#{registrationController.email}" />
 						<!-- <input class="input100" type="text" name="email"/> -->
 						<span class="focus-input100"></span> 
 						<span class="label-input100">#{msgs['login.email']}</span>
@@ -67,10 +67,11 @@
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
 						<div class="contact100-form-checkbox">
-							<a href="core/home.xhtml" class="txt1">
+							<a href="core/registration/index.xhtml" class="txt1">
 								#{msgs['login.register']} </a>
 						</div>
-
+						
+						
 						<div>
 							<a href="#" class="txt1"> #{msgs['login.forgotPassword']} </a>
 						</div>
@@ -78,9 +79,10 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn"
+						  <button class="login100-form-btn"
 							action="#{registrationController.getAccess()}">#{msgs['login.login']}
 						</button>
+
 					</div>
 				</form>
 
