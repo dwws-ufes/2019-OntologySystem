@@ -15,19 +15,12 @@
 		<h:outputText value="#{msgs['registration.description']}" />
 	</ui:define>
 
-	<ui:define name="body">
-		<adm:breadcrumb link="/core/manageWorkshops/index"
-			title="#{msgs['registration.title']}" />
-		<h:form id="listingForm">
-
-
-			<h:panelGroup id="buttonsGroup">
-				<p:commandButton action="#{registrationController.create()}"
-					icon="fa fa-plus" value="#{msgs['registration.register']}" />
-
-
-			</h:panelGroup>
-
-		</h:form>
+  	<ui:define name="body">
+		<p><h:outputText value="#{msgs['registration.done.message']}" /></p>
+		
+		<p:commandButton id="enterButton" value="#{msgs['registration.done.enter']}"
+				action="/index.xhtml?faces-redirect=true"
+				immediate="true" />
 	</ui:define>
+
 </ui:composition>

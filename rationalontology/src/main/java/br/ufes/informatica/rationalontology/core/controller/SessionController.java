@@ -21,20 +21,13 @@ import br.ufes.informatica.rationalontology.core.exception.LoginFailedException;
  * Session-scoped managed bean that provides to web pages the login service, indication if the user is logged in and the
  * current date/time.
  * 
- * @author Vitor E. Silva Souza (vitorsouza@gmail.com)
+ * @author Adapted from: Vitor E. Silva Souza (vitorsouza@gmail.com)
  */
 @Named
 @SessionScoped
 public class SessionController extends JSFController {
 	/** Serialization id. */
 	private static final long serialVersionUID = 1L;
-
-	/** The logger. */
-	private static final Logger logger = Logger.getLogger(SessionController.class.getCanonicalName());
-
-	/** Information on the whole application. */
-	//@EJB
-	//private CoreInformation coreInformation;
 
 	/** Information on the current visitor. */
 	@EJB
@@ -99,30 +92,23 @@ public class SessionController extends JSFController {
 		// Attempts to retrieve this information from the external context.
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 		if (session != null) {
-			logger.log(Level.FINEST, "Calculating session expiration time from the HTTP session...");
 			long expTimeMillis = session.getLastAccessedTime() + session.getMaxInactiveInterval() * 1000;
 			expTime = new Date(expTimeMillis);
 		}
 
 		// If it could not be retrieved from the external context, use default of 30 minutes.
 		if (expTime == null) {
-			logger.log(Level.FINEST, "HTTP Session not available. Using default expiration time: now plus 30 minutes...");
 			expTime = new Date(System.currentTimeMillis() + 30 * 60000);
 		}
-
-		logger.log(Level.FINEST, "Calculated expiration time: {0}", expTime);
+		
 		return expTime;
 	}
 
 	/**
 	 * Accesses the Login service to authenticate the user given his email and password.
 	 */
-	public String getAccess() {
-		System.out.println("SessionController -> email: "+ email + "  password: "+ password);
-		
+	public String getAccess() {		
 		try {
-			// Uses the Login service to authenticate the user.
-			//logger.log(Level.FINEST, "User attempting login with email \"{0}\"...", email);
 			sessionInformation.login(email, password);
 		}
 		catch (LoginFailedException e) {
@@ -130,15 +116,11 @@ public class SessionController extends JSFController {
 			switch (e.getReason()) {
 			case INCORRECT_PASSWORD:
 			case UNKNOWN_USERNAME:
-				// Normal login exception (invalid usernaem or password). Report the error to the user.
-				logger.log(Level.INFO, "Login failed for \"{0}\". Reason: \"{1}\"", new Object[] { email, e.getReason() });
-				addGlobalI18nMessage("msgsCore", FacesMessage.SEVERITY_ERROR, "login.error.nomatch.summary", "login.error.nomatch.detail");
+				addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "login.error.nomatch.summary", "login.error.nomatch.detail");
 				return null;
 
 			default:
-				// System failure exception. Report a fatal error and ask the user to contact the administrators.
-				logger.log(Level.INFO, "System failure during login. Email: \"" + email + "\"; reason: \"" + e.getReason() + "\"", e);
-				addGlobalI18nMessage("msgsCore", FacesMessage.SEVERITY_FATAL, "login.error.fatal.summary", new Object[0], "login.error.fatal.detail", new Object[] { new Date(System.currentTimeMillis()) });
+				addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_FATAL, "login.error.nomatch.summary", new Object[0], "login.error.nomatch.detail", new Object[] { new Date(System.currentTimeMillis()) });
 				return null;
 			}
 		}
