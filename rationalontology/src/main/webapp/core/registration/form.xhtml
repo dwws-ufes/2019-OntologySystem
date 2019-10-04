@@ -22,9 +22,9 @@
 			<p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8"
 				layout="grid" styleClass="ui-panelgrid-blank">
 				
-				<p:outputLabel for="yearField"
+				<p:outputLabel for="nameField"
 					value="#{msgs['registration.name']}" />
-				<p:inputText id="yearField"
+				<p:inputText id="nameField"
 					value="#{registrationController.selectedEntity.name}"
 					style="width: 100%;" />
 					
@@ -42,9 +42,17 @@
 					
 				<p:outputLabel for="passwordField"
 					value="#{msgs['registration.password']} " />
-				<p:inputText id="passwordField"
+				<p:password id="passwordField"
 					value="#{registrationController.selectedEntity.password}"
 					style="width: 100%;" />
+				
+				<p:outputLabel for="repeatPasswordField"
+					value="#{msgs['registration.repeatPassword']} " />
+				<p:password id="repeatPasswordField"
+					value="#{registrationController.repeatPassword}"
+					style="width: 100%;" >
+					<f:ajax event="blur" render=":globalMessages" listener="#{registrationController.ajaxCheckPasswords}" execute="password repeatPassword" />
+				</p:password>
 					
 			</p:panelGrid>
 			
@@ -62,7 +70,7 @@
 			<p:commandButton id="backButton"
 				value="#{msgs['button.back']}"
 				icon="fa fa-arrow-circle-left"
-				action="#{registrationController.list}" immediate="true"
+				action="core/registration/index.xhtml?faces-redirect=true" immediate="true"
 				rendered="#{registrationController.readOnly}" />
 		</h:form>
 	</ui:define>
