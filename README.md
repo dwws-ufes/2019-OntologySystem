@@ -8,7 +8,22 @@ BD
 
 
 WildFly
-Alterar a seguinte configuração em standalone.xml
+  Alterar as seguintes configurações em standalone.xml
 
-de   : <default-missing-method-permissions-deny-access value="true"/>
-para : <default-missing-method-permissions-deny-access value="false"/>
+  1)
+  de   : <default-missing-method-permissions-deny-access value="true"/>
+  para : <default-missing-method-permissions-deny-access value="false"/>
+
+  2) Criar o datasource:
+  
+  				<datasource jta="true"
+					jndi-name="java:jboss/datasources/RationalOntology"
+					pool-name="RationalOntologyPool" enabled="true"
+					use-java-context="true">
+					<connection-url>jdbc:mysql://localhost:3306/ros?serverTimezone=UTC</connection-url>
+					<driver>mysql</driver>
+					<security>
+						<user-name>dwws</user-name>
+						<password>dwws</password>
+					</security>
+				</datasource>
