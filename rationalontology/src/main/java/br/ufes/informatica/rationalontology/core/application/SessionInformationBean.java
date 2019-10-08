@@ -1,14 +1,12 @@
 package br.ufes.informatica.rationalontology.core.application;
 
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 
 import br.ufes.inf.nemo.jbutler.TextUtils;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.exceptions.MultiplePersistentObjectsFoundException;
@@ -24,6 +22,7 @@ import br.ufes.informatica.rationalontology.core.domain.User;
  * @author Adapted from: Vitor E. Silva Souza (vitorsouza@gmail.com)
  * @see br.org.feees.sigme.core.application.SessionInformation
  */
+@ManagedBean(name = "usuarioLogadoMB")
 @SessionScoped
 @Stateful
 public class SessionInformationBean implements SessionInformation {
@@ -54,6 +53,7 @@ public class SessionInformationBean implements SessionInformation {
 			String pwd = user.getPassword();
 			if ((pwd != null) && (pwd.equals(md5pwd))) {
 				currentUser = user;
+				SessionContext.getInstance().setAttribute("usuarioLogado", currentUser);
 			}
 			else {
 				// Passwords don't match.
@@ -77,4 +77,10 @@ public class SessionInformationBean implements SessionInformation {
 			throw new LoginFailedException(LoginFailedException.LoginFailedReason.MD5_ERROR);
 		}
 	}
+	
+    public String logout() {
+        SessionContext.getInstance().encerrarSessao();
+        //saddInfoMessage("Logout realizado com sucesso !");
+        return "core/home.xhtml?faces-redirect=true";
+     }
 }

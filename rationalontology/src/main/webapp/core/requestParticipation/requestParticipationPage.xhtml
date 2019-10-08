@@ -1,26 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:adm="http://github.com/adminfaces"
-    template="/WEB-INF/templates/template.xhtml">
-	
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:adm="http://github.com/adminfaces"
+	template="/WEB-INF/templates/template.xhtml">
 
-    <ui:define name="title">
-        <h:outputText value="#{msgsCore['requestParticipation.title']}" />
-    </ui:define>
+	<ui:define name="title">
+		<h:outputText value="#{msgs['requestParticipation.title']}" />
+	</ui:define>
 
-    <ui:define name="description">
-        <h:outputText value="#{msgsCore['requestParticipation.title.description']}" />
-    </ui:define>
+	<ui:define name="description">
+		<h:outputText value="#{msgs['requestParticipation.title.description']}" />
+	</ui:define>
 
-    <ui:define name="body">
-		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['requestParticipation.title']}" />
-		<p:inputText id="ontologyName" value="#{requestParticipationController.ontologyName}" />
-		<p:dataGrid id="ontologies" value="#{requestParticipationController.ontologies}" />
-		<p:textEditor id="requestDescription" value="#{requestParticipationController.requestDescription}" />
-		<p:dataGrid id="requests" value="#{requestParticipationController.requests}" />
-    </ui:define>
+	<ui:define name="body">
+		<adm:breadcrumb link="/core/requestParticipation/index"
+			title="#{msgs['requestParticipation.title']}" />
+			<!-- 
+		<h:form id="listingForm">
+			<p:dataTable id="entitiesDataTable" 
+				value="#{requestParticipationController.requests}"
+				var="entity"
+				
+				selection="#{requestParticipationController.selectedRequest}" rowKey="#{Access.email_text}"
+			
+				
+				rows="#{requestParticipationController.maxDataTableRowsPerPage}"
+				rowsPerPageTemplate="#{requestParticipationController.halfMaxDataTableRowsPerPage},#{requestParticipationController.maxDataTableRowsPerPage},#{requestParticipationController.doubleMaxDataTableRowsPerPage}"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				lazy="true" paginatorPosition="bottom"
+				emptyMessage="#{msgs['requestParticipation.text.noEntities']}">
+				<p:ajax event="rowSelect" update="buttonsGroup" />
+				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				<f:facet name="header">
+					<h:outputText value="#{msgs['requestParticipation.text.entities']}" />
+				</f:facet>
+				
+				<p:column
+					headerText="#{msgs['requestParticipation.field.ontology']}">
+					<h:outputText value="#{entity.target.name}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['requestParticipation.field.access']}">
+					<h:outputText value="#{entity.accessType}" />
+				</p:column>
+				
+				<f:facet name="footer">
+					<h:panelGroup id="buttonsGroup">
+						<p:commandButton icon="fa fa-close"
+							action="#{requestParticipationController.getRequests()}"
+							value="#{msgs['jbutler.crud.button.cancelParticipation']}" />
+
+						<p:commandButton icon="fa fa-plus"
+							value="#{msgs['jbutler.crud.button.createParticipation']}" />
+
+					</h:panelGroup>
+				</f:facet>
+
+			</p:dataTable>
+
+		</h:form>
+		 -->
+		<h:form id="listingForm">
+			<p:dataTable id="singleDT" var="car" value="#{dtSelectionView.cars2}" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">s
+				<f:facet name="header">
+            Single with Row Click
+        </f:facet>
+				<p:column headerText="Id">
+					<h:outputText value="#{car.id}" />
+				</p:column>
+				<p:column headerText="Year">
+					<h:outputText value="#{car.year}" />
+				</p:column>
+				<p:column headerText="Brand">
+					<h:outputText value="#{car.brand}" />
+				</p:column>
+				<p:column headerText="Color">
+					<h:outputText value="#{car.color}" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+		
+
+	</ui:define>
 </ui:composition>

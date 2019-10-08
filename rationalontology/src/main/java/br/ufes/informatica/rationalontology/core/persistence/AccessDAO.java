@@ -1,5 +1,7 @@
 package br.ufes.informatica.rationalontology.core.persistence;
 
+import java.util.List;
+
 import javax.ejb.Local;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
 import br.ufes.informatica.rationalontology.core.domain.Access;
@@ -8,7 +10,7 @@ import br.ufes.informatica.rationalontology.core.domain.Access;
 @Local
 public interface AccessDAO extends BaseDAO<Access> {
 
-	Access findRequests(String email);
+	List getRequests(long ids);
 
 	String requestParticipation(String ontoName, String email);
 	

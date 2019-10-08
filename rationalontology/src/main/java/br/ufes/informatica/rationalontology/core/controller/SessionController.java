@@ -1,8 +1,6 @@
 package br.ufes.informatica.rationalontology.core.controller;
 
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -12,7 +10,6 @@ import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
-//import br.ufes.informatica.pooptime.core.application.CoreInformation;
 import br.ufes.informatica.rationalontology.core.application.SessionInformation;
 import br.ufes.informatica.rationalontology.core.domain.User;
 import br.ufes.informatica.rationalontology.core.exception.LoginFailedException;
