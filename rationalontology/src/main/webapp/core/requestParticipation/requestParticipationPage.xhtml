@@ -18,15 +18,12 @@
 	<ui:define name="body">
 		<adm:breadcrumb link="/core/requestParticipation/index"
 			title="#{msgs['requestParticipation.title']}" />
-			<!-- 
+			
 		<h:form id="listingForm">
 			<p:dataTable id="entitiesDataTable" 
 				value="#{requestParticipationController.requests}"
-				var="entity"
-				
-				selection="#{requestParticipationController.selectedRequest}" rowKey="#{Access.email_text}"
-			
-				
+				var="access" selectionMode="single"
+				selection="#{requestParticipationController.selectedRequest}" rowKey="#{access.id}"
 				rows="#{requestParticipationController.maxDataTableRowsPerPage}"
 				rowsPerPageTemplate="#{requestParticipationController.halfMaxDataTableRowsPerPage},#{requestParticipationController.maxDataTableRowsPerPage},#{requestParticipationController.doubleMaxDataTableRowsPerPage}"
 				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
@@ -39,12 +36,17 @@
 				</f:facet>
 				
 				<p:column
+					headerText="#{msgs['requestParticipation.field.id']}">
+					<h:outputText value="#{access.id}" />
+				</p:column>
+				
+				<p:column
 					headerText="#{msgs['requestParticipation.field.ontology']}">
-					<h:outputText value="#{entity.target.name}" />
+					<h:outputText value="#{access.target.name}" />
 				</p:column>
 				
 				<p:column headerText="#{msgs['requestParticipation.field.access']}">
-					<h:outputText value="#{entity.accessType}" />
+					<h:outputText value="#{access.accessTypeText}" />
 				</p:column>
 				
 				<f:facet name="footer">
@@ -62,7 +64,10 @@
 			</p:dataTable>
 
 		</h:form>
-		 -->
+		
+		<!-- 
+		
+		
 		<h:form id="listingForm">
 			<p:dataTable id="singleDT" var="car" value="#{dtSelectionView.cars2}" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">s
 				<f:facet name="header">
@@ -77,13 +82,10 @@
 				<p:column headerText="Brand">
 					<h:outputText value="#{car.brand}" />
 				</p:column>
-				<p:column headerText="Color">
-					<h:outputText value="#{car.color}" />
-				</p:column>
 
 			</p:dataTable>
 		</h:form>
-		
+		 -->
 
 	</ui:define>
 </ui:composition>
