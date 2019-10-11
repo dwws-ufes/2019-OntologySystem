@@ -38,7 +38,7 @@
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QEz3sNrmEemi0MvOBUAy_w" name="Method Diagram" repPath="#_QEyCgNrmEemi0MvOBUAy_w">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
-        <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName"/>
+        <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-S970drnEemi0MvOBUAy_w" name="Method Diagram" repPath="#_-S8GoNrnEemi0MvOBUAy_w">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
@@ -54,7 +54,7 @@
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_vx_wQNroEemi0MvOBUAy_w" name="Method Diagram" repPath="#_vx97ENroEemi0MvOBUAy_w">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
-        <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies"/>
+        <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ilQMs9rpEemi0MvOBUAy_w" name="NavigationUserRegistration" repPath="#_ilI38NrpEemi0MvOBUAy_w">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']"/>
@@ -143,7 +143,6 @@
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_3RGqqNvvEemOKrHuziDMmg" name="Method Diagram" repPath="#_3RGqoNvvEemOKrHuziDMmg">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
-        <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ShluaNvyEemOKrHuziDMmg" name="Method Diagram" repPath="#_ShluYNvyEemOKrHuziDMmg">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
@@ -194,6 +193,10 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_E6q4wtzOEemunoDI_b-rnA" name="Method Diagram" repPath="#_E6hu0NzOEemunoDI_b-rnA">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
         <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentControllerBean/findSubOntologies"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_MnvFoOrFEemUrNMAKz882g" name="Method Diagram" repPath="#_Mnl7sOrFEemUrNMAKz882g">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
+        <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -819,25 +822,25 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@subNodeMappings[name='DomainAttribute']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_kGdPwNukEemRXZGE2HVp_g" name="CompetenceQuestion" incomingEdges="_tf65gNukEemRXZGE2HVp_g">
-        <target xmi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion"/>
-        <semanticElements xmi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_kGdPwNukEemRXZGE2HVp_g" name="CompetencyQuestion" incomingEdges="_tf65gNukEemRXZGE2HVp_g">
+        <target xmi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetencyQuestion"/>
+        <semanticElements xmi:type="frameweb:DomainClass" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetencyQuestion"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_kGdPwdukEemRXZGE2HVp_g" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
           <labelFormat>bold</labelFormat>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_nD0YwNukEemRXZGE2HVp_g" name=" - identificator : String {size=6}">
-          <target xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion/identificator"/>
-          <semanticElements xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion/identificator"/>
+          <target xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetencyQuestion/identificator"/>
+          <semanticElements xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetencyQuestion/identificator"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_nD0YwdukEemRXZGE2HVp_g" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@subNodeMappings[name='DomainAttribute']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@subNodeMappings[name='DomainAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_qaQwINukEemRXZGE2HVp_g" name=" - description : String {size=500}">
-          <target xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion/description"/>
-          <semanticElements xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetenceQuestion/description"/>
+          <target xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetencyQuestion/description"/>
+          <semanticElements xmi:type="frameweb:DomainAttribute" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/CompetencyQuestion/description"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_qaQwIdukEemRXZGE2HVp_g" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@subNodeMappings[name='DomainAttribute']/@style"/>
           </ownedStyle>
@@ -877,7 +880,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_NAsOGNukEemRXZGE2HVp_g" name="has" sourceNode="_eQqWgNujEemRXZGE2HVp_g" targetNode="__5ypQNujEemRXZGE2HVp_g" beginLabel="1" endLabel="1..*">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_NAsOGNukEemRXZGE2HVp_g" name="has" sourceNode="_eQqWgNujEemRXZGE2HVp_g" targetNode="__5ypQNujEemRXZGE2HVp_g" beginLabel="1" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1"/>
       <semanticElements xmi:type="frameweb:DomainProperty" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.1/Source"/>
@@ -893,7 +896,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_gXWgwNukEemRXZGE2HVp_g" name="has" sourceNode="_eQqWgNujEemRXZGE2HVp_g" targetNode="_SEk-sNukEemRXZGE2HVp_g" beginLabel="1" endLabel="1..*">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_gXWgwNukEemRXZGE2HVp_g" name="has" sourceNode="_eQqWgNujEemRXZGE2HVp_g" targetNode="_SEk-sNukEemRXZGE2HVp_g" beginLabel="1" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2"/>
       <semanticElements xmi:type="frameweb:DomainProperty" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.2/Source"/>
@@ -909,7 +912,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tf65gNukEemRXZGE2HVp_g" name="has" sourceNode="__5ypQNujEemRXZGE2HVp_g" targetNode="_kGdPwNukEemRXZGE2HVp_g" beginLabel="1" endLabel="1..*">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tf65gNukEemRXZGE2HVp_g" name="has" sourceNode="__5ypQNujEemRXZGE2HVp_g" targetNode="_kGdPwNukEemRXZGE2HVp_g" beginLabel="1" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3"/>
       <semanticElements xmi:type="frameweb:DomainProperty" href="frameweb/Java.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.domain/has.3/Source"/>
@@ -961,7 +964,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sJ0yJ9pYEemL2cubndOL1g"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_sJ0yIdpYEemL2cubndOL1g" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sJ0yItpYEemL2cubndOL1g" x="145" y="34" width="30" height="30"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sJ0yItpYEemL2cubndOL1g" x="167" y="34" width="30" height="30"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_udL8GtpYEemL2cubndOL1g" type="3009" element="_uc5A8NpYEemL2cubndOL1g">
               <children xmi:type="notation:Node" xmi:id="_udVs4NpYEemL2cubndOL1g" type="5004"/>
@@ -974,7 +977,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_udVs49pYEemL2cubndOL1g"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_udL8G9pYEemL2cubndOL1g" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_udL8HNpYEemL2cubndOL1g" y="94" width="308" height="58"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_udL8HNpYEemL2cubndOL1g" x="14" y="94" width="293" height="58"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_LQiiUNrkEemi0MvOBUAy_w" type="3007" element="_LPbIANrkEemi0MvOBUAy_w">
               <children xmi:type="notation:Node" xmi:id="_LQxL0NrkEemi0MvOBUAy_w" type="5003">
@@ -1042,7 +1045,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_cXPkktrkEemi0MvOBUAy_w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_cXNIUdrkEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cXNIUtrkEemi0MvOBUAy_w" x="365" y="219" width="273" height="63"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cXNIUtrkEemi0MvOBUAy_w" x="356" y="219" width="273" height="63"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_f_67cNrkEemi0MvOBUAy_w" type="3009" element="_f_BjkNrkEemi0MvOBUAy_w">
               <children xmi:type="notation:Node" xmi:id="_f_7igNrkEemi0MvOBUAy_w" type="5004"/>
@@ -1072,15 +1075,11 @@
                   <styles xmi:type="notation:FontStyle" xmi:id="_HF6NkdrnEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_HF6NktrnEemi0MvOBUAy_w"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_y5yhqNvuEemOKrHuziDMmg" type="3010" element="_y5MrsNvuEemOKrHuziDMmg">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_y5yhqdvuEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_y5yhqtvuEemOKrHuziDMmg"/>
-                </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_hp5xAtrkEemi0MvOBUAy_w"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_hp5xA9rkEemi0MvOBUAy_w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_hp5J8drkEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hp5J8trkEemi0MvOBUAy_w" y="219" width="353" height="73"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hp5J8trkEemi0MvOBUAy_w" x="9" y="219" width="298" height="63"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_jPlVYNrkEemi0MvOBUAy_w" type="3009" element="_jPAGkNrkEemi0MvOBUAy_w">
               <children xmi:type="notation:Node" xmi:id="_jPl8cNrkEemi0MvOBUAy_w" type="5004"/>
@@ -1106,7 +1105,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_lDne09rkEemi0MvOBUAy_w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_lDm3wNrkEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lDm3wdrkEemi0MvOBUAy_w" x="374" y="374" width="259" height="53"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lDm3wdrkEemi0MvOBUAy_w" x="363" y="373" width="259" height="53"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_arONR9pYEemL2cubndOL1g"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_arONSNpYEemL2cubndOL1g"/>
@@ -1120,45 +1119,45 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2p10g9pYEemL2cubndOL1g" x="-6" y="-6"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_2p10hNpYEemL2cubndOL1g" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2p10hdpYEemL2cubndOL1g" x="9"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2p10hdpYEemL2cubndOL1g" x="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_2p10htpYEemL2cubndOL1g" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2p10h9pYEemL2cubndOL1g" x="-7" y="-2"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_2p10f9pYEemL2cubndOL1g"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_2p10gNpYEemL2cubndOL1g" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2p10gdpYEemL2cubndOL1g" points="[-1, -2, 7, 45]$[-6, -32, 2, 15]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2p10iNpYEemL2cubndOL1g" id="(0.5490196078431373,0.03571428571428571)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2p10gdpYEemL2cubndOL1g" points="[0, -2, 0, 45]$[0, -32, 0, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2p10iNpYEemL2cubndOL1g" id="(0.577319587628866,0.03571428571428571)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_4edG4NrkEemi0MvOBUAy_w" type="4001" element="_4dwjVNrkEemi0MvOBUAy_w" source="_cXNIUNrkEemi0MvOBUAy_w" target="_UXaAMNrkEemi0MvOBUAy_w">
           <children xmi:type="notation:Node" xmi:id="_4eh_YNrkEemi0MvOBUAy_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4eh_YdrkEemi0MvOBUAy_w" x="2" y="-5"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4eh_YdrkEemi0MvOBUAy_w" x="1" y="-6"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_4ejNgNrkEemi0MvOBUAy_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ejNgdrkEemi0MvOBUAy_w" x="2" y="5"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ejNgdrkEemi0MvOBUAy_w" x="3" y="5"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_4ekboNrkEemi0MvOBUAy_w" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ekbodrkEemi0MvOBUAy_w" x="4" y="2"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_4edG4drkEemi0MvOBUAy_w"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_4edG4trkEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4edG49rkEemi0MvOBUAy_w" points="[-3, -1, 0, 40]$[-3, -26, 0, 15]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4edG49rkEemi0MvOBUAy_w" points="[0, -1, -6, 40]$[3, -26, -3, 15]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4eoGANrkEemi0MvOBUAy_w" id="(0.4797047970479705,0.01639344262295082)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I06foNvwEemOKrHuziDMmg" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_5efnkNrkEemi0MvOBUAy_w" type="4001" element="_5d5xuNrkEemi0MvOBUAy_w" source="_lDmQsNrkEemi0MvOBUAy_w" target="_XSMWUNrkEemi0MvOBUAy_w">
           <children xmi:type="notation:Node" xmi:id="_5egOoNrkEemi0MvOBUAy_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5egOodrkEemi0MvOBUAy_w" x="10" y="-1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5egOodrkEemi0MvOBUAy_w" x="10" y="-2"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_5egOotrkEemi0MvOBUAy_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5egOo9rkEemi0MvOBUAy_w" x="4" y="-1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5egOo9rkEemi0MvOBUAy_w" x="4" y="-2"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_5egOpNrkEemi0MvOBUAy_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5egOpdrkEemi0MvOBUAy_w" x="-2" y="-3"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5egOpdrkEemi0MvOBUAy_w" x="-2" y="-4"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_5efnkdrkEemi0MvOBUAy_w"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_5efnktrkEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5efnk9rkEemi0MvOBUAy_w" points="[-3, -7, 0, 35]$[-3, -42, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5efnk9rkEemi0MvOBUAy_w" points="[1, -7, -7, 34]$[8, -41, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5eg1sNrkEemi0MvOBUAy_w" id="(0.39299610894941633,0.13725490196078433)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5eg1sdrkEemi0MvOBUAy_w" id="(0.5,1.0)"/>
         </edges>
@@ -1180,18 +1179,18 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_66SQINrkEemi0MvOBUAy_w" type="4001" element="_65rzONrkEemi0MvOBUAy_w" source="_hp5J8NrkEemi0MvOBUAy_w" target="_NvuhkNrkEemi0MvOBUAy_w">
           <children xmi:type="notation:Node" xmi:id="_66SQJNrkEemi0MvOBUAy_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66SQJdrkEemi0MvOBUAy_w" x="5" y="-4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66SQJdrkEemi0MvOBUAy_w" x="7" y="-4"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_66S3MNrkEemi0MvOBUAy_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66S3MdrkEemi0MvOBUAy_w" x="-2" y="-2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66S3MdrkEemi0MvOBUAy_w" x="2" y="-3"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_66S3MtrkEemi0MvOBUAy_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66S3M9rkEemi0MvOBUAy_w" y="-4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66S3M9rkEemi0MvOBUAy_w" x="3" y="-5"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_66SQIdrkEemi0MvOBUAy_w"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_66SQItrkEemi0MvOBUAy_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_66SQI9rkEemi0MvOBUAy_w" points="[0, -1, -3, 25]$[3, -26, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_66S3NNrkEemi0MvOBUAy_w" id="(0.42735042735042733,0.014084507042253521)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_66SQI9rkEemi0MvOBUAy_w" points="[-1, -1, 5, 25]$[-6, -26, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_66S3NNrkEemi0MvOBUAy_w" id="(0.5067567567567568,0.01639344262295082)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_66S3NdrkEemi0MvOBUAy_w" id="(0.5,1.0)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_7sRtwNrkEemi0MvOBUAy_w" type="4001" element="_7rxXfNrkEemi0MvOBUAy_w" source="_jPlVYNrkEemi0MvOBUAy_w" target="_QLag4NrkEemi0MvOBUAy_w">
@@ -1282,9 +1281,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subNodeMappings[name='DAOInterface']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_XRqx4NrkEemi0MvOBUAy_w" name="CompetenceQuestionDAO" incomingEdges="_5d5xuNrkEemi0MvOBUAy_w" width="3" height="3">
-        <target xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetenceQuestionDAO"/>
-        <semanticElements xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetenceQuestionDAO"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_XRqx4NrkEemi0MvOBUAy_w" name="CompetencyQuestionDAO" incomingEdges="_5d5xuNrkEemi0MvOBUAy_w" width="3" height="3">
+        <target xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetencyQuestionDAO"/>
+        <semanticElements xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetencyQuestionDAO"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1345,9 +1344,9 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_MyYdoNrmEemi0MvOBUAy_w" name=" + findOntologiByName (ontoName : String) : List">
-          <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName"/>
-          <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_MyYdoNrmEemi0MvOBUAy_w" name=" + findOntologyByName (ontoName : String) : List">
+          <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName"/>
+          <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_MyZEsNrmEemi0MvOBUAy_w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@subNodeMappings[name='DAO%20Method%20Node']/@style"/>
           </ownedStyle>
@@ -1389,14 +1388,6 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@subNodeMappings[name='DAO%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_y5MrsNvuEemOKrHuziDMmg" name=" + requestParticipation (ontoName : String, email : String) : String">
-          <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation"/>
-          <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation"/>
-          <ownedStyle xmi:type="diagram:Dot" uid="_y5MrsdvuEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@subNodeMappings[name='DAO%20Method%20Node']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@subNodeMappings[name='DAO%20Method%20Node']"/>
-        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_jPAGkNrkEemi0MvOBUAy_w" name="SubOntologyJPADAO" outgoingEdges="_7rxXfNrkEemi0MvOBUAy_w">
         <target xmi:type="frameweb:DAOClass" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO"/>
@@ -1409,9 +1400,9 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_p2A6ANroEemi0MvOBUAy_w" name=" + findSubOntoogies (ontology : Ontology) : List">
-          <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies"/>
-          <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_p2A6ANroEemi0MvOBUAy_w" name=" + findSubOntologies (ontology : Ontology) : List">
+          <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies"/>
+          <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_p2A6AdroEemi0MvOBUAy_w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@subNodeMappings[name='DAO%20Method%20Node']/@style"/>
           </ownedStyle>
@@ -1699,8 +1690,8 @@
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_QEypkNrmEemi0MvOBUAy_w" name="findOntologiByName" incomingEdges="_QjZ4MtrmEemi0MvOBUAy_w" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName"/>
-      <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName"/>
+      <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName"/>
+      <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName"/>
       <ownedStyle xmi:type="diagram:Square" uid="_QEypkdrmEemi0MvOBUAy_w" showIcon="false" labelPosition="node" width="10" height="3" color="246,139,139">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='DAOMethod']/@style"/>
@@ -1708,8 +1699,8 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='DAOMethod']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_Qi3ssNrmEemi0MvOBUAy_w" name="ontoName" outgoingEdges="_QjZ4MtrmEemi0MvOBUAy_w" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName/ontoName"/>
-      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName/ontoName"/>
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName/ontoName"/>
+      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName/ontoName"/>
       <ownedStyle xmi:type="diagram:Square" uid="_Qi3ssdrmEemi0MvOBUAy_w" labelPosition="node" width="10" height="3" color="209,209,209">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
@@ -1717,7 +1708,7 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_QjZ4MtrmEemi0MvOBUAy_w" sourceNode="_Qi3ssNrmEemi0MvOBUAy_w" targetNode="_QEypkNrmEemi0MvOBUAy_w">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName/ontoName"/>
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName/ontoName"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_QjafQNrmEemi0MvOBUAy_w" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QjafQdrmEemi0MvOBUAy_w"/>
@@ -1727,7 +1718,7 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_QEyCgdrmEemi0MvOBUAy_w"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
-    <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologiByName"/>
+    <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/OntologyJPADAO/findOntologyByName"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_-S8GoNrnEemi0MvOBUAy_w" name="Method Diagram">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_-S9Uw9rnEemi0MvOBUAy_w" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -2011,8 +2002,8 @@
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_vx-iINroEemi0MvOBUAy_w" name="recoverSubOntoogies" incomingEdges="_wLxiNNroEemi0MvOBUAy_w" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies"/>
-      <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies"/>
+      <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies"/>
+      <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies"/>
       <ownedStyle xmi:type="diagram:Square" uid="_vx-iIdroEemi0MvOBUAy_w" showIcon="false" labelPosition="node" width="10" height="3" color="246,139,139">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='DAOMethod']/@style"/>
@@ -2020,8 +2011,8 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='DAOMethod']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_wLcyENroEemi0MvOBUAy_w" name="ontology" outgoingEdges="_wLxiNNroEemi0MvOBUAy_w" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies/ontology"/>
-      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies/ontology"/>
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies/ontology"/>
+      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies/ontology"/>
       <ownedStyle xmi:type="diagram:Square" uid="_wLcyEdroEemi0MvOBUAy_w" labelPosition="node" width="10" height="3" color="209,209,209">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
@@ -2029,7 +2020,7 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_wLxiNNroEemi0MvOBUAy_w" sourceNode="_wLcyENroEemi0MvOBUAy_w" targetNode="_vx-iINroEemi0MvOBUAy_w">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies/ontology"/>
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies/ontology"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_wLyJQNroEemi0MvOBUAy_w" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_wLyJQdroEemi0MvOBUAy_w"/>
@@ -2039,7 +2030,7 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_vx97EdroEemi0MvOBUAy_w"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
-    <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntoogies"/>
+    <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/SubOntologyJPADAO/findSubOntologies"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_ilI38NrpEemi0MvOBUAy_w" name="NavigationUserRegistration">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ilQMsNrpEemi0MvOBUAy_w" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -4890,9 +4881,9 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_HuuSoNv7EemOKrHuziDMmg" name="&lt;&lt;page>>&#xA;competenceQuestionPage" outgoingEdges="_V_is8Nv7EemOKrHuziDMmg" incomingEdges="_TUCI7Nv7EemOKrHuziDMmg _YmlAoNv7EemOKrHuziDMmg">
-        <target xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage"/>
-        <semanticElements xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_HuuSoNv7EemOKrHuziDMmg" name="&lt;&lt;page>>&#xA;competencyQuestionPage" outgoingEdges="_V_is8Nv7EemOKrHuziDMmg" incomingEdges="_TUCI7Nv7EemOKrHuziDMmg _YmlAoNv7EemOKrHuziDMmg">
+        <target xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage"/>
+        <semanticElements xmi:type="frameweb:Page" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -4901,25 +4892,25 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_LFSl79v7EemOKrHuziDMmg" name=" - competenceQuestion.identificator : inputText">
-          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.identificator"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.identificator"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_LFSl79v7EemOKrHuziDMmg" name=" - competencyQuestion.identificator : inputText">
+          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage/competencyQuestion.identificator"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage/competencyQuestion.identificator"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_LFSl8Nv7EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_Loc9YNv7EemOKrHuziDMmg" name=" - competenceQuestion.desctiption : inputText">
-          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.desctiption"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestion.desctiption"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_Loc9YNv7EemOKrHuziDMmg" name=" - competencyQuestion.desctiption : inputText">
+          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage/competencyQuestion.desctiption"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage/competencyQuestion.desctiption"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_Loc9Ydv7EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_MTEnsdv7EemOKrHuziDMmg" name=" - competenceQuestionList : dataTable">
-          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestionList"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competenceQuestionPage/competenceQuestionList"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_MTEnsdv7EemOKrHuziDMmg" name=" - competencyQuestionList : dataTable">
+          <target xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage/competencyQuestionList"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="Model.frameweb#//@compose.1/ontologyRegistration/competencyQuestionPage/competencyQuestionList"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_MTEnstv7EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
@@ -5097,9 +5088,9 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_iZaeUNvUEemOKrHuziDMmg" name="CompetenceQuestionController" outgoingEdges="_YmlAoNv7EemOKrHuziDMmg" incomingEdges="_V_is8Nv7EemOKrHuziDMmg">
-        <target xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController"/>
-        <semanticElements xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_iZaeUNvUEemOKrHuziDMmg" name="CompetencyQuestionController" outgoingEdges="_YmlAoNv7EemOKrHuziDMmg" incomingEdges="_V_is8Nv7EemOKrHuziDMmg">
+        <target xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController"/>
+        <semanticElements xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -5108,33 +5099,33 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_krU2kNvUEemOKrHuziDMmg" name=" - competenceQuestion : CompetenceQuestion">
-          <target xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/competenceQuestion"/>
-          <semanticElements xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/competenceQuestion"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_krU2kNvUEemOKrHuziDMmg" name=" - competenceQuestion : CompetencyQuestion">
+          <target xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/competenceQuestion"/>
+          <semanticElements xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/competenceQuestion"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_krU2kdvUEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_rK8lYNvUEemOKrHuziDMmg" name=" - competenceQuestionList : List">
-          <target xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/competenceQuestionList"/>
-          <semanticElements xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/competenceQuestionList"/>
+          <target xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/competenceQuestionList"/>
+          <semanticElements xmi:type="frameweb:IOParameter" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/competenceQuestionList"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_rK8lYdvUEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_wistMNvUEemOKrHuziDMmg" name=" + saveCQ () : String">
-          <target xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/saveCQ"/>
-          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/saveCQ"/>
+          <target xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/saveCQ"/>
+          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/saveCQ"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_wistMdvUEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" uid="_iXiSYNv9EemOKrHuziDMmg" name=" + findCompetenceQuestion () : void">
-          <target xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/findCompetenceQuestion"/>
-          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController/findCompetenceQuestion"/>
+          <target xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/findCompetenceQuestion"/>
+          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController/findCompetenceQuestion"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_iXiSYdv9EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']/@style"/>
           </ownedStyle>
@@ -5810,9 +5801,9 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_7JiOJNyGEemunoDI_b-rnA" name=" + revoqueParticipation () : String">
-          <target xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller.3/GrantParticipationController/revoqueParticipation"/>
-          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller.3/GrantParticipationController/revoqueParticipation"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_7JiOJNyGEemunoDI_b-rnA" name=" + revokeParticipation () : String">
+          <target xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller.3/GrantParticipationController/revokeParticipation"/>
+          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller.3/GrantParticipationController/revokeParticipation"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_7JjcQNyGEemunoDI_b-rnA" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']/@style"/>
           </ownedStyle>
@@ -5829,7 +5820,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='ResultDependency%20Line']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7JwQydyGEemunoDI_b-rnA" name="{method=revoqueParticipation, result=String, ajax=true}" sourceNode="_7JdVztyGEemunoDI_b-rnA" targetNode="_7JXPCdyGEemunoDI_b-rnA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7JwQydyGEemunoDI_b-rnA" name="{method=revokeParticipation, result=String, ajax=true}" sourceNode="_7JdVztyGEemunoDI_b-rnA" targetNode="_7JXPCdyGEemunoDI_b-rnA">
       <target xmi:type="frameweb:ResultDependency" href="Model.frameweb#//@compose.1/@packagedElement.39"/>
       <semanticElements xmi:type="frameweb:ResultDependency" href="Model.frameweb#//@compose.1/@packagedElement.39"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_7JwQytyGEemunoDI_b-rnA" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
@@ -5865,7 +5856,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7J2XZtyGEemunoDI_b-rnA" name="{method=revoqueParticipation}" sourceNode="_7JXPCdyGEemunoDI_b-rnA" targetNode="_7JdVztyGEemunoDI_b-rnA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7J2XZtyGEemunoDI_b-rnA" name="{method=revokeParticipation}" sourceNode="_7JXPCdyGEemunoDI_b-rnA" targetNode="_7JdVztyGEemunoDI_b-rnA">
       <target xmi:type="frameweb:FrontControllerDependency" href="Model.frameweb#//@compose.1/@packagedElement.44"/>
       <semanticElements xmi:type="frameweb:FrontControllerDependency" href="Model.frameweb#//@compose.1/@packagedElement.44"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_7J2XZ9yGEemunoDI_b-rnA" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
@@ -6066,7 +6057,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_NoLuQ9vYEemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_NoCkbdvYEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NoCkbtvYEemOKrHuziDMmg" x="125" y="39" width="218" height="68"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NoCkbtvYEemOKrHuziDMmg" x="125" y="39" width="268" height="68"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_OM7KatvpEemOKrHuziDMmg" type="3007" element="_OMeeYNvpEemOKrHuziDMmg">
               <children xmi:type="notation:Node" xmi:id="_OM7KbdvpEemOKrHuziDMmg" type="5003">
@@ -6258,7 +6249,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_Wgw4stv9EemOKrHuziDMmg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_WgnvE9v9EemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WgnvFNv9EemOKrHuziDMmg" x="135" y="741" width="208" height="53"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WgnvFNv9EemOKrHuziDMmg" x="135" y="741" width="250" height="53"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="__jKw1dvWEemOKrHuziDMmg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="__jKw1tvWEemOKrHuziDMmg"/>
@@ -6340,7 +6331,7 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_QdfHddvYEemOKrHuziDMmg"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_QdfHdtvYEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QdfHd9vYEemOKrHuziDMmg" points="[-55, 1, 54, -2]$[-109, 3, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QdfHftvYEemOKrHuziDMmg" id="(0.25462962962962965,0.45454545454545453)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QdfHftvYEemOKrHuziDMmg" id="(0.2067669172932331,0.45454545454545453)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QdfHf9vYEemOKrHuziDMmg" id="(1.0,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_r4fEANvYEemOKrHuziDMmg" type="4001" element="_r34nENvYEemOKrHuziDMmg" source="_NoCkbNvYEemOKrHuziDMmg" target="_65mk2NvWEemOKrHuziDMmg">
@@ -6356,7 +6347,7 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_r4fEAdvYEemOKrHuziDMmg"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_r4fEAtvYEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_r4fEA9vYEemOKrHuziDMmg" points="[4, 2, -144, 0]$[148, 2, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_r4fECtvYEemOKrHuziDMmg" id="(0.9814814814814815,0.4090909090909091)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_r4fECtvYEemOKrHuziDMmg" id="(0.7969924812030075,0.4090909090909091)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_r4fEC9vYEemOKrHuziDMmg" id="(0.0,0.5666666666666667)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_YdTN8NvpEemOKrHuziDMmg" type="4001" element="_YcadJNvpEemOKrHuziDMmg" source="_V1YJfNvpEemOKrHuziDMmg" target="_OM7KatvpEemOKrHuziDMmg">
@@ -6658,7 +6649,7 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_annZfdv9EemOKrHuziDMmg"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_annZftv9EemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_annZf9v9EemOKrHuziDMmg" points="[-6, -3, 35, 0]$[-41, -3, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_annZhtv9EemOKrHuziDMmg" id="(0.02912621359223301,0.1568627450980392)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_annZhtv9EemOKrHuziDMmg" id="(0.024193548387096774,0.1568627450980392)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_annZh9v9EemOKrHuziDMmg" id="(1.0,0.3333333333333333)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Ub7VdNwMEemOKrHuziDMmg" type="4001" element="_UbLukNwMEemOKrHuziDMmg" source="_WgnvEtv9EemOKrHuziDMmg" target="_65wVv9vWEemOKrHuziDMmg">
@@ -6674,7 +6665,7 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_Ub7VddwMEemOKrHuziDMmg"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_Ub7VdtwMEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ub7Vd9wMEemOKrHuziDMmg" points="[0, 0, -134, -9]$[134, 9, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ub7VftwMEemOKrHuziDMmg" id="(1.0,0.21568627450980393)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ub7VftwMEemOKrHuziDMmg" id="(0.8306451612903226,0.21568627450980393)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ub7Vf9wMEemOKrHuziDMmg" id="(0.0,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_XMykaNwVEemOKrHuziDMmg" type="4001" element="_XL5zpNwVEemOKrHuziDMmg" source="_NWIZltv2EemOKrHuziDMmg" target="_65wVutvWEemOKrHuziDMmg">
@@ -6845,9 +6836,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subNodeMappings[name='Front%20Controller%20Node']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_64yseNvWEemOKrHuziDMmg" name="CompetenceQuestionController" outgoingEdges="_K2_ZTNv9EemOKrHuziDMmg" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController"/>
-        <semanticElements xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetenceQuestionController"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_64yseNvWEemOKrHuziDMmg" name="CompetencyQuestionController" outgoingEdges="_K2_ZTNv9EemOKrHuziDMmg" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController"/>
+        <semanticElements xmi:type="frameweb:FrontControllerClass" href="Model.frameweb#//@compose.1/br.ufes.informatica.rationalontology.core.controller/CompetencyQuestionController"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -6927,9 +6918,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subNodeMappings[name='DAOInterface']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_64ysjdvWEemOKrHuziDMmg" name="CompetenceQuestionDAO" incomingEdges="_UbLukNwMEemOKrHuziDMmg _ag-5HNwVEemOKrHuziDMmg" width="3" height="3">
-        <target xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetenceQuestionDAO"/>
-        <semanticElements xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetenceQuestionDAO"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_64ysjdvWEemOKrHuziDMmg" name="CompetencyQuestionDAO" incomingEdges="_UbLukNwMEemOKrHuziDMmg _ag-5HNwVEemOKrHuziDMmg" width="3" height="3">
+        <target xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetencyQuestionDAO"/>
+        <semanticElements xmi:type="frameweb:DAOInterface" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/CompetencyQuestionDAO"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -7034,9 +7025,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subNodeMappings[name='ServiceInterface']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_IKZ3INv9EemOKrHuziDMmg" name="CompetenceQuestionController" incomingEdges="_K2_ZTNv9EemOKrHuziDMmg _am3yjNv9EemOKrHuziDMmg" width="3" height="3">
-        <target xmi:type="frameweb:ServiceInterface" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionController"/>
-        <semanticElements xmi:type="frameweb:ServiceInterface" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionController"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_IKZ3INv9EemOKrHuziDMmg" name="CompetencyQuestionController" incomingEdges="_K2_ZTNv9EemOKrHuziDMmg _am3yjNv9EemOKrHuziDMmg" width="3" height="3">
+        <target xmi:type="frameweb:ServiceInterface" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionController"/>
+        <semanticElements xmi:type="frameweb:ServiceInterface" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionController"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -7057,7 +7048,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_WulSENvYEemOKrHuziDMmg" name=" + getAccess (email : String) : void">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_WulSENvYEemOKrHuziDMmg" name=" + getAccess (email : String, senha : String) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_WulSEdvYEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7093,7 +7084,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@subNodeMappings[name='Service%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_sglWENvpEemOKrHuziDMmg" name=" + requestParticipation (access : Access) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_sglWENvpEemOKrHuziDMmg" name=" + requestParticipation (access : Access) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RequestParticipationBean/requestParticipation"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RequestParticipationBean/requestParticipation"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_sglWEdvpEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7129,7 +7120,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@subNodeMappings[name='Service%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_ZbZe0NvyEemOKrHuziDMmg" name=" + grantParticipation (access : Access) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_ZbZe0NvyEemOKrHuziDMmg" name=" + grantParticipation (access : Access) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/GrantParticipationBean/grantParticipation"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/GrantParticipationBean/grantParticipation"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_ZbZe0dvyEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7137,7 +7128,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@subNodeMappings[name='Service%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_xCJtsNvyEemOKrHuziDMmg" name=" + revoqueParticipation (access : Access) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_xCJtsNvyEemOKrHuziDMmg" name=" + revoqueParticipation (access : Access) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/GrantParticipationBean/revoqueParticipation"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/GrantParticipationBean/revoqueParticipation"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_xCJtsdvyEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7165,7 +7156,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@subNodeMappings[name='Service%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_x3MKYNwVEemOKrHuziDMmg" name=" + generatePDF (onto : Ontology) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_x3MKYNwVEemOKrHuziDMmg" name=" + generatePDF (onto : Ontology) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean/generatePDF"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/OntologyControllerBean/generatePDF"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_x3MKYdwVEemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7185,7 +7176,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_h0hToNv3EemOKrHuziDMmg" name=" + saveOntology (onto : Ontology) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_h0hToNv3EemOKrHuziDMmg" name=" + saveOntology (onto : Ontology) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentControllerBean/saveOntology"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentControllerBean/saveOntology"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_h0hTodv3EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7213,7 +7204,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_UsFL0Nv5EemOKrHuziDMmg" name=" + saveDictionary (dic : DataDictionary) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_UsFL0Nv5EemOKrHuziDMmg" name=" + saveDictionary (dic : DataDictionary) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/DictionaryControllerBean/saveDictionary"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/DictionaryControllerBean/saveDictionary"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_UsFL0dv5EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7233,7 +7224,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_sJ2WcNv8EemOKrHuziDMmg" name=" + saveSubOntology (subOnt : SubOntology) : String">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_sJ2WcNv8EemOKrHuziDMmg" name=" + saveSubOntology (subOnt : SubOntology) : void">
           <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/SubOntologyDevelopmentControllerBean/saveSubOntology"/>
           <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/SubOntologyDevelopmentControllerBean/saveSubOntology"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_sJ2Wcdv8EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -7242,9 +7233,9 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@subNodeMappings[name='Service%20Method%20Node']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WfuW4Nv9EemOKrHuziDMmg" name="CompetenceQuestionControllerBean" outgoingEdges="_am3yjNv9EemOKrHuziDMmg _UbLukNwMEemOKrHuziDMmg">
-        <target xmi:type="frameweb:ServiceClass" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionControllerBean"/>
-        <semanticElements xmi:type="frameweb:ServiceClass" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionControllerBean"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WfuW4Nv9EemOKrHuziDMmg" name="CompetencyQuestionControllerBean" outgoingEdges="_am3yjNv9EemOKrHuziDMmg _UbLukNwMEemOKrHuziDMmg">
+        <target xmi:type="frameweb:ServiceClass" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean"/>
+        <semanticElements xmi:type="frameweb:ServiceClass" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -7253,9 +7244,9 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bWG3ANv9EemOKrHuziDMmg" name=" + saveCQ () : void">
-          <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionControllerBean/saveCQ"/>
-          <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetenceQuestionControllerBean/saveCQ"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bWG3ANv9EemOKrHuziDMmg" name=" + saveCQ (cq : CompetencyQuestion) : void">
+          <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ"/>
+          <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_bWG3Adv9EemOKrHuziDMmg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer/@containerMappings[name='ApplicationPackage']/@subContainerMappings[name='ServiceClass']/@subNodeMappings[name='Service%20Method%20Node']/@style"/>
           </ownedStyle>
@@ -7623,6 +7614,17 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_fM3tAdvYEemOKrHuziDMmg" fontName="Segoe UI" fontHeight="8" italic="true"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fM3tAtvYEemOKrHuziDMmg" x="270" y="55" width="100" height="30"/>
         </children>
+        <children xmi:type="notation:Node" xmi:id="_4ImvAOrEEemUrNMAKz882g" type="2001" element="_4HjmIOrEEemUrNMAKz882g">
+          <children xmi:type="notation:Node" xmi:id="_4Iv48OrEEemUrNMAKz882g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_4Iv48erEEemUrNMAKz882g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4I5p8OrEEemUrNMAKz882g" type="3003" element="_4HtXIOrEEemUrNMAKz882g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4I5p8erEEemUrNMAKz882g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4I5p8urEEemUrNMAKz882g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_4ImvAerEEemUrNMAKz882g" fontName="Segoe UI" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ImvAurEEemUrNMAKz882g" x="105" y="115" width="100" height="30"/>
+        </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_eg3iq9vYEemOKrHuziDMmg"/>
         <edges xmi:type="notation:Edge" xmi:id="_fM3tCNvYEemOKrHuziDMmg" type="4001" element="_fMbBNNvYEemOKrHuziDMmg" source="_fM3tANvYEemOKrHuziDMmg" target="_ehBToNvYEemOKrHuziDMmg">
           <children xmi:type="notation:Node" xmi:id="_fM3tDNvYEemOKrHuziDMmg" type="6001">
@@ -7640,9 +7642,25 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fM3tEtvYEemOKrHuziDMmg" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fM3tE9vYEemOKrHuziDMmg" id="(0.5,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_4I5p8-rEEemUrNMAKz882g" type="4001" element="_4HtXLOrEEemUrNMAKz882g" source="_4ImvAOrEEemUrNMAKz882g" target="_ehBToNvYEemOKrHuziDMmg">
+          <children xmi:type="notation:Node" xmi:id="_4I5p9-rEEemUrNMAKz882g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4I5p-OrEEemUrNMAKz882g" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4I5p-erEEemUrNMAKz882g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4I5p-urEEemUrNMAKz882g" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4I5p--rEEemUrNMAKz882g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4I5p_OrEEemUrNMAKz882g" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_4I5p9OrEEemUrNMAKz882g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_4I5p9erEEemUrNMAKz882g" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4I5p9urEEemUrNMAKz882g" points="[-14, -15, 91, 100]$[-92, -100, 13, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4JCz4OrEEemUrNMAKz882g" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4JCz4erEEemUrNMAKz882g" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_eg3iotvYEemOKrHuziDMmg" name="getAccess" incomingEdges="_fMbBNNvYEemOKrHuziDMmg" width="10" height="3" resizeKind="EAST_WEST">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_eg3iotvYEemOKrHuziDMmg" name="getAccess" incomingEdges="_fMbBNNvYEemOKrHuziDMmg _4HtXLOrEEemUrNMAKz882g" width="10" height="3" resizeKind="EAST_WEST">
       <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess"/>
       <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess"/>
       <ownedStyle xmi:type="diagram:Square" uid="_eg3io9vYEemOKrHuziDMmg" showIcon="false" labelPosition="node" width="10" height="3" color="194,239,255">
@@ -7660,11 +7678,28 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
     </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_4HjmIOrEEemUrNMAKz882g" name="senha" outgoingEdges="_4HtXLOrEEemUrNMAKz882g" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess/senha"/>
+      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess/senha"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_4HtXIOrEEemUrNMAKz882g" labelPosition="node" width="10" height="3" color="209,209,209">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
+    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_fMbBNNvYEemOKrHuziDMmg" sourceNode="_fMNlsNvYEemOKrHuziDMmg" targetNode="_eg3iotvYEemOKrHuziDMmg">
       <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess/email"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_fMbBNdvYEemOKrHuziDMmg" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_fMbBNtvYEemOKrHuziDMmg"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_4HtXLOrEEemUrNMAKz882g" sourceNode="_4HjmIOrEEemUrNMAKz882g" targetNode="_eg3iotvYEemOKrHuziDMmg">
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/RegistrationServiceBean/getAccess/senha"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_4HtXLerEEemUrNMAKz882g" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_4HtXLurEEemUrNMAKz882g"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
     </ownedDiagramElements>
@@ -8060,8 +8095,6 @@
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_3RGqotvvEemOKrHuziDMmg" name="requestParticipation" incomingEdges="_3xlhhNvvEemOKrHuziDMmg _6DAxptvvEemOKrHuziDMmg" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation"/>
-      <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation"/>
       <ownedStyle xmi:type="diagram:Square" uid="_3RGqo9vvEemOKrHuziDMmg" showIcon="false" labelPosition="node" width="10" height="3" color="246,139,139">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='DAOMethod']/@style"/>
@@ -8069,8 +8102,6 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='DAOMethod']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_3xSmkNvvEemOKrHuziDMmg" name="ontoName" outgoingEdges="_3xlhhNvvEemOKrHuziDMmg" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation/ontoName"/>
-      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation/ontoName"/>
       <ownedStyle xmi:type="diagram:Square" uid="_3xSmkdvvEemOKrHuziDMmg" labelPosition="node" width="10" height="3" color="209,209,209">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
@@ -8078,8 +8109,6 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_6Ct2oNvvEemOKrHuziDMmg" name="email" outgoingEdges="_6DAxptvvEemOKrHuziDMmg" width="10" height="3" resizeKind="EAST_WEST">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation/email"/>
-      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation/email"/>
       <ownedStyle xmi:type="diagram:Square" uid="_6Ct2odvvEemOKrHuziDMmg" labelPosition="node" width="10" height="3" color="209,209,209">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
@@ -8087,7 +8116,6 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_3xlhhNvvEemOKrHuziDMmg" sourceNode="_3xSmkNvvEemOKrHuziDMmg" targetNode="_3RGqotvvEemOKrHuziDMmg">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation/ontoName"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_3xlhhdvvEemOKrHuziDMmg" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_3xlhhtvvEemOKrHuziDMmg"/>
@@ -8095,7 +8123,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6DAxptvvEemOKrHuziDMmg" sourceNode="_6Ct2oNvvEemOKrHuziDMmg" targetNode="_3RGqotvvEemOKrHuziDMmg">
-      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation/email"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_6DAxp9vvEemOKrHuziDMmg" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_6DAxqNvvEemOKrHuziDMmg"/>
@@ -8105,7 +8132,6 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_3RGqodvvEemOKrHuziDMmg"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
-    <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.0/br.ufes.informatica.rationalontology.core.persistence/AccessJPADAO/requestParticipation"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_ShluYNvyEemOKrHuziDMmg" name="Method Diagram">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ShluZdvyEemOKrHuziDMmg" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -9298,5 +9324,83 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_E6hu0dzOEemunoDI_b-rnA"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
     <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/OntologyDevelopmentControllerBean/findSubOntologies"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_Mnl7sOrFEemUrNMAKz882g" name="Method Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Mnl7terFEemUrNMAKz882g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_Mnl7turFEemUrNMAKz882g"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_MqRcQOrFEemUrNMAKz882g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_MqRcQerFEemUrNMAKz882g" type="Sirius" element="_Mnl7sOrFEemUrNMAKz882g" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_MqRcQ-rFEemUrNMAKz882g" type="2001" element="_Mnl7surFEemUrNMAKz882g">
+          <children xmi:type="notation:Node" xmi:id="_MqRcRurFEemUrNMAKz882g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_MqbNQOrFEemUrNMAKz882g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_MqbNQerFEemUrNMAKz882g" type="3003" element="_Mnl7s-rFEemUrNMAKz882g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_MqbNQurFEemUrNMAKz882g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MqbNQ-rFEemUrNMAKz882g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_MqRcROrFEemUrNMAKz882g" fontName="Segoe UI" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MqRcRerFEemUrNMAKz882g" width="100" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NW-KOOrFEemUrNMAKz882g" type="2001" element="_NV7oYOrFEemUrNMAKz882g">
+          <children xmi:type="notation:Node" xmi:id="_NW-KO-rFEemUrNMAKz882g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_NW-KPOrFEemUrNMAKz882g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NW-KPerFEemUrNMAKz882g" type="3003" element="_NV7oYerFEemUrNMAKz882g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_NW-KPurFEemUrNMAKz882g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NW-KP-rFEemUrNMAKz882g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_NW-KOerFEemUrNMAKz882g" fontName="Segoe UI" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NW-KOurFEemUrNMAKz882g" x="260" y="60" width="100" height="30"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_MqRcQurFEemUrNMAKz882g"/>
+        <edges xmi:type="notation:Edge" xmi:id="_NW-KQOrFEemUrNMAKz882g" type="4001" element="_NW-KM-rFEemUrNMAKz882g" source="_NW-KOOrFEemUrNMAKz882g" target="_MqRcQ-rFEemUrNMAKz882g">
+          <children xmi:type="notation:Node" xmi:id="_NW-KROrFEemUrNMAKz882g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NW-KRerFEemUrNMAKz882g" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NW-KRurFEemUrNMAKz882g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NW-KR-rFEemUrNMAKz882g" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NW-KSOrFEemUrNMAKz882g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NW-KSerFEemUrNMAKz882g" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_NW-KQerFEemUrNMAKz882g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_NW-KQurFEemUrNMAKz882g" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NW-KQ-rFEemUrNMAKz882g" points="[-50, -12, 210, 48]$[-210, -49, 50, 11]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NW-KSurFEemUrNMAKz882g" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NW-KS-rFEemUrNMAKz882g" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Mnl7surFEemUrNMAKz882g" name="saveCQ" incomingEdges="_NW-KM-rFEemUrNMAKz882g" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ"/>
+      <semanticElements xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_Mnl7s-rFEemUrNMAKz882g" showIcon="false" labelPosition="node" width="10" height="3" color="194,239,255">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='ServiceMethod']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='ServiceMethod']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_NV7oYOrFEemUrNMAKz882g" name="cq" outgoingEdges="_NW-KM-rFEemUrNMAKz882g" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ/cq"/>
+      <semanticElements xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ/cq"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_NV7oYerFEemUrNMAKz882g" labelPosition="node" width="10" height="3" color="209,209,209">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_NW-KM-rFEemUrNMAKz882g" sourceNode="_NV7oYOrFEemUrNMAKz882g" targetNode="_Mnl7surFEemUrNMAKz882g">
+      <target xmi:type="uml:Parameter" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ/cq"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_NW-KNOrFEemUrNMAKz882g" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_NW-KNerFEemUrNMAKz882g"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Mnl7serFEemUrNMAKz882g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
+    <target xmi:type="frameweb:ServiceMethod" href="Model.frameweb#//@compose.2/br.ufes.informatica.rationalontology.core.application/CompetencyQuestionControllerBean/saveCQ"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

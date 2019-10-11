@@ -48,30 +48,15 @@ public class RegistrationServiceAppBean implements RegistrationServiceApp {
 	public void save(User user) throws RegistrationFailedException {
 		
 		try {
-			// Encodes the admin's password.
 			user.setPassword(TextUtils.produceMd5Hash(user.getPassword()));
 
-			// Saves the administrator.
-			//logger.log(Level.FINER, "Persisting admin data...\n\t- Short name = {0}\n\t- Last update date = {1}", new Object[] { admin.getShortName(), admin.getLastUpdateDate() });
 			userDAO.save(user);
-			//logger.log(Level.FINE, "The administrator has been saved: {0} ({1})", new Object[] { admin.getName(), admin.getEmail() });
-
-			// Saves Marvin's configuration.
-			///logger.log(Level.FINER, "Persisting configuration data...\n\t- Date = {0}\n\t- Acronym = {1}", new Object[] { config.getCreationDate(), config.getInstitutionAcronym() });
-			//marvinConfigurationDAO.save(config);
-			//logger.log(Level.FINE, "The configuration has been saved");
-
-			// Reloads the bean that holds the configuration and determines if the system is installed.
-			//logger.log(Level.FINER, "Reloading core information...");
-			//coreInformation.init();
 		}
 		catch (Exception e) {
 			// Logs and rethrows the exception for the controller to display the error to the user.
 			//logger.log(Level.SEVERE, "Exception during system installation!", e);
 			throw new RegistrationFailedException(e);
 		}
-		
-		return;
 	}
 	
 

@@ -16,10 +16,10 @@
 	</ui:define>
 
 	<ui:define name="body">
-		<adm:breadcrumb link="/core/requestParticipation/index"
+		<adm:breadcrumb link="/core/requestParticipation/requestParticipationPage"
 			title="#{msgs['requestParticipation.title']}" />
 			
-		<h:form id="listingForm">
+		<h:form id="form">
 			<p:dataTable id="entitiesDataTable" 
 				value="#{requestParticipationController.requests}"
 				var="access" selectionMode="single"
@@ -28,11 +28,12 @@
 				rowsPerPageTemplate="#{requestParticipationController.halfMaxDataTableRowsPerPage},#{requestParticipationController.maxDataTableRowsPerPage},#{requestParticipationController.doubleMaxDataTableRowsPerPage}"
 				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
 				lazy="true" paginatorPosition="bottom"
-				emptyMessage="#{msgs['requestParticipation.text.noEntities']}">
-				<p:ajax event="rowSelect" update="buttonsGroup" />
-				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				emptyMessage="#{msgs['requestParticipation.dataTable.noEntities']}">
+				<p:ajax event="rowSelect" />
+				<p:ajax event="rowUnselect"  />
+				
 				<f:facet name="header">
-					<h:outputText value="#{msgs['requestParticipation.text.entities']}" />
+					<h:outputText value="#{msgs['requestParticipation.dataTable.title']}" />
 				</f:facet>
 				
 				<p:column
@@ -52,11 +53,13 @@
 				<f:facet name="footer">
 					<h:panelGroup id="buttonsGroup">
 						<p:commandButton icon="fa fa-close"
-							action="#{requestParticipationController.getRequests()}"
-							value="#{msgs['jbutler.crud.button.cancelParticipation']}" />
+							action="#{requestParticipationController.cancelParticipation()}"
+							value="#{msgs['jbutler.crud.button.cancelParticipation']}" 
+							 />
 
 						<p:commandButton icon="fa fa-plus"
-							value="#{msgs['jbutler.crud.button.createParticipation']}" />
+							value="#{msgs['jbutler.crud.button.createParticipation']}" 
+							action="/core/requestParticipation/newRquestParticipationPage.xhtml?faces-redirect=true" />
 
 					</h:panelGroup>
 				</f:facet>

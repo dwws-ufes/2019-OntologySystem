@@ -10,8 +10,6 @@ import br.ufes.informatica.rationalontology.core.domain.Access;
 @Local
 public interface AccessDAO extends BaseDAO<Access> {
 
-	List getRequests(long ids);
-
-	String requestParticipation(String ontoName, String email);
+	List<Access> getRequests(long ids);
 	
 }
