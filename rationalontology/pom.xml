@@ -4,7 +4,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>br.ufes.informatica</groupId>
 	<artifactId>rationalontology</artifactId>
 	<version>1.0</version>
@@ -52,13 +51,19 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.2</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-email</artifactId>
 			<version>1.5</version>
 		</dependency>
-			
+		
+		<dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>mailapi</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+		
 	</dependencies>
 
 	<repositories>

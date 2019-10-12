@@ -25,7 +25,7 @@ import br.ufes.informatica.rationalontology.core.domain.User;
 @ManagedBean(name = "usuarioLogadoMB")
 @SessionScoped
 @Stateful
-public class SessionInformationBean implements SessionInformation {
+public class SessionInformationBean  implements SessionInformation {
 	/** Serialization id. */
 	private static final long serialVersionUID = 1L;
 
@@ -78,9 +78,8 @@ public class SessionInformationBean implements SessionInformation {
 		}
 	}
 	
-    public String logout() {
+    public void logout() {
         SessionContext.getInstance().encerrarSessao();
         //saddInfoMessage("Logout realizado com sucesso !");
-        return "core/home.xhtml?faces-redirect=true";
      }
 }

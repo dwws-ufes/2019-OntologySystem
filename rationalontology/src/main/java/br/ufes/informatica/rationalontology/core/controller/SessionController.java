@@ -58,7 +58,7 @@ public class SessionController extends JSFController {
 	public boolean isLoggedIn() {
 		return sessionInformation.getCurrentUser() != null;
 	}
-
+	
 	/**
 	 * Provides the current authenticated user.
 	 * 
@@ -73,9 +73,9 @@ public class SessionController extends JSFController {
 	 * 
 	 * @return A Date object representing the date/time the method was called.
 	 */
-	public Date getNow() {
-		return new Date(System.currentTimeMillis());
-	}
+	//public Date getNow() {
+	//	return new Date(System.currentTimeMillis());
+	//}
 
 	/**
 	 * Provides the expiration date/time for the user session. This makes it possible to warn the user when his session
@@ -83,7 +83,7 @@ public class SessionController extends JSFController {
 	 * 
 	 * @return A Date object representing the date/time of the user's session expiration.
 	 */
-	public Date getSessionExpirationTime() {
+	/*public Date getSessionExpirationTime() {
 		Date expTime = null;
 
 		// Attempts to retrieve this information from the external context.
@@ -99,7 +99,7 @@ public class SessionController extends JSFController {
 		}
 		
 		return expTime;
-	}
+	}*/
 
 	/**
 	 * Accesses the Login service to authenticate the user given his email and password.
@@ -124,5 +124,10 @@ public class SessionController extends JSFController {
 
 		// If everything is OK, redirect back to the home screen.
 		return "core/home.xhtml?faces-redirect=true";
+	}
+	
+	public String logout() {
+		sessionInformation.logout();
+		return "/index.xhtml?faces-redirect=true";
 	}
 }

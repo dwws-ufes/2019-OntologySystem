@@ -27,7 +27,7 @@
 				rows="#{requestParticipationController.maxDataTableRowsPerPage}"
 				rowsPerPageTemplate="#{requestParticipationController.halfMaxDataTableRowsPerPage},#{requestParticipationController.maxDataTableRowsPerPage},#{requestParticipationController.doubleMaxDataTableRowsPerPage}"
 				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-				lazy="true" paginatorPosition="bottom"
+				lazy="true" paginatorPosition="bottom" update="display"
 				emptyMessage="#{msgs['requestParticipation.dataTable.noEntities']}">
 				<p:ajax event="rowSelect" />
 				<p:ajax event="rowUnselect"  />
@@ -52,14 +52,13 @@
 				
 				<f:facet name="footer">
 					<h:panelGroup id="buttonsGroup">
-						<p:commandButton icon="fa fa-close"
+						<p:commandButton icon="fa fa-ban"
 							action="#{requestParticipationController.cancelParticipation()}"
-							value="#{msgs['jbutler.crud.button.cancelParticipation']}" 
-							 />
+							value="#{msgs['jbutler.button.cancelParticipation']}" update="entitiesDataTable" />
 
 						<p:commandButton icon="fa fa-plus"
-							value="#{msgs['jbutler.crud.button.createParticipation']}" 
-							action="/core/requestParticipation/newRquestParticipationPage.xhtml?faces-redirect=true" />
+							value="#{msgs['jbutler.button.createParticipation']}" 
+							action="/core/requestParticipation/newRquestParticipationPage.xhtml?faces-redirect=true" update="entitiesDataTable"/>
 
 					</h:panelGroup>
 				</f:facet>

@@ -31,7 +31,7 @@
 					style="width: 20%;" />
 
 				<p:commandButton icon="fa fa-search"
-					value="#{msgs['jbutler.crud.button.find']}"
+					value="#{msgs['jbutler.button.find']}"
 					action="#{requestParticipationController.findOntologyByName()}"
 					update="entitiesDataTable">
 
@@ -72,10 +72,10 @@
 			<h3 style="margin-top:1">#{msgs['newRequestParticipation.subject']}</h3>
 				<p:textEditor widgetVar="editor1" value="#{requestParticipationController.email_text}" height="200" style="margin-bottom:10px"/>
 			
-			<p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}"
+			<p:commandButton id="saveButton" value="#{msgs['jbutler.button.save']}"
 				icon="fa fa-save" action="#{requestParticipationController.save}" />
 			
-			<p:commandButton id="backCancel" value="#{msgs['jbutler.crud.button.cancel']}"
+			<p:commandButton id="backCancel" value="#{msgs['jbutler.button.cancel']}"
 				icon="fa fa-arrow-circle-left"
 				action="/core/requestParticipation/requestParticipationPage.xhtml?faces-redirect=true" immediate="true" />
 				

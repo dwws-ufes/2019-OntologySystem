@@ -16,6 +16,9 @@
 		<adm:breadcrumb link="/core/grantParticipation/grantParticipationPage.xhtml" title="#{msgs['grantParticipation.title.text']}" />
 		
 		<h:form id="form">
+		
+			<p:growl id="growl-mensagem" showDetail="true" sticky="true" />
+		
 			<p:dataTable id="entitiesDataTable" 
 				value="#{grantParticipationController.requests}"
 				var="access" selectionMode="single"
@@ -24,7 +27,7 @@
 				rowsPerPageTemplate="#{grantParticipationController.halfMaxDataTableRowsPerPage},#{grantParticipationController.maxDataTableRowsPerPage},#{grantParticipationController.doubleMaxDataTableRowsPerPage}"
 				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
 				lazy="true" paginatorPosition="bottom"
-				emptyMessage="#{msgs['dataTable.noEntities']}">
+				emptyMessage="#{msgs['dataTable.noEntities']}" update="display">
 				<p:ajax event="rowSelect" />
 				<p:ajax event="rowUnselect"  />
 				
@@ -40,33 +43,33 @@
 				
 				<p:column
 					headerText="#{msgs['grantParticipation.field.requester']}">
-					<h:outputText value="#{access.target.name}" />
+					<h:outputText value="#{access.source.name}" />
 				</p:column>
 				
 				<p:column headerText="#{msgs['grantParticipation.field.ontology']}">
-					<h:outputText value="#{access.accessTypeText}" />
+					<h:outputText value="#{access.target.name}" />
 				</p:column>
 				
-				<p:column headerText="#{msgs['grantParticipation.field.descriptin']}">
+				<p:column headerText="#{msgs['grantParticipation.field.access']}">
 					<h:outputText value="#{access.accessTypeText}" />
+				</p:column>
+					
+				<p:column headerText="#{msgs['grantParticipation.field.descriptin']}">
+					<h:outputText value="#{access.email_text}" />
 				</p:column>
 				
 				<f:facet name="footer">
 					<h:panelGroup id="buttonsGroup">
-						<p:commandButton icon="fa fa-close"
-							value="#{msgs['jbutler.button.grant']}" 
+						<p:commandButton icon="fa fa-handshake-o"
+							value="#{msgs['jbutler.button.grant']}" update="entitiesDataTable"
 							action="#{grantParticipationController.grantParticipation()}"/>
 						
-						<p:commandButton icon="fa fa-close"
-							value="#{msgs['jbutler.button.cancel']}" 
+						<p:commandButton icon="fa fa-ban"
+							value="#{msgs['jbutler.button.cancel']}" update="entitiesDataTable"
 							action="#{grantParticipationController.cancelParticipation()}"/>
-						
-						<p:commandButton icon="fa fa-close"
-							value="#{msgs['jbutler.button.decline']}" 
-							action="#{grantParticipationController.declineParticipation()}"/>
 
-						<p:commandButton icon="fa fa-plus"
-							value="#{msgs['jbutler.crud.button.back']}" 
+						<p:commandButton icon="fa fa-arrow-circle-left"
+							value="#{msgs['jbutler.button.back']}" 
 							action="/core/home.xhtml?faces-redirect=true" />
 
 					</h:panelGroup>

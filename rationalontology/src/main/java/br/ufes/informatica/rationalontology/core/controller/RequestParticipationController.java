@@ -113,13 +113,14 @@ public class RequestParticipationController extends JSFController implements Ser
 	@PostConstruct
     public void init() {
     	requests = requestParticipationApp.getRequests(SessionContext.getInstance().getUsuarioLogado().getId());
-    	ontologies = requestParticipationApp.findOntologyByName("");
+    	ontologies = requestParticipationApp.findOntologyByNameNotMine("");
     }
 
 	public void cancelParticipation() {
 		try {
 			selectedRequest.setAccessType( TypeOfAccess.CANCELADO );
 			requestParticipationApp.cancellParticipation(selectedRequest);
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_INFO, "jbutler.message.successUpdate");
 		}
 		catch (RegistrationFailedException e) {
 			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_FATAL, "requestParticipation.error.summary", "requestParticipation.error.detail");
@@ -139,6 +140,7 @@ public class RequestParticipationController extends JSFController implements Ser
 		
 		try {
 			requestParticipationApp.saveNewParticipation(newAccess);
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_INFO, "jbutler.message.successInsert");
 		} catch (RegistrationFailedException e) {
 			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_FATAL, "requestParticipation.error.summary", "requestParticipation.error.detail");
 		}		

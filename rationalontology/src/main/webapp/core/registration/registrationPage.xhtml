@@ -44,15 +44,15 @@
 
 			</p:panelGrid>
 
-			<p:commandButton id="cancelButton" value="#{msgs['button.cancel']}"
+			<p:commandButton id="cancelButton" value="#{msgs['jbutler.button.cancel']}"
 				icon="fa fa-close" action="/index.xhtml?faces-redirect=true"
 				immediate="true" />
 
-			<p:commandButton id="saveButton" value="#{msgs['button.save']}"
+			<p:commandButton id="saveButton" value="#{msgs['jbutler.button.save']}"
 				icon="fa fa-save" action="#{registrationController.save}" />
 			<p:defaultCommand target="saveButton" />
 
-			<p:commandButton id="backButton" value="#{msgs['button.back']}"
+			<p:commandButton id="backButton" value="#{msgs['jbutler.button.back']}"
 				icon="fa fa-arrow-circle-left"
 				action="/index.xhtml?faces-redirect=true" immediate="true" />
 		</h:form>

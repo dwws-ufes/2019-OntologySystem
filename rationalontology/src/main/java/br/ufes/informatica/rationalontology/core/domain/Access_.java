@@ -2,6 +2,7 @@ package br.ufes.informatica.rationalontology.core.domain;
 
 import java.util.Date;
 import javax.annotation.Generated;
+import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 

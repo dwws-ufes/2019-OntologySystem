@@ -2,7 +2,6 @@ package br.ufes.informatica.rationalontology.core.application;
 
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 
 import br.ufes.informatica.rationalontology.core.domain.User;
   
@@ -36,11 +35,12 @@ public class SessionContext {
     }
      
     public void setUsuarioLogado(User usuario){
-         setAttribute("usuarioLogado", usuario);
+        setAttribute("usuarioLogado", usuario);
     }
      
-    public void encerrarSessao(){   
-         currentExternalContext().invalidateSession();
+    public void encerrarSessao(){
+    	instance = null;
+        currentExternalContext().invalidateSession();
     }
      
     public Object getAttribute(String nome){
