@@ -133,3 +133,192 @@ public class Ontology extends PersistentObjectSupport implements Comparable<Onto
 		return super.compareTo(o);
 	}
 }
+
+/*
+package br.ufes.informatica.rationalontology.core.domain;
+
+import java.util.*;
+import java.math.*;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+import br.ufes.inf.nemo.jbutler.ejb.domain.DomainObject;
+import br.ufes.inf.nemo.jbutler.ejb.domain.DomainObjectSupport;
+import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObject;
+import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
+
+
+@Entity
+public class Ontology implements DomainObject, PersistentObject, Comparable<Ontology> {
+	
+	private static final long serialVersionUID = 1L;
+	@Basic
+	@Column(nullable = false, length = 40)
+	protected String uuid;
+
+	
+	public Ontology() {
+		// Generates UUID during object construction.
+		uuid = UUID.randomUUID().toString();
+	}
+	
+	@Override
+	public String getUuid() {
+		return uuid;
+	}
+
+	protected void setUuid(String uuid) {
+		this.uuid = uuid;
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		// Checks if the class is the same.
+		if ((obj == null) || (!getClass().equals(obj.getClass()))) { return false; }
+		DomainObjectSupport o = (DomainObjectSupport) obj;
+
+		// Checks if the UUID is the same.
+		return uuid.equals(o.getUuid());
+	}
+	
+	@Override
+	public int hashCode() {
+		return uuid.hashCode();
+	}
+
+	
+	@NotNull
+	@Size(max = 100)
+	private String name;
+
+	
+	@Size(max = 500)
+	private String description;
+
+	@Size(max = 1000)
+	private String intendedUse;
+
+	@Size(max = 1000)
+	private String domainDescription;
+
+	@NotNull
+	@Size(max = 15)
+	private String nickname;
+
+	@OneToMany(mappedBy = "Target")
+	private Set<Access> Source;
+
+	@OneToMany(mappedBy = "Source")
+	private Set<SubOntology> TargetSubOntology;
+
+	@OneToMany(mappedBy = "Source")
+	private Set<DataDictionary> TargetDataDictionary;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getIntendedUse() {
+		return intendedUse;
+	}
+
+	public void setIntendedUse(String intendedUse) {
+		this.intendedUse = intendedUse;
+	}
+
+	public String getDomainDescription() {
+		return domainDescription;
+	}
+
+	public void setDomainDescription(String domainDescription) {
+		this.domainDescription = domainDescription;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public Set<Access> getSource() {
+		return Source;
+	}
+
+	public void setSource(Set<Access> Source) {
+		this.Source = Source;
+	}
+
+	public Set<SubOntology> getTargetSubOntology() {
+		return TargetSubOntology;
+	}
+
+	public void setTargetSubOntology(Set<SubOntology> Target) {
+		this.TargetSubOntology = Target;
+	}
+
+	public Set<DataDictionary> getTargetDataDictionay() {
+		return TargetDataDictionary;
+	}
+
+	public void setTargetDataDictionary(Set<DataDictionary> Target) {
+		this.TargetDataDictionary = Target;
+	}
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	@Version
+	@Column(nullable = false)
+	private Long version;
+
+	@Override
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@Override
+	public Long getVersion() {
+		return version;
+	}
+
+	protected void setVersion(Long version) {
+		this.version = version;
+	}
+
+	@Override
+	public boolean isPersistent() {
+		return (id != null);
+	}
+
+	@Override
+	public String toString() {
+		return "Instance of " + getClass().getName() + " (id: " + id + "; uuid: " + uuid + ")";
+	}
+
+	@Override
+	public int compareTo(Ontology o) {
+		// TODO Auto-generated method stub
+		return uuid.compareTo(o.getUuid());
+	}
+}
+*/

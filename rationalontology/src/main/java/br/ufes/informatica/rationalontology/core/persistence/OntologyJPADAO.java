@@ -64,7 +64,38 @@ public class OntologyJPADAO extends BaseJPADAO<Ontology> implements OntologyDAO{
     	
 		return result;
     	
+/*
+ 	    //main query
+    	CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+    		
+    	   
+    	//main query
+    	CriteriaQuery<Ontology> ontologyQuery = criteriaBuilder.createQuery(Ontology.class);
+    	Root<Ontology> ontology = ontologyQuery.from(Ontology.class);
+    	
+    	//subquery
+    	Subquery<Access> accessSubquery = ontologyQuery.subquery(Access.class);
+    	Root<Access> access = accessSubquery.from(Access.class);
+    	
+  
+    	
+    	accessSubquery.select(access)//subquery selection
+    	         .where(	criteriaBuilder.equal(access.get(Access_.Target), ontology.get(Ontology_.id))
+    	        		 ,	criteriaBuilder.equal(access.get(Access_.Source), id) //retirara os projetos pertencentes ao usuário logado
+    	        		 );//subquery restriction
+    	
+    	//main query selection
+    	ontologyQuery.select(ontology)
+    			.where(		criteriaBuilder.not(criteriaBuilder.exists(accessSubquery))
+    					,	criteriaBuilder.like(ontology.get(Ontology_.name), "%"+ontoName+"%")
+    					);
 
+    	TypedQuery<Ontology> typedQuery = entityManager.createQuery(ontologyQuery);
+    	List<Ontology> resultList = typedQuery.getResultList();
+    	   
+		return resultList;
+		*/
+ 
 	}
     
     private List<Access> findAccesOntology(long id){
