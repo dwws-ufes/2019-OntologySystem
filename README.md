@@ -42,11 +42,3 @@ WildFly
 				
 				
 				
-				<div class="highlight highlight-text-xml"><pre> &lt;<span class="pl-ent">datasource</span> <span class="pl-e">jta</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-e">jndi-name</span>=<span class="pl-s"><span class="pl-pds">"</span>java:/jboss/datasources/PoopTime<span class="pl-pds">"</span></span> <span class="pl-e">pool-name</span>=<span class="pl-s"><span class="pl-pds">"</span>PoopTimePool<span class="pl-pds">"</span></span> <span class="pl-e">enabled</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-e">use-java-context</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;
-	&lt;<span class="pl-ent">connection-url</span>&gt;jdbc:mysql://localhost:3306/pooptime&lt;/<span class="pl-ent">connection-url</span>&gt;
-	&lt;<span class="pl-ent">driver</span>&gt;mysql&lt;/<span class="pl-ent">driver</span>&gt;
-	&lt;<span class="pl-ent">security</span>&gt;
-	    &lt;<span class="pl-ent">user-name</span>&gt;dwws&lt;/<span class="pl-ent">user-name</span>&gt;
-	    &lt;<span class="pl-ent">password</span>&gt;dwws&lt;/<span class="pl-ent">password</span>&gt;
-	&lt;/<span class="pl-ent">security</span>&gt;
- &lt;/<span class="pl-ent">datasource</span>&gt;</pre></div>
