@@ -10,7 +10,7 @@ BD
 WildFly
   Alterar as seguintes configurações em standalone.xml
 
-  1)
+  1) Altere a permissão de acesso:
   de   : <default-missing-method-permissions-deny-access value="true"/>
   para : <default-missing-method-permissions-deny-access value="false"/>
 
