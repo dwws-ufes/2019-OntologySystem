@@ -4,6 +4,8 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
+import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
+
 @Generated(value="Dali", date="2019-10-08T16:54:48.771-0300")
 @StaticMetamodel(CompetenceQuestion.class)
 public class CompetenceQuestion_ extends PersistentObjectSupport_ {

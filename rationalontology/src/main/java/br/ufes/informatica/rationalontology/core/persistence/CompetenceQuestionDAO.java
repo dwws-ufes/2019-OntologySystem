@@ -11,6 +11,10 @@ import br.ufes.informatica.rationalontology.core.domain.SubOntology;
 @Local
 public interface CompetenceQuestionDAO extends BaseDAO<CompetenceQuestion> {
 
-	List findCQ(SubOntology subOntology);
+	public List findCQ(SubOntology subOntology);
+	
+	//public List<CompetenceQuestion> getCompetenceQuestionByIdOntology(long id);
+	
+	public List<CompetenceQuestion> getCompetenceQuestionBySubOntology(List<SubOntology> list);
 	
 }

@@ -37,6 +37,14 @@ public class SessionContext {
     public void setUsuarioLogado(User usuario){
         setAttribute("usuarioLogado", usuario);
     }
+    
+    public long getIdOntology() {
+    	return (long) getAttribute("idOntology");
+    }
+    
+    public void setIdOntology(long id) {
+    	setAttribute("idOntology", id);
+    }
      
     public void encerrarSessao(){
     	instance = null;

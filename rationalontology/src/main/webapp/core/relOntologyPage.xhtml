@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:adm="http://github.com/adminfaces"
+	template="/WEB-INF/templates/template.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="#{msgs['home.title']}" />
+	</ui:define>
+
+	<ui:define name="description">
+		<h:outputText value="#{msgs['relOntology.description']}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<adm:breadcrumb
+			link="/core/requestParticipation/requestParticipationPage"
+			title="#{msgs['requestParticipation.title']}" />
+
+		<h:form id="form">
+			
+			<p:panelGrid
+				columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8"
+				layout="grid" styleClass="ui-panelgrid-blank">
+				
+				<p:outputPanel deferred="true">
+		        	<h3>#{msgs['relOntology.name']}</h3>
+		        	<p> #{relOntologyController.ontology.name}</p>
+		    	</p:outputPanel>
+
+				<p:outputPanel deferred="true">
+		        	<h3>#{msgs['relOntology.nickname']}</h3>
+		        	<p> #{relOntologyController.ontology.nickname}</p>
+		    	</p:outputPanel>
+		    	
+				<p:outputPanel deferred="true">
+		        	<h3>#{msgs['relOntology.descriptionField']}</h3>
+		        	<p> #{relOntologyController.ontology.description}</p>
+		    	</p:outputPanel>
+
+				<p:outputPanel deferred="true">
+		        	<h3>#{msgs['relOntology.domainDescription']}</h3>
+		        	<p> #{relOntologyController.ontology.domainDescription}</p>
+		    	</p:outputPanel>
+				    
+				<p:outputPanel deferred="true">
+		        	<h3>#{msgs['relOntology.intendedUse']}</h3>
+		        	<p> #{relOntologyController.ontology.intendedUse}</p>
+		    	</p:outputPanel>
+			</p:panelGrid>
+			
+			<p:panel id="SubOntologyPanel" header="#{msgs['relOntology.subOntologies.title']}"  style="margin-bottom:20px">
+	        <h:panelGrid columns="1" cellpadding="10">
+				<p:dataTable var="subOtology" value="#{relOntologyController.subOntology}" 
+					emptyMessage="#{msgs['relOntology.subOntologies.noEntities']}">
+				
+					<p:column headerText="#{msgs['relOntology.subOntologies.name']}"> 
+				        <p:outputPanel deferred="true">
+						 	<p> #{subOtology.name}</p>
+						</p:outputPanel>
+				    </p:column>
+				    
+				    <p:column headerText="#{msgs['relOntology.subOntologies.shortDescription']}"> 
+				        <p:outputPanel deferred="true">
+				        	<p> #{subOtology.shortDescription}</p>
+				    	</p:outputPanel>
+				    </p:column>
+				
+				    <p:column headerText="#{msgs['relOntology.subOntologies.fullDescription']}"> 
+				        <p:outputPanel deferred="true">
+				        	<p> #{subOtology.fullDescription}</p>
+				    	</p:outputPanel>
+				    </p:column>
+				    
+				</p:dataTable>
+		    </h:panelGrid>
+		    </p:panel>
+				 
+			
+			<p:panel id="CompetenceQuestionPanel" header="#{msgs['relOntology.competenceQuestion.title']}"  style="margin-bottom:20px">
+	        <h:panelGrid columns="1" cellpadding="10">
+				<p:dataTable var="competenceQuestion" value="#{relOntologyController.competenceQuestion}"
+					emptyMessage="#{msgs['relOntology.competenceQuestion.noEntities']}">
+				
+				    <p:column headerText="#{msgs['relOntology.competenceQuestion.identificator']}"> 
+				        <h:outputText value="#{competenceQuestion.identificator}" />
+				    </p:column>
+				    
+				    <p:column headerText="#{msgs['relOntology.competenceQuestion.description']}"> 
+				        <h:outputText value="#{competenceQuestion.description}" />
+				    </p:column>
+				    
+				</p:dataTable>
+		    </h:panelGrid>
+		    </p:panel>
+		    
+		    <p:panel id="DictionaryPanel" header="#{msgs['relOntology.dictionary.title']}"  style="margin-bottom:20px">
+	        <h:panelGrid columns="1" cellpadding="10">
+				<p:dataTable var="dataDictionary" value="#{relOntologyController.dataDictionary}"
+					emptyMessage="#{msgs['relOntology.dataDictionary.noEntities']}">
+				
+				    <p:column headerText="#{msgs['relOntology.dataDictionary.identificator']}"> 
+				        <h:outputText value="#{dataDictionary.id}" />
+				    </p:column>
+				    
+				    <p:column headerText="#{msgs['relOntology.dataDictionary.concept']}"> 
+				        <h:outputText value="#{dataDictionary.concept}" />
+				    </p:column>
+
+				    <p:column headerText="#{msgs['relOntology.dataDictionary.definition']}"> 
+				        <h:outputText value="#{dataDictionary.definition}" />
+				    </p:column>
+				    
+				    <p:column headerText="#{msgs['relOntology.dataDictionary.source']}"> 
+				        <h:outputText value="#{dataDictionary.source}" />
+				    </p:column>
+				    
+				</p:dataTable>
+		    </h:panelGrid>
+		    </p:panel>
+			
+
+		</h:form>
+			<p:commandButton value="Print" icon="fa fa-print" style="display:block;margin-bottom: 20px">
+			    <p:printer target="form" />
+			</p:commandButton>
+	</ui:define>
+</ui:composition>

@@ -13,4 +13,6 @@ public interface SubOntologyDAO extends BaseDAO<SubOntology> {
 
 	List findSubOntoogies(Ontology ontology);
 	
+	public List<SubOntology> getSubOntologyByIdOntology(long id);
+	
 }

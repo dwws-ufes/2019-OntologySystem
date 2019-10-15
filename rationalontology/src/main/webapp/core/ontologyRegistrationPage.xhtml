@@ -17,7 +17,13 @@
     </ui:define>
 
     <ui:define name="body">
+    <h:form id="form">
 		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['ontology.title']}" />
-		<p:dataGrid id="ontologies" value="#{ontologyController.ontologies}" />
+			<p:commandButton icon="fa fa-search"
+					value="Relatório"
+					action=  "#{ontologyController.generateRel()}">
+					<!-- <f:param name="id" value="#{ontologyController.meuId}"/>  -->
+			</p:commandButton>
+	</h:form>
     </ui:define>
 </ui:composition>

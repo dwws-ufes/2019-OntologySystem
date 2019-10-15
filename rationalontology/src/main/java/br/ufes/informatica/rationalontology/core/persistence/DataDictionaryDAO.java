@@ -12,5 +12,5 @@ import br.ufes.informatica.rationalontology.core.domain.Ontology;
 @Local
 public interface DataDictionaryDAO extends BaseDAO<DataDictionary> {
 
-	List findDataDictionary(Ontology ontology);
+	List<DataDictionary> getDataDictionary(Ontology ontology);
 }
