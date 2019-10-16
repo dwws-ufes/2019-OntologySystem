@@ -35,7 +35,7 @@ public class GrantParticipationAppBean implements GrantParticipationApp {
 			accessDAO.save(access);
 		}
 		else {
-			throw new SaveException(null, "Só pode ser COLABORADOR se antes foi um SOLICITANTE");
+			throw new SaveException(null, "O usuário só pode ser COLABORADOR se antes foi um SOLICITANTE");
 		}
 		
 	}
@@ -47,7 +47,7 @@ public class GrantParticipationAppBean implements GrantParticipationApp {
 			accessDAO.save(access);
 		}
 		else {
-			throw new SaveException(null, "Só pode ser NEGADA se antes foi um SOLICITANTE ou COLABORADOR");
+			throw new SaveException(null, "Uma solicitação só pode ser NEGADA se for SOLICITANTE ou COLABORADOR");
 		}
 	}
 

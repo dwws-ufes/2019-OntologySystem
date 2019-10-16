@@ -117,6 +117,11 @@ public class RequestParticipationController extends JSFController implements Ser
     }
 
 	public void cancelParticipation() {
+		if(selectedRequest == null) {
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "requestParticipation.notSelectedAccess");
+			return;
+		}
+		
 		try {
 			selectedRequest.setAccessType( TypeOfAccess.CANCELADO );
 			requestParticipationApp.cancellParticipation(selectedRequest);
@@ -132,6 +137,11 @@ public class RequestParticipationController extends JSFController implements Ser
 	}
 	
 	public String save() {		
+		if(selectedOntology == null) {
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "requestParticipation.notSelectedOntology");
+			return "core/requestParticipation/newRquestParticipationPage.xhtml?faces-redirect=true";
+		}
+		
 		Access newAccess = new Access();
 		newAccess.setAccessType(TypeOfAccess.SOLICITANTE);
 		newAccess.setEmail_text(email_text);
