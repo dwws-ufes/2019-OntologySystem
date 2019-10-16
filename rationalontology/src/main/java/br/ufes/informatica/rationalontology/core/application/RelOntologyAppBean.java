@@ -2,6 +2,7 @@ package br.ufes.informatica.rationalontology.core.application;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -15,6 +16,7 @@ import br.ufes.informatica.rationalontology.core.persistence.OntologyDAO;
 import br.ufes.informatica.rationalontology.core.persistence.SubOntologyDAO;
 
 @Stateless
+@RolesAllowed("SysAdmin")
 public class RelOntologyAppBean implements RelOntologyApp{
 
 	private static final long serialVersionUID = 1L;

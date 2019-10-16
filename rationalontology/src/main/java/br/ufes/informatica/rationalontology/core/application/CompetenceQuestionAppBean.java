@@ -1,5 +1,6 @@
 package br.ufes.informatica.rationalontology.core.application;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 

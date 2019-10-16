@@ -61,9 +61,6 @@ public class LoginServiceBean implements LoginService {
 			// Checks if the passwords match.
 			String pwd = user.getPassword();
 			
-			System.out.println("BD    : "+pwd);
-			System.out.println("Tela  : "+md5pwd + "        obtido pelo: "+ password);
-			
 			if ((pwd != null) && (pwd.equals(md5pwd))) {
 				//logger.log(Level.FINEST, "Passwords match for user \"{0}\".", username);
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/templates/template.xhtml">
+
+	<ui:define name="head"></ui:define>
+	
+    <ui:define name="title"><h:outputText value="#{msgs['error.auth.title']}" /></ui:define>
+
+    <ui:define name="body">
+		<p><strong><h:outputText value="#{msgs['error.auth.summary']}" /></strong>:   
+		<h:outputFormat value="#{msgs['error.auth.detail']}"></h:outputFormat></p>
+		
+		<p align="center" style="margin-top: 50px;"><h:link outcome="/index"><h:outputText value="#{msgs['error.auth.backToLogin']}" /></h:link></p>
+    </ui:define>
+</ui:composition>
