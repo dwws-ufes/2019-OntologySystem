@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
 import br.ufes.informatica.rationalontology.core.domain.Access;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.User;
@@ -43,7 +44,7 @@ public class RequestParticipationAppBean implements RequestParticipationApp {
 	
 	@Override
 	public List<Ontology> findOntologyByNameNotMine(String name) {
-		User user = SessionContext.getInstance().getUsuarioLogado();
+		User user = SessionInformation.getInstance().getUsuarioLogado();
 		return ontologyDAO.findOntologyByNameNotMine(name, user);		
 	}
 

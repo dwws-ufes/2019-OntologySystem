@@ -8,12 +8,10 @@ import javax.ejb.EJB;
 import javax.enterprise.inject.*;
 import javax.faces.application.FacesMessage;
 
-import org.primefaces.event.SelectEvent;
-
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
 import br.ufes.informatica.rationalontology.TypeOfAccess;
 import br.ufes.informatica.rationalontology.core.application.RequestParticipationApp;
-import br.ufes.informatica.rationalontology.core.application.SessionContext;
+import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
 import br.ufes.informatica.rationalontology.core.domain.Access;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.exception.RegistrationFailedException;
@@ -112,7 +110,7 @@ public class RequestParticipationController extends JSFController implements Ser
 	
 	@PostConstruct
     public void init() {
-    	requests = requestParticipationApp.getRequests(SessionContext.getInstance().getUsuarioLogado().getId());
+    	requests = requestParticipationApp.getRequests(SessionInformation.getInstance().getUsuarioLogado().getId());
     	ontologies = requestParticipationApp.findOntologyByNameNotMine("");
     }
 
@@ -145,7 +143,7 @@ public class RequestParticipationController extends JSFController implements Ser
 		Access newAccess = new Access();
 		newAccess.setAccessType(TypeOfAccess.SOLICITANTE);
 		newAccess.setEmail_text(email_text);
-		newAccess.setSource(SessionContext.getInstance().getUsuarioLogado());
+		newAccess.setSource(SessionInformation.getInstance().getUsuarioLogado());
 		newAccess.setTarget(selectedOntology);
 		
 		try {

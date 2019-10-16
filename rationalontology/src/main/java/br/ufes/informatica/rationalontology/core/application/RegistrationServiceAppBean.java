@@ -48,7 +48,7 @@ public class RegistrationServiceAppBean implements RegistrationServiceApp {
 	public void save(User user) throws RegistrationFailedException {
 		
 		try {
-			user.setPassword(TextUtils.produceMd5Hash(user.getPassword()));
+			user.setPassword(TextUtils.produceBase64EncodedMd5Hash(user.getPassword()));
 
 			userDAO.save(user);
 		}

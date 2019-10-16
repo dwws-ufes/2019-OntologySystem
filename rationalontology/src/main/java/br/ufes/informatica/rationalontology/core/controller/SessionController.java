@@ -7,12 +7,14 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpSession;
 
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
-import br.ufes.informatica.rationalontology.core.application.SessionInformation;
+import br.ufes.informatica.rationalontology.core.application.login.LoginService;
 import br.ufes.informatica.rationalontology.core.domain.User;
 import br.ufes.informatica.rationalontology.core.exception.LoginFailedException;
+import br.ufes.informatica.rationalontology.core.exception.LoginFailedException.LoginFailedReason;
 
 /**
  * Session-scoped managed bean that provides to web pages the login service, indication if the user is logged in and the
@@ -27,12 +29,17 @@ public class SessionController extends JSFController {
 	private static final long serialVersionUID = 1L;
 
 	/** Information on the current visitor. */
+	//@EJB
+	//private SessionInformation sessionInformation;
+	
 	@EJB
-	private SessionInformation sessionInformation;
+	private LoginService loginService;
 
 	
 	private String email;
 	private String password;
+	
+	private User currentUser;
 
 	public String getEmail() {
 		return email;
@@ -56,7 +63,7 @@ public class SessionController extends JSFController {
 	 * @return <code>true</code> if the user is logged in, <code>false</code> otherwise.
 	 */
 	public boolean isLoggedIn() {
-		return sessionInformation.getCurrentUser() != null;
+		return currentUser != null; //sessionInformation.getCurrentUser() != null;
 	}
 	
 	/**
@@ -65,7 +72,7 @@ public class SessionController extends JSFController {
 	 * @return The Academic object that represents the user that has been authenticated in this session.
 	 */
 	public User getCurrentUser() {
-		return sessionInformation.getCurrentUser();
+		return currentUser;//sessionInformation.getCurrentUser();
 	}
 
 	/**
@@ -104,7 +111,8 @@ public class SessionController extends JSFController {
 	/**
 	 * Accesses the Login service to authenticate the user given his email and password.
 	 */
-	public String getAccess() {		
+	public String login() {		
+		/*
 		try {
 			sessionInformation.login(email, password);
 		}
@@ -122,12 +130,47 @@ public class SessionController extends JSFController {
 			}
 		}
 
-		// If everything is OK, redirect back to the home screen.
+		// If everything is OK, redirect back to the home screen.*/
+		try {
+			// Uses the Session Information bean to authenticate the user.
+			
+			loginService.login(email, password);
+
+			// Also authenticates on JAAS.
+			// FIXME: is there a way to do this at the application package (in the EJB)?
+			try {
+				HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+				request.login(email, password);
+			}
+			catch (Exception e) {
+				throw new LoginFailedException(e, LoginFailedReason.NO_HTTP_REQUEST);
+			}
+		}
+		catch (LoginFailedException e) {
+			// Checks if it's a normal login exception (wrong username or password) or not.
+			switch (e.getReason()) {
+			case INCORRECT_PASSWORD:
+			case UNKNOWN_USERNAME:
+				// Normal login exception (invalid usernaem or password). Report the error to the user.
+				addGlobalI18nMessage("msgsCore", FacesMessage.SEVERITY_ERROR, "login.error.nomatch.summary", "login.error.nomatch.detail");
+				return null;
+
+			default:
+				// System failure exception. Report a fatal error and ask the user to contact the administrators.
+				addGlobalI18nMessage("msgsCore", FacesMessage.SEVERITY_FATAL, "login.error.fatal.summary", new Object[0], "login.error.fatal.detail", new Object[] { new Date(System.currentTimeMillis()) });
+				return null;
+			}
+		}
+
+		// If everything is OK, stores the current user and redirects back to the home screen.
+		currentUser = loginService.getCurrentUser();
 		return "core/home.xhtml?faces-redirect=true";
 	}
 	
+	/*
 	public String logout() {
 		sessionInformation.logout();
 		return "/index.xhtml?faces-redirect=true";
 	}
+	*/
 }

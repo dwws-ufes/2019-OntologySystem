@@ -1,4 +1,4 @@
-package br.ufes.informatica.rationalontology.core.application;
+package br.ufes.informatica.rationalontology.core.application.login;
 
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -6,19 +6,19 @@ import javax.faces.context.FacesContext;
 import br.ufes.informatica.rationalontology.core.domain.User;
   
   
-public class SessionContext {
+public class SessionInformation {
      
-    private static SessionContext instance;
+    private static SessionInformation instance;
      
-    public static SessionContext getInstance(){
+    public static SessionInformation getInstance(){
          if (instance == null){
-             instance = new SessionContext();
+             instance = new SessionInformation();
          }
           
          return instance;
     }
      
-    private SessionContext(){
+    private SessionInformation(){
           
     }
      

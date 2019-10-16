@@ -5,13 +5,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
-import javax.faces.bean.RequestScoped;
 
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
 import br.ufes.informatica.rationalontology.core.application.RelOntologyApp;
-import br.ufes.informatica.rationalontology.core.application.RelOntologyAppBean;
-import br.ufes.informatica.rationalontology.core.application.SessionContext;
-import br.ufes.informatica.rationalontology.core.domain.Access;
+import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
 import br.ufes.informatica.rationalontology.core.domain.CompetenceQuestion;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
@@ -100,7 +97,7 @@ public class RelOntologyController extends JSFController {
 	//****************************************************************************
 	@PostConstruct
     public void init() {
-		generateRel( SessionContext.getInstance().getIdOntology() );
+		generateRel( SessionInformation.getInstance().getIdOntology() );
     }
 	
 	public String generateRel(long id) {
