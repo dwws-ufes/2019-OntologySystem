@@ -58,7 +58,7 @@
 
 						<p:commandButton icon="fa fa-plus"
 							value="#{msgs['jbutler.button.createParticipation']}" 
-							action="/core/requestParticipation/newRquestParticipationPage.xhtml?faces-redirect=true" update="entitiesDataTable"/>
+							action="#{requestParticipationController.newParticipation()}"/>
 
 					</h:panelGroup>
 				</f:facet>
@@ -66,28 +66,6 @@
 			</p:dataTable>
 
 		</h:form>
-		
-		<!-- 
-		
-		
-		<h:form id="listingForm">
-			<p:dataTable id="singleDT" var="car" value="#{dtSelectionView.cars2}" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">s
-				<f:facet name="header">
-            Single with Row Click
-        </f:facet>
-				<p:column headerText="Id">
-					<h:outputText value="#{car.id}" />
-				</p:column>
-				<p:column headerText="Year">
-					<h:outputText value="#{car.year}" />
-				</p:column>
-				<p:column headerText="Brand">
-					<h:outputText value="#{car.brand}" />
-				</p:column>
-
-			</p:dataTable>
-		</h:form>
-		 -->
 
 	</ui:define>
 </ui:composition>

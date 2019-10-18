@@ -3,17 +3,12 @@ package br.ufes.informatica.rationalontology.core.application;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
-import br.ufes.informatica.rationalontology.core.application.email.EMail;
-import br.ufes.informatica.rationalontology.core.application.email.MailEvent;
 import br.ufes.informatica.rationalontology.core.application.email.Mailer;
 import br.ufes.informatica.rationalontology.core.application.email.MailerTemplate;
 import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
@@ -40,8 +35,8 @@ public class RequestParticipationAppBean implements RequestParticipationApp {
 	@EJB
 	private OntologyDAO ontologyDAO;
 	
-	@Inject
-	private Event<MailEvent> mailEvent;
+	//@Inject
+	//private Event<MailEvent> mailEvent;
 	
 	@Inject
 	private Mailer mail;
@@ -53,21 +48,15 @@ public class RequestParticipationAppBean implements RequestParticipationApp {
 	public void saveNewParticipation(Access access) throws RegistrationFailedException{
 		save(access);
 		//EMail.sendEMail();
-		send();
+		//send();
 	}
 	
 	private void send() {
-		//Academic academic = academicDAO.retrieveByEmail(email);
-		//academic.setPasswordCode(UUID.randomUUID().toString());
-
 		// Creates the data model with the information needed to send an e-mail with the reset code.
 		Map<String, Object> dataModel = new HashMap<>();
-		//dataModel.put("config", coreInformation.getCurrentConfig());
-		//dataModel.put("academic", academic);s
 
 		// Then, fire an e-mail event so the e-mail gets sent.
 		try {
-		// mailEvent.fire(new MailEvent("guidoni@gmai.com", MailerTemplate.RESET_PASSWORD, dataModel));
 			mail.sendEmail("guidoni@gmai.com", MailerTemplate.RESET_PASSWORD, dataModel);
 			System.out.println("ENVIOU");
 		}
