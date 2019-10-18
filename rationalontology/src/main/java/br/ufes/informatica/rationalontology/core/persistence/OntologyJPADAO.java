@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaBuilder.In;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Subquery;
@@ -118,6 +119,39 @@ public class OntologyJPADAO extends BaseJPADAO<Ontology> implements OntologyDAO{
 		// FIXME: auto-generated method stub
 		return null;
 	}
+    
+    public List<Ontology> getOntologiesByUser(User user){
+    	long id = user.getId();
+ 	    //main query
+    	CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+    		
+    	   
+    	//main query
+    	CriteriaQuery<Ontology> ontologyQuery = criteriaBuilder.createQuery(Ontology.class);
+    	Root<Ontology> rootOntology = ontologyQuery.from(Ontology.class);
+    	
+    	//subquery
+    	Subquery<Access> accessSubquery = ontologyQuery.subquery(Access.class);
+    	Root<Access> access = accessSubquery.from(Access.class);
+    	In<String> inClause = criteriaBuilder.in(access.get("accessType"));
+    	inClause.value("1");
+    	inClause.value("3");
+    	
+    	accessSubquery.select(access)//subquery selection
+    	         .where(	criteriaBuilder.equal(access.get(Access_.Target), rootOntology.get(Ontology_.id))
+    	        		 ,	criteriaBuilder.equal(access.get(Access_.Source), id) //retirara os projetos pertencentes ao usuário logado
+    	        		 );//subquery restriction
+    	
+    	//main query selection
+    	ontologyQuery.select(rootOntology)
+    			.where(		criteriaBuilder.exists(accessSubquery)
+    					);
+
+    	TypedQuery<Ontology> typedQuery = entityManager.createQuery(ontologyQuery);
+    	List<Ontology> resultList = typedQuery.getResultList();
+    	   
+		return resultList;
+    }
 	
 
 }

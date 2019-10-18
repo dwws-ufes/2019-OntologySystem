@@ -1,4 +1,4 @@
-package br.ufes.informatica.rationalontology.core.application;
+package br.ufes.informatica.rationalontology.core.application.email;
 
 public enum MailerTemplate {
 	NEW_ACADEMIC_REGISTERED("NewAcademicRegistered"), RESET_PASSWORD("ResetPassword");

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:adm="http://github.com/adminfaces"
+	template="/WEB-INF/templates/template.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="#{msgs['home.title']}" />
+	</ui:define>
+
+	<ui:define name="description">
+		<h:outputText value="#{msgs['relOntology.description']}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<adm:breadcrumb link="/core/reports/relOntologyDescriptionSelectPage"
+			title="#{msgs['relOntologyDescriptionSelect.title']}" />
+		<h:form id="ontologyForm">
+			<p:dataTable id="entitiesDataTable" 
+				value="#{relOntologyDescriptionController.ontologies}"
+				var="ontology" selectionMode="single" paginator="true"
+				selection="#{relOntologyDescriptionController.selectedOntology}"  rowKey="#{ontology.id}"
+				rows="#{relOntologyDescriptionController.maxDataTableRowsPerPage}"
+				rowsPerPageTemplate="#{relOntologyDescriptionController.halfMaxDataTableRowsPerPage},#{relOntologyDescriptionController.maxDataTableRowsPerPage},#{relOntologyDescriptionController.doubleMaxDataTableRowsPerPage}"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				lazy="true" paginatorPosition="bottom" update="display"
+				emptyMessage="#{msgs['dataTable.noEntities']}">
+				<p:ajax event="rowSelect" update="buttonsGroup" />
+				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				
+				<f:facet name="header">
+					<h:outputText value="#{msgs['relOntologyDescriptionSelect.selectOntology']}" />
+				</f:facet>
+				
+				<p:column headerText="#{msgs['relOntologyDescriptionSelect.id']}">
+					<h:outputText value="#{ontology.id}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['relOntologyDescriptionSelect.name']}">
+					<h:outputText value="#{ontology.name}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['relOntologyDescriptionSelect.nickName']}">
+					<h:outputText value="#{ontology.nickname}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['relOntologyDescriptionSelect.shorDescription']}">
+					<h:outputText value="#{ontology.description}" />
+				</p:column>
+				
+				<f:facet name="footer">
+					<h:panelGroup id="buttonsGroup">
+					
+						<p:commandButton action="#{relOntologyDescriptionController.generateRel}"
+							icon="fa fa-file-text-o" value="#{msgs['jbutler.button.reportView']}"/>
+							
+					</h:panelGroup>
+				</f:facet>
+			</p:dataTable>
+			
+		</h:form>
+	</ui:define>
+	
+
+</ui:composition>

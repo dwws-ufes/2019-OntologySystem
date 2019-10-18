@@ -1,4 +1,4 @@
-package br.ufes.informatica.rationalontology.core.application;
+package br.ufes.informatica.rationalontology.core.application.email;
 
 import java.util.Map;
 

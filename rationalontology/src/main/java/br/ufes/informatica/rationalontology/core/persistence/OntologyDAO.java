@@ -19,4 +19,6 @@ public interface OntologyDAO extends BaseDAO<Ontology> {
 	
 	public Ontology findOntologyByID(long id);
 	
+	public List<Ontology> getOntologiesByUser(User user);
+	
 }

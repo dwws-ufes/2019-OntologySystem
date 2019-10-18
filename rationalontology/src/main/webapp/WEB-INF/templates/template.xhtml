@@ -39,17 +39,17 @@
 					<span><h:outputText value="#{msgs['menu.grantParticipatin']}" /></span>
 			</p:link></li>
 			
+			<li><p:link outcome="/core/reports/relOntologyDescriptionSelectPage.xhtml"
+					onclick="clearBreadCrumbs()">
+					<i class="fa fa-file-text-o"></i>
+					<span><h:outputText value="#{msgs['menu.reports']}" /></span>
+			</p:link></li>
+						
 			<li><p:link href="#{facesContext.externalContext.requestContextPath}/logout"
 					onclick="clearBreadCrumbs()">
 					<i class="fa fa-sign-out"></i>
 					<span><h:outputText value="#{msgs['menu.logout']}" /></span>
 			</p:link></li>
-			
-			<li><p:link outcome="/core/ontologyRegistrationPage.xhtml"
-					onclick="clearBreadCrumbs()">
-					<span><h:outputText value="Relatório" /></span>
-			</p:link></li>
-			
 
 		</ul>
 	</ui:define>

@@ -1,10 +1,13 @@
 package br.ufes.informatica.rationalontology.core.controller;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.inject.Model;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.inject.Named;
 
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
 import br.ufes.informatica.rationalontology.core.application.RelOntologyApp;
@@ -14,40 +17,35 @@ import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.SubOntology;
 
-@Model
-public class RelOntologyController extends JSFController {
+@Named @SessionScoped
+public class RelOntologyDescriptionController extends JSFController  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
 	private RelOntologyApp relOntologyApp;	
 	
-	
 	//********************************************************************************
-	//********** Variáveis e métodos responsáveis por EXIBIR os dados da Ontologia
+	//********** Variáveis e métodos para EXIBIR as ontologias
 	//********************************************************************************
+	private List<Ontology> ontologies;
 	
-	private Ontology ontology;
+	private Ontology selectedOntology;
 	
-	private long idOntology;
-	
-	public long getIdOntology() {
-		return idOntology;
+	public List<Ontology> getOntologies() {
+		return ontologies;
 	}
 
-	public void setIdOntology(long idOntology) {
-		this.idOntology = idOntology;
+	public void setOntologies(List<Ontology> ontologies) {
+		this.ontologies = ontologies;
 	}
 
-	public Ontology getOntology() {
-		return ontology;
+	public Ontology getSelectedOntology() {
+		return selectedOntology;
 	}
 
-	public void setOntology(Ontology ontology) {
-		this.ontology = ontology;
+	public void setSelectedOntology(Ontology selectedOntology) {
+		this.selectedOntology = selectedOntology;
 	}
-	
-
-	
 	
 	//********************************************************************************
 	//********** Variáveis e métodos responsáveis por EXIBIR os dados das Sub-Ontologia
@@ -97,19 +95,25 @@ public class RelOntologyController extends JSFController {
 	//****************************************************************************
 	@PostConstruct
     public void init() {
-		generateRel( SessionInformation.getInstance().getIdOntology() );
+		
+		ontologies = relOntologyApp.getOntologiesByUser(SessionInformation.getInstance().getUsuarioLogado());
     }
 	
-	public String generateRel(long id) {
-		ontology = relOntologyApp.getOntologyByID(id);
+	public String generateRel() {
+		if(selectedOntology == null) {
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "requestParticipation.notSelectedAccess");
+			return "core/reports/requestParticipation/relOntologyDescriptionSelectPage.xhtml?faces-redirect=true";
+		}
+		
+		long id = selectedOntology.getId();
 		
 		subOntology =  relOntologyApp.getSubOntologyByIdOntology(id);
 		
-		competenceQuestion = relOntologyApp.getCompetenceQuestionBySubOntology(subOntology);
+		competenceQuestion = relOntologyApp.getCompetenceQuestionBySubOntologies(subOntology);
 		
-		dataDictionary = relOntologyApp.getDataDictinary(ontology);
-
-		return null;
+		dataDictionary = relOntologyApp.getDataDictinary(selectedOntology);
+		
+		return "relOntologyDescriptionPage.xhtml?faces-redirect=true ";
 	}
 
 }

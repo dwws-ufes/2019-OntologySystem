@@ -12,6 +12,7 @@
     <semanticResources>frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb</semanticResources>
     <semanticResources>frameweb/jbutler/ApplicationModel_JButler_CDI.frameweb</semanticResources>
     <semanticResources>frameweb/jbutler/PersistenceModel_JButler.frameweb</semanticResources>
+    <semanticResources>VisualizarQuerysExecutadasNoBD.sql</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_vdAFQF00Eem7Q4kk1okOFA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_maWzENpGEemPm4wrmdyK7g" name="rationalontologyFrameWEB" repPath="#_mZwWINpGEemPm4wrmdyK7g">

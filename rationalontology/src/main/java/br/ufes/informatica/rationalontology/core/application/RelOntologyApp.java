@@ -9,6 +9,7 @@ import br.ufes.informatica.rationalontology.core.domain.CompetenceQuestion;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.SubOntology;
+import br.ufes.informatica.rationalontology.core.domain.User;
 
 @Local
 public interface RelOntologyApp extends Serializable {
@@ -17,8 +18,10 @@ public interface RelOntologyApp extends Serializable {
 	
 	public List<SubOntology> getSubOntologyByIdOntology(long id);
 	
-	public List<CompetenceQuestion> getCompetenceQuestionBySubOntology(List<SubOntology> list);
+	public List<CompetenceQuestion> getCompetenceQuestionBySubOntologies(List<SubOntology> list);
 	
 	public List<DataDictionary> getDataDictinary(Ontology ontology);
+	
+	public List<Ontology> getOntologiesByUser(User user);
 
 }

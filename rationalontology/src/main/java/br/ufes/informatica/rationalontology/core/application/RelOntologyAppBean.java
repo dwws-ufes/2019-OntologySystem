@@ -10,6 +10,7 @@ import br.ufes.informatica.rationalontology.core.domain.CompetenceQuestion;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.SubOntology;
+import br.ufes.informatica.rationalontology.core.domain.User;
 import br.ufes.informatica.rationalontology.core.persistence.CompetenceQuestionDAO;
 import br.ufes.informatica.rationalontology.core.persistence.DataDictionaryDAO;
 import br.ufes.informatica.rationalontology.core.persistence.OntologyDAO;
@@ -44,12 +45,17 @@ public class RelOntologyAppBean implements RelOntologyApp{
 	}
 	
 	@Override
-	public List<CompetenceQuestion> getCompetenceQuestionBySubOntology(List<SubOntology> list){
-		return comptetenceQuestionDAO.getCompetenceQuestionBySubOntology(list);
+	public List<CompetenceQuestion> getCompetenceQuestionBySubOntologies(List<SubOntology> list){
+		return comptetenceQuestionDAO.getCompetenceQuestionBySubOntologies(list);
 	}
 
 	@Override
 	public List<DataDictionary> getDataDictinary(Ontology ontology) {
 		return dataDictionaryDAO.getDataDictionary(ontology);
+	}
+
+	@Override
+	public List<Ontology> getOntologiesByUser(User user) {
+		return ontologyDAO.getOntologiesByUser(user);
 	}
 }

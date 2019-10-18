@@ -15,6 +15,6 @@ public interface CompetenceQuestionDAO extends BaseDAO<CompetenceQuestion> {
 	
 	//public List<CompetenceQuestion> getCompetenceQuestionByIdOntology(long id);
 	
-	public List<CompetenceQuestion> getCompetenceQuestionBySubOntology(List<SubOntology> list);
+	public List<CompetenceQuestion> getCompetenceQuestionBySubOntologies(List<SubOntology> list);
 	
 }

@@ -17,7 +17,7 @@
 
 	<ui:define name="body">
 		<adm:breadcrumb
-			link="/core/requestParticipation/requestParticipationPage"
+			link="/core/reports/relOntologyDescriptionPage"
 			title="#{msgs['requestParticipation.title']}" />
 
 		<h:form id="form">
@@ -28,33 +28,33 @@
 				
 				<p:outputPanel deferred="true">
 		        	<h3>#{msgs['relOntology.name']}</h3>
-		        	<p> #{relOntologyController.ontology.name}</p>
+		        	<p> #{relOntologyDescriptionController.selectedOntology.name}</p>
 		    	</p:outputPanel>
 
 				<p:outputPanel deferred="true">
 		        	<h3>#{msgs['relOntology.nickname']}</h3>
-		        	<p> #{relOntologyController.ontology.nickname}</p>
+		        	<p> #{relOntologyDescriptionController.selectedOntology.nickname}</p>
 		    	</p:outputPanel>
 		    	
 				<p:outputPanel deferred="true">
 		        	<h3>#{msgs['relOntology.descriptionField']}</h3>
-		        	<p> #{relOntologyController.ontology.description}</p>
+		        	<p> #{relOntologyDescriptionController.selectedOntology.description}</p>
 		    	</p:outputPanel>
 
 				<p:outputPanel deferred="true">
 		        	<h3>#{msgs['relOntology.domainDescription']}</h3>
-		        	<p> #{relOntologyController.ontology.domainDescription}</p>
+		        	<p> #{relOntologyDescriptionController.selectedOntology.domainDescription}</p>
 		    	</p:outputPanel>
 				    
 				<p:outputPanel deferred="true">
 		        	<h3>#{msgs['relOntology.intendedUse']}</h3>
-		        	<p> #{relOntologyController.ontology.intendedUse}</p>
+		        	<p> #{relOntologyDescriptionController.selectedOntology.intendedUse}</p>
 		    	</p:outputPanel>
 			</p:panelGrid>
 			
 			<p:panel id="SubOntologyPanel" header="#{msgs['relOntology.subOntologies.title']}"  style="margin-bottom:20px">
 	        <h:panelGrid columns="1" cellpadding="10">
-				<p:dataTable var="subOtology" value="#{relOntologyController.subOntology}" 
+				<p:dataTable var="subOtology" value="#{relOntologyDescriptionController.subOntology}" 
 					emptyMessage="#{msgs['relOntology.subOntologies.noEntities']}">
 				
 					<p:column headerText="#{msgs['relOntology.subOntologies.name']}"> 
@@ -82,7 +82,7 @@
 			
 			<p:panel id="CompetenceQuestionPanel" header="#{msgs['relOntology.competenceQuestion.title']}"  style="margin-bottom:20px">
 	        <h:panelGrid columns="1" cellpadding="10">
-				<p:dataTable var="competenceQuestion" value="#{relOntologyController.competenceQuestion}"
+				<p:dataTable var="competenceQuestion" value="#{relOntologyDescriptionController.competenceQuestion}"
 					emptyMessage="#{msgs['relOntology.competenceQuestion.noEntities']}">
 				
 				    <p:column headerText="#{msgs['relOntology.competenceQuestion.identificator']}"> 
@@ -99,7 +99,7 @@
 		    
 		    <p:panel id="DictionaryPanel" header="#{msgs['relOntology.dictionary.title']}"  style="margin-bottom:20px">
 	        <h:panelGrid columns="1" cellpadding="10">
-				<p:dataTable var="dataDictionary" value="#{relOntologyController.dataDictionary}"
+				<p:dataTable var="dataDictionary" value="#{relOntologyDescriptionController.dataDictionary}"
 					emptyMessage="#{msgs['relOntology.dataDictionary.noEntities']}">
 				
 				    <p:column headerText="#{msgs['relOntology.dataDictionary.identificator']}"> 
