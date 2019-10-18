@@ -1,16 +1,11 @@
 package br.ufes.informatica.rationalontology.core.application;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
-import br.ufes.informatica.rationalontology.core.application.email.Mailer;
-import br.ufes.informatica.rationalontology.core.application.email.MailerTemplate;
 import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
 import br.ufes.informatica.rationalontology.core.domain.Access;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
@@ -35,30 +30,18 @@ public class RequestParticipationAppBean implements RequestParticipationApp {
 	@EJB
 	private OntologyDAO ontologyDAO;
 	
-	//@Inject
-	//private Event<MailEvent> mailEvent;
-	
-	@Inject
-	private Mailer mail;
-	
 	@Override
 	public void cancellParticipation(Access access) throws RegistrationFailedException{
 		save(access);
 	}
 	public void saveNewParticipation(Access access) throws RegistrationFailedException{
 		save(access);
-		//EMail.sendEMail();
-		//send();
+		send(access.getSource().getEmail(), access.getEmail_text());
 	}
 	
-	private void send() {
-		// Creates the data model with the information needed to send an e-mail with the reset code.
-		Map<String, Object> dataModel = new HashMap<>();
-
-		// Then, fire an e-mail event so the e-mail gets sent.
+	private void send(String addressee, String text) {
 		try {
-			mail.sendEmail("guidoni@gmai.com", MailerTemplate.RESET_PASSWORD, dataModel);
-			System.out.println("ENVIOU");
+			Mailer.sendEmail("guidoni@gmail.com", "Requisição de participação",text);
 		}
 		catch(MailerException e) {
 			System.out.println(e.getStackTrace());

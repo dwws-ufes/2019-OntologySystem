@@ -22,7 +22,7 @@
 		<h:form id="form">
 			<p:dataTable id="entitiesDataTable" 
 				value="#{requestParticipationController.requests}"
-				var="access" selectionMode="single"
+				var="access" selectionMode="single" paginator="true"
 				selection="#{requestParticipationController.selectedRequest}" rowKey="#{access.id}"
 				rows="#{requestParticipationController.maxDataTableRowsPerPage}"
 				rowsPerPageTemplate="#{requestParticipationController.halfMaxDataTableRowsPerPage},#{requestParticipationController.maxDataTableRowsPerPage},#{requestParticipationController.doubleMaxDataTableRowsPerPage}"

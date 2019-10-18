@@ -21,7 +21,7 @@
 		
 			<p:dataTable id="entitiesDataTable" 
 				value="#{grantParticipationController.requests}"
-				var="access" selectionMode="single"
+				var="access" selectionMode="single" paginator="true"
 				selection="#{grantParticipationController.selectedRequest}" rowKey="#{access.id}"
 				rows="#{grantParticipationController.maxDataTableRowsPerPage}"
 				rowsPerPageTemplate="#{grantParticipationController.halfMaxDataTableRowsPerPage},#{grantParticipationController.maxDataTableRowsPerPage},#{grantParticipationController.doubleMaxDataTableRowsPerPage}"
@@ -36,26 +36,24 @@
 					<h:outputText value="#{msgs['grantParticipation.dataTable.title']}" />
 				</f:facet>
 				
-				<p:column
-					headerText="#{msgs['grantParticipation.field.id']}">
-					<h:outputText value="#{access.id}" />
-				</p:column>
-				
-				<p:column
+				<p:column  style="width:20%"
 					headerText="#{msgs['grantParticipation.field.requester']}">
 					<h:outputText value="#{access.source.name}" />
 				</p:column>
 				
-				<p:column headerText="#{msgs['grantParticipation.field.ontology']}">
+				<p:column  style="width:20%"
+					headerText="#{msgs['grantParticipation.field.ontology']}">
 					<h:outputText value="#{access.target.name}" />
 				</p:column>
 				
-				<p:column headerText="#{msgs['grantParticipation.field.access']}">
+				<p:column  style="width:10%"
+					headerText="#{msgs['grantParticipation.field.access']}">
 					<h:outputText value="#{access.accessTypeText}" />
 				</p:column>
-					
-				<p:column headerText="#{msgs['grantParticipation.field.description']}">
-					<h:outputText value="#{access.email_text}" />
+				
+				<p:column  style="width:50%" 
+					headerText="#{msgs['grantParticipation.field.description']}">
+		    		<h:outputText value="#{access.email_text}" escape="false" />
 				</p:column>
 				
 				<f:facet name="footer">
