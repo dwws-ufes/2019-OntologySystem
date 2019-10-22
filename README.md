@@ -28,17 +28,18 @@ WildFly
 					</security>
 				</datasource>
   3) Adicione
-  				<security-domain name="rationalontology">
-				    <authentication>
-				        <login-module code="Database" flag="required">
-				            <module-option name="dsJndiName" value="java:jboss/datasources/RationalOntology"/>
-				            <module-option name="principalsQuery" value="select password from user where email=?"/>
-				            <module-option name="hashAlgorithm" value="MD5"/>
-				            <module-option name="hashEncoding" value="base64"/>
-				            <module-option name="hashUserPassword" value="true"/>
-				        </login-module>
-				    </authentication>
-				</security-domain>
+                <security-domain name="RationalOntology">
+                    <authentication>
+                        <login-module code="Database" flag="required">
+                            <module-option name="dsJndiName" value="java:jboss/datasources/RationalOntology"/>
+                            <module-option name="principalsQuery" value="select password from user where email=?"/>
+                            <module-option name="rolesQuery" value="select 'SysAdmin', 'Roles' from user where email=?"/>
+                            <module-option name="hashAlgorithm" value="MD5"/>
+                            <module-option name="hashEncoding" value="base64"/>
+                            <module-option name="hashUserPassword" value="true"/>
+                        </login-module>
+                    </authentication>
+                </security-domain>
 				
 				
 				
