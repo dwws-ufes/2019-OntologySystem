@@ -77,5 +77,9 @@ public class RequestParticipationAppBean implements RequestParticipationApp {
 			throw new RegistrationFailedException(e);
 		}
 	}
+	@Override
+	public void checkAuthorization() {
+		System.out.println("checkAuthorization");		
+	}
 
 }

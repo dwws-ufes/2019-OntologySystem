@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+	
+
+    <ui:define name="title">
+        <h:outputText value="#{msgs['ontologySelectPage.title']}" />
+    </ui:define>
+
+    <ui:define name="description">
+        <h:outputText value="#{msgs['ontologySelectPage.title.description']}" />
+    </ui:define>
+    
+    <f:metadata>  
+    	<f:event type="preRenderView" listener="#{ontologyController.onLoadForm}"/>  
+	</f:metadata>
+
+    <ui:define name="body">
+    	<adm:breadcrumb link="/core/ontology/ontologySelectPage.xhtml" title="#{msgs['ontologySelectPage.title']}" />
+	    <h:form id="form">
+			
+			<p:dataTable id="entitiesDataTable" 
+				value="#{ontologyController.ontologies}"
+				var="ontology" selectionMode="single" paginator="true"
+				selection="#{ontologyController.selectedOntology}"  rowKey="#{ontology.id}"
+				rows="#{ontologyController.maxDataTableRowsPerPage}"
+				rowsPerPageTemplate="#{ontologyController.halfMaxDataTableRowsPerPage},#{ontologyController.maxDataTableRowsPerPage},#{ontologyController.doubleMaxDataTableRowsPerPage}"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				lazy="true" paginatorPosition="bottom" update="display"
+				emptyMessage="#{msgs['dataTable.noEntities']}">
+				<p:ajax event="rowSelect" update="buttonsGroup" />
+				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				
+				<f:facet name="header">
+					<h:outputText value="#{msgs['ontologySelectPage.dataTable.title']}" />
+				</f:facet>
+				
+				<p:column headerText="#{msgs['ontologySelectPage.id']}">
+					<h:outputText value="#{ontology.id}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['ontologySelectPage.name']}">
+					<h:outputText value="#{ontology.name}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['ontologySelectPage.nickName']}">
+					<h:outputText value="#{ontology.nickname}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['ontologySelectPage.shorDescription']}">
+					<h:outputText value="#{ontology.description}" />
+				</p:column>
+				
+				<f:facet name="footer">
+					<div>
+						<h:panelGroup id="buttonsGroup">
+						
+							<p:commandButton action="#{ontologyController.newOntology}"
+								icon="fa fa-plus" value="#{msgs['ontologySelectPage.new']}"/>
+							
+							<p:commandButton action="#{ontologyController.editOntology}"
+								icon="fa fa-edit" value="#{msgs['ontologySelectPage.edit']}"/>
+								
+							<p:commandButton action="#{ontologyController.deleteOntology}"
+								icon="fa fa-trash-o" value="#{msgs['ontologySelectPage.delete']}"/>
+								
+						</h:panelGroup>
+					</div>
+					<p> </p>
+					<div>
+						<h:panelGroup id="buttonsViewGroup">
+							
+							<p:commandButton action="#{ontologyController.showSubOntologies}"
+								icon="fa fa-search" value="#{msgs['ontologySelectPage.showSubOntology']}"/>
+							
+							<p:commandButton action="#{ontologyController.showDataDictionary}"
+								icon="fa fa-globe" value="#{msgs['ontologySelectPage.showDataDictionary']}"/>
+								
+						</h:panelGroup>
+					</div>
+				</f:facet>
+			</p:dataTable>
+			
+		</h:form>
+    </ui:define>
+</ui:composition>

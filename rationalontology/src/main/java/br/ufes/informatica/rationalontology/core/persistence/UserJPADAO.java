@@ -1,7 +1,5 @@
 package br.ufes.informatica.rationalontology.core.persistence;
 
-import java.util.logging.Level;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

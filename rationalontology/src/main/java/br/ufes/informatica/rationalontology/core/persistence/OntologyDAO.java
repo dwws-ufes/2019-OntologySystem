@@ -15,10 +15,10 @@ public interface OntologyDAO extends BaseDAO<Ontology> {
 	
 	public List<Ontology> findOntologyByNameNotMine(String ontoName, User user);
 	
-	public Ontology getOntology(String nickname);
-	
 	public Ontology findOntologyByID(long id);
 	
 	public List<Ontology> getOntologiesByUser(User user);
+	
+	public void deleteOntology(Ontology ontology);
 	
 }

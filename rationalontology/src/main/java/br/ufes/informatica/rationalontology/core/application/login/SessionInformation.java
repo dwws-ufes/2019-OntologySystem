@@ -3,6 +3,8 @@ package br.ufes.informatica.rationalontology.core.application.login;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
+import br.ufes.informatica.rationalontology.core.domain.Ontology;
+import br.ufes.informatica.rationalontology.core.domain.SubOntology;
 import br.ufes.informatica.rationalontology.core.domain.User;
   
   
@@ -14,7 +16,6 @@ public class SessionInformation {
          if (instance == null){
              instance = new SessionInformation();
          }
-          
          return instance;
     }
      
@@ -38,12 +39,20 @@ public class SessionInformation {
         setAttribute("usuarioLogado", usuario);
     }
     
-    public long getIdOntology() {
-    	return (long) getAttribute("idOntology");
+    public Ontology getOntology(){
+        return (Ontology) getAttribute("ontology");
     }
     
-    public void setIdOntology(long id) {
-    	setAttribute("idOntology", id);
+    public void setOntology(Ontology ontology){
+       setAttribute("ontology", ontology);
+    }
+    
+    public SubOntology getSubOntology(){
+        return (SubOntology) getAttribute("subOntology");
+    }
+    
+    public void setSubOntology(SubOntology subOntology){
+       setAttribute("subOntology",subOntology);
     }
      
     public void encerrarSessao(){

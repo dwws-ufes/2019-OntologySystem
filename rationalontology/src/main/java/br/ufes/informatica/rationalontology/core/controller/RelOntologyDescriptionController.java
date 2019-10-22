@@ -12,7 +12,7 @@ import javax.inject.Named;
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
 import br.ufes.informatica.rationalontology.core.application.RelOntologyApp;
 import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
-import br.ufes.informatica.rationalontology.core.domain.CompetenceQuestion;
+import br.ufes.informatica.rationalontology.core.domain.CompetencyQuestion;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.SubOntology;
@@ -66,13 +66,13 @@ public class RelOntologyDescriptionController extends JSFController  implements 
 	//********** Variáveis e métodos responsáveis por EXIBIR os dados das Sub-Ontologia
 	//********************************************************************************
 		
-	private List<CompetenceQuestion> competenceQuestion;	
+	private List<CompetencyQuestion> competenceQuestion;	
 
-	public List<CompetenceQuestion> getCompetenceQuestion() {
+	public List<CompetencyQuestion> getCompetenceQuestion() {
 		return competenceQuestion;
 	}
 
-	public void setCompeenceQuestion(List<CompetenceQuestion> competenceQuestion) {
+	public void setCompeenceQuestion(List<CompetencyQuestion> competenceQuestion) {
 		this.competenceQuestion = competenceQuestion;
 	}
 	
@@ -93,11 +93,14 @@ public class RelOntologyDescriptionController extends JSFController  implements 
 	//****************************************************************************
 	//********** Métodos de regras de negócio
 	//****************************************************************************
-	@PostConstruct
-    public void init() {
-		
+	
+    public void putOntologies() {
 		ontologies = relOntologyApp.getOntologiesByUser(SessionInformation.getInstance().getUsuarioLogado());
     }
+    
+	public void onLoadForm() {
+		putOntologies();
+	}
 	
 	public String generateRel() {
 		if(selectedOntology == null) {
@@ -105,9 +108,7 @@ public class RelOntologyDescriptionController extends JSFController  implements 
 			return "core/reports/requestParticipation/relOntologyDescriptionSelectPage.xhtml?faces-redirect=true";
 		}
 		
-		long id = selectedOntology.getId();
-		
-		subOntology =  relOntologyApp.getSubOntologyByIdOntology(id);
+		subOntology =  relOntologyApp.getSubOntologyByOntology(selectedOntology);
 		
 		competenceQuestion = relOntologyApp.getCompetenceQuestionBySubOntologies(subOntology);
 		
@@ -115,5 +116,8 @@ public class RelOntologyDescriptionController extends JSFController  implements 
 		
 		return "relOntologyDescriptionPage.xhtml?faces-redirect=true ";
 	}
-
+	
+	public void checkAuthorization() {
+		relOntologyApp.checkAuthorization();
+	}
 }

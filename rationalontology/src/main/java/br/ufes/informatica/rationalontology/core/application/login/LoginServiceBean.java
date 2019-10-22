@@ -52,7 +52,6 @@ public class LoginServiceBean implements LoginService {
 	public void login(String username, String password) throws LoginFailedException {
 		try {
 			// Obtains the user given the e-mail address (that serves as username).
-			//logger.log(Level.FINER, "Authenticating user with username \"{0}\"...", username);
 			User user = userDAO.retrieveByEmail(username);
 
 			// Creates the MD5 hash of the password for comparison.
@@ -62,27 +61,16 @@ public class LoginServiceBean implements LoginService {
 			String pwd = user.getPassword();
 			
 			if ((pwd != null) && (pwd.equals(md5pwd))) {
-				//logger.log(Level.FINEST, "Passwords match for user \"{0}\".", username);
-
-				// Login successful.
-				//logger.log(Level.FINE, "Academic \"{0}\" successfully logged in.", username);
 				User currentUser = user;
 				pwd = null;
 				
 				SessionInformation.getInstance().setUsuarioLogado(currentUser);
-
-				// Registers the user login.
-				//Date now = new Date(System.currentTimeMillis());
-				//logger.log(Level.FINER, "Setting last login date for academic with username \"{0}\" as \"{1}\"...", new Object[] { currentUser.getEmail(), now });
-				//currentUser.setLastLoginDate(now);
-				//userDAO.save(currentUser);
 
 				// Fires a login event.
 				loginEvent.fire(new LoginEvent(currentUser));
 			}
 			else {
 				// Passwords don't match.
-				//logger.log(Level.INFO, "Academic \"{0}\" not logged in: password didn't match.", username);
 				throw new LoginFailedException(LoginFailedException.LoginFailedReason.INCORRECT_PASSWORD);
 			}
 		}

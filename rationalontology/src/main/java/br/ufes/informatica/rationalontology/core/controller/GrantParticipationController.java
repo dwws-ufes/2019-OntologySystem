@@ -2,7 +2,6 @@ package br.ufes.informatica.rationalontology.core.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.inject.*;
 import javax.faces.application.FacesMessage;
@@ -32,7 +31,7 @@ public class GrantParticipationController extends JSFController {
 	public String grantParticipation() {
 		if(selectedRequest == null) {
 			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "grantParticipation.notSelectedOntology");
-			return "core/grantParticipation/grantParticipationPage.xhtml?faces-redirect=true";
+			return null; // "core/grantParticipation/grantParticipationPage.xhtml?faces-redirect=true";
 		}
 		
 	  	try {
@@ -47,7 +46,7 @@ public class GrantParticipationController extends JSFController {
 	public String declineParticipation() {
 		if(selectedRequest == null) {
 			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "grantParticipation.notSelectedOntology");
-			return "core/grantParticipation/grantParticipationPage.xhtml?faces-redirect=true";
+			return null; //"core/grantParticipation/grantParticipationPage.xhtml?faces-redirect=true";
 		}
 		
 		try {
@@ -79,8 +78,14 @@ public class GrantParticipationController extends JSFController {
 		this.requests = requests;
 	}
 	
-	@PostConstruct
-    public void init() {
+	//******************************
+	//***
+	//******************************
+	public void onLoadForm() {
+		putRequests();
+	}
+	
+    public void putRequests() {
     	requests = grantParticipation.getRequests(SessionInformation.getInstance().getUsuarioLogado().getId());
     }
 }

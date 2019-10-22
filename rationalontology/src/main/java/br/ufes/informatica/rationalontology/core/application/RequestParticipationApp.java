@@ -24,4 +24,6 @@ public interface RequestParticipationApp extends Serializable {
 	
 	public void saveNewParticipation(Access access) throws RegistrationFailedException;
 	
+	public void checkAuthorization();
+	
 }

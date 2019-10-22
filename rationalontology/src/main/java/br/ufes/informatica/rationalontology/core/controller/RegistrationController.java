@@ -1,20 +1,14 @@
 package br.ufes.informatica.rationalontology.core.controller;
 
-import java.util.logging.Level;
-
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-//import br.ufes.inf.nemo.jbutler.ejb.application.CrudService;
-//import br.ufes.inf.nemo.jbutler.ejb.controller.CrudController;
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
-//import br.ufes.informatica.pooptime.core.exceptions.SystemInstallFailedException;
 import br.ufes.informatica.rationalontology.core.application.RegistrationServiceApp;
 import br.ufes.informatica.rationalontology.core.domain.User;
 import br.ufes.informatica.rationalontology.core.exception.RegistrationFailedException;

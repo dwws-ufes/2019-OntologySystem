@@ -14,6 +14,10 @@
 	<ui:define name="description">
 		<h:outputText value="#{msgs['requestParticipation.title.description']}" />
 	</ui:define>
+	
+	<f:metadata>  
+    	<f:event type="preRenderView" listener="#{requestParticipationController.onLoadForm}"/>  
+	</f:metadata>
 
 	<ui:define name="body">
 		<adm:breadcrumb link="/core/requestParticipation/requestParticipationPage"

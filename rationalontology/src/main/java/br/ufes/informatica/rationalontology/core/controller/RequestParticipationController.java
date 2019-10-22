@@ -3,7 +3,6 @@ package br.ufes.informatica.rationalontology.core.controller;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
@@ -106,15 +105,13 @@ public class RequestParticipationController extends JSFController implements Ser
 	//**********************
     //**  Métodos gerais ***
     //**********************
+	public void onLoadForm() {
+		setRequests();
+	}
 	
 	private void setRequests() {
 		requests = requestParticipationApp.getRequests();
 	}
-	
-	@PostConstruct
-    public void init() {
-    	setRequests();
-    }
 	
 	public String newParticipation() {
 		ontologies = null;
@@ -165,6 +162,10 @@ public class RequestParticipationController extends JSFController implements Ser
 		}		
 		
 		return "/core/requestParticipation/requestParticipationPage.xhtml?faces-redirect=true";
+	}
+	
+	public void checkAuthorization() {
+		requestParticipationApp.checkAuthorization();
 	}
 
 }

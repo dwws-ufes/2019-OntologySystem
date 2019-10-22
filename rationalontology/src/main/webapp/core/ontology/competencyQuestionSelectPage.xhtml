@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+	
+
+    <ui:define name="title">
+        <h:outputText value="#{msgs['competencyQuestionSelectPage.title']}" />
+    </ui:define>
+    
+    <ui:define name="description">
+        <h:outputText value="#{msgs['competencyQuestionSelectPage.description']}: #{subOntologyController.ontology.getName()}" />
+    </ui:define>
+    
+    <f:metadata>  
+    	<f:event type="preRenderView" listener="#{competencyQuestionController.onLoadForm}"/>  
+	</f:metadata>
+	
+    <ui:define name="body">
+    	<adm:breadcrumb link="/core/ontology/dictionarySelectPage.xhtml" title="#{msgs['competencyQuestionSelectPage.title']}" />
+	    <h:form id="form">
+	    	<p:dataTable id="entitiesDataTable" 
+				value="#{competencyQuestionController.competencyQuestionList}"
+				var="item" selectionMode="single" paginator="true"
+				selection="#{competencyQuestionController.selectedItem}"  rowKey="#{item.id}"
+				rows="#{competencyQuestionController.maxDataTableRowsPerPage}"
+				rowsPerPageTemplate="#{competencyQuestionController.halfMaxDataTableRowsPerPage},#{competencyQuestionController.maxDataTableRowsPerPage},#{competencyQuestionController.doubleMaxDataTableRowsPerPage}"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				lazy="true" paginatorPosition="bottom" update="display"
+				emptyMessage="#{msgs['dataTable.noEntities']}">
+				<p:ajax event="rowSelect" update="buttonsGroup" />
+				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				
+				<f:facet name="header">
+					<h:outputText value="#{msgs['competencyQuestionSelectPage.title']}" />
+				</f:facet>
+				
+				<p:column headerText="#{msgs['competencyQuestionSelectPage.id']}">
+					<h:outputText value="#{item.id}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['competencyQuestionSelectPage.id']}">
+					<h:outputText value="#{item.identificator}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['competencyQuestionSelectPage.id']}">
+					<h:outputText value="#{item.description}" />
+				</p:column>
+								
+				<f:facet name="footer">
+					<h:panelGroup id="buttonsGroup">
+					
+						<p:commandButton action="#{competencyQuestionController.newCQ}"
+							icon="fa fa-plus" value="#{msgs['competencyQuestionSelectPage.newCQ']}"/>
+						
+						<p:commandButton action="#{competencyQuestionController.editCQ}"
+							icon="fa fa-edit" value="#{msgs['competencyQuestionSelectPage.editCQ']}"/>
+							
+						<p:commandButton action="#{competencyQuestionController.deleteCQ}"	
+							icon="fa fa-trash-o" value="#{msgs['competencyQuestionSelectPage.deleteCQ']}"/>
+						
+						<p:commandButton action="/core/ontology/subOntologySelectPage.xhtml?faces-redirect=true"
+							icon="fa fa-arrow-circle-left" value="#{msgs['jbutler.button.back']}"/>
+							
+					</h:panelGroup>
+				</f:facet>
+				
+			</p:dataTable>
+			
+
+			
+		</h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+	
+
+    <ui:define name="title">
+        <h:outputText value="#{msgs['dictionarySelectPage.title']}" />
+    </ui:define>
+
+    <f:metadata>  
+    	<f:event type="preRenderView" listener="#{dictionaryController.onLoadForm}"/>  
+	</f:metadata>
+	
+    <ui:define name="body">
+    	<adm:breadcrumb link="/core/ontology/dictionarySelectPage.xhtml" title="#{msgs['dictionarySelectPage.title']}" />
+	    <h:form id="form">
+			
+			<p:dataTable id="entitiesDataTable" 
+				value="#{dictionaryController.terms}"
+				var="term" selectionMode="single" paginator="true"
+				selection="#{dictionaryController.selectedTerm}"  rowKey="#{term.id}"
+				rows="#{dictionaryController.maxDataTableRowsPerPage}"
+				rowsPerPageTemplate="#{dictionaryController.halfMaxDataTableRowsPerPage},#{dictionaryController.maxDataTableRowsPerPage},#{dictionaryController.doubleMaxDataTableRowsPerPage}"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				lazy="true" paginatorPosition="bottom" update="display"
+				emptyMessage="#{msgs['dataTable.noEntities']}">
+				<p:ajax event="rowSelect" update="buttonsGroup" />
+				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				
+				<f:facet name="header">
+					<h:outputText value="#{msgs['dictionarySelectPage.terms']}" />
+				</f:facet>
+				
+				<p:column headerText="#{msgs['dictionarySelectPage.id']}">
+					<h:outputText value="#{term.id}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['dictionarySelectPage.concept']}">
+					<h:outputText value="#{term.concept}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['dictionarySelectPage.definition']}">
+					<h:outputText value="#{term.definition}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['dictionarySelectPage.source']}">
+					<h:outputText value="#{term.source}" />
+				</p:column>
+				
+				<f:facet name="footer">
+					<h:panelGroup id="buttonsGroup">
+					
+						<p:commandButton action="#{dictionaryController.newTerm}"
+							icon="fa fa-plus" value="#{msgs['dictionarySelectPage.newTerm']}"/>
+						
+						<p:commandButton action="#{dictionaryController.editTerm}"
+							icon="fa fa-edit" value="#{msgs['dictionarySelectPage.editTerm']}"/>
+							
+						<p:commandButton action="#{dictionaryController.deleteTerm}"	
+							icon="fa fa-trash-o" value="#{msgs['dictionarySelectPage.deleteTerm']}"/>
+						
+						<p:commandButton action="/core/ontology/ontologySelectPage.xhtml?faces-redirect=true"
+							icon="fa fa-arrow-circle-left" value="#{msgs['jbutler.button.back']}"/>
+							
+					</h:panelGroup>
+				</f:facet>
+			</p:dataTable>
+			
+		</h:form>
+    </ui:define>
+</ui:composition>

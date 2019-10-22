@@ -11,6 +11,10 @@
     <ui:define name="title">
         <h:outputText value="#{msgs['grantParticipation.title.text']}" />
     </ui:define>
+    
+    <f:metadata>  
+    	<f:event type="preRenderView" listener="#{grantParticipationController.onLoadForm}"/>  
+	</f:metadata>
 
     <ui:define name="body">
 		<adm:breadcrumb link="/core/grantParticipation/grantParticipationPage.xhtml" title="#{msgs['grantParticipation.title.text']}" />

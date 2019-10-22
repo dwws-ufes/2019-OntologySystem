@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import br.ufes.informatica.rationalontology.core.domain.CompetenceQuestion;
+import br.ufes.informatica.rationalontology.core.domain.CompetencyQuestion;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;
 import br.ufes.informatica.rationalontology.core.domain.SubOntology;
@@ -16,12 +16,14 @@ public interface RelOntologyApp extends Serializable {
 	
 	public Ontology getOntologyByID(long id);
 	
-	public List<SubOntology> getSubOntologyByIdOntology(long id);
-	
-	public List<CompetenceQuestion> getCompetenceQuestionBySubOntologies(List<SubOntology> list);
+	public List<CompetencyQuestion> getCompetenceQuestionBySubOntologies(List<SubOntology> list);
 	
 	public List<DataDictionary> getDataDictinary(Ontology ontology);
 	
 	public List<Ontology> getOntologiesByUser(User user);
+
+	public List<SubOntology> getSubOntologyByOntology(Ontology ontology);
+	
+	public void checkAuthorization();
 
 }

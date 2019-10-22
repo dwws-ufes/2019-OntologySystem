@@ -11,8 +11,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseJPADAO;
-import br.ufes.informatica.rationalontology.core.domain.Access;
-import br.ufes.informatica.rationalontology.core.domain.Access_;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary;
 import br.ufes.informatica.rationalontology.core.domain.DataDictionary_;
 import br.ufes.informatica.rationalontology.core.domain.Ontology;

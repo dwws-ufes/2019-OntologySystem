@@ -1,8 +1,6 @@
 package br.ufes.informatica.rationalontology.core.domain;
 
 import java.util.*;
-import java.io.Serializable;
-import java.math.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;

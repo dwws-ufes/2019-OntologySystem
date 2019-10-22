@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+	
+
+    <ui:define name="title">
+        <h:outputText value="#{msgs['subOntologySelectPage.title']}" />
+    </ui:define>
+    
+     <ui:define name="description">
+        <h:outputText value="#{msgs['subOntologySelectPage.description']} #{subOntologyController.ontology.getName()}" />
+    </ui:define>
+    
+    <f:metadata>  
+    	<f:event type="preRenderView" listener="#{subOntologyController.onLoadForm}"/>  
+	</f:metadata>
+
+    <ui:define name="body">
+    	<adm:breadcrumb link="/core/ontology/subOntologySelectPage.xhtml" title="#{msgs['subOntologySelectPage.title']}" />
+	    <h:form id="form">
+			
+			<p:dataTable id="entitiesDataTable" 
+				value="#{subOntologyController.subOntologies}"
+				var="subOntology" selectionMode="single" paginator="true"
+				selection="#{subOntologyController.selectedSubOntology}"  rowKey="#{subOntology.id}"
+				rows="#{subOntologyController.maxDataTableRowsPerPage}"
+				rowsPerPageTemplate="#{subOntologyController.halfMaxDataTableRowsPerPage},#{subOntologyController.maxDataTableRowsPerPage},#{subOntologyController.doubleMaxDataTableRowsPerPage}"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				lazy="true" paginatorPosition="bottom" update="display"
+				emptyMessage="#{msgs['dataTable.noEntities']}">
+				<p:ajax event="rowSelect" update="buttonsGroup" />
+				<p:ajax event="rowUnselect" update="buttonsGroup" />
+				
+				<f:facet name="header">
+					<h:outputText value="#{msgs['subOntologySelectPage.project']}" />
+				</f:facet>
+				
+				<p:column headerText="#{msgs['subOntologySelectPage.id']}">
+					<h:outputText value="#{subOntology.id}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['subOntologySelectPage.name']}">
+					<h:outputText value="#{subOntology.name}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['subOntologySelectPage.shortDescription']}">
+					<h:outputText value="#{subOntology.shortDescription}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs['subOntologySelectPage.fullDescription']}">
+					<h:outputText value="#{subOntology.fullDescription}" />
+				</p:column>
+				
+				<f:facet name="footer">
+					<div>
+						<h:panelGroup id="buttonsGroup">
+						
+							<p:commandButton action="#{subOntologyController.newSubOntology}"
+								icon="fa fa-plus" value="#{msgs['subOntologySelectPage.newSubOntology']}"/>
+							
+							<p:commandButton action="#{subOntologyController.editSubOntology}"
+								icon="fa fa-edit" value="#{msgs['subOntologySelectPage.editSubOntology']}"/>
+							
+							<p:commandButton action="/core/ontology/ontologySelectPage.xhtml?faces-redirect=true"
+								icon="fa fa-arrow-circle-left" value="#{msgs['jbutler.button.back']}"/>
+								
+						</h:panelGroup>
+					</div>
+					<p> </p>
+					<div>
+						<h:panelGroup id="buttonsViewGroup">
+							
+							<p:commandButton action="#{subOntologyController.showCompetenceQuestion}"
+								icon="fa fa-search" value="#{msgs['subOntologySelectPage.showCompetenceQuestion']}"/>
+								
+						</h:panelGroup>
+					</div>
+				</f:facet>
+			</p:dataTable>
+			
+		</h:form>
+    </ui:define>
+</ui:composition>

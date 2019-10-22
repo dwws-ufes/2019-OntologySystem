@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.faces.application.FacesMessage;
 
 import br.ufes.informatica.rationalontology.TypeOfAccess;
 import br.ufes.informatica.rationalontology.core.domain.Access;

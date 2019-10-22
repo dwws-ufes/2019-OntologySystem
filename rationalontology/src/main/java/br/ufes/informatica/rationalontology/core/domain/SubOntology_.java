@@ -14,5 +14,5 @@ public class SubOntology_ extends PersistentObjectSupport_ {
 	public static volatile SingularAttribute<SubOntology, String> shortDescription;
 	public static volatile SingularAttribute<SubOntology, String> fullDescription;
 	public static volatile SingularAttribute<SubOntology, Ontology> Source;
-	public static volatile SetAttribute<SubOntology, CompetenceQuestion> Target;
+	public static volatile SetAttribute<SubOntology, CompetencyQuestion> Target;
 }
