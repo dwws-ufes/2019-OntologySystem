@@ -78,7 +78,7 @@ search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x
 
 6.1 With the root user, type the command `SET GLOBAL general_log = 'ON'`;
 
-6.2 Search for the `MySql DESKTOP-7GMHQFV.log` log file (this file name may vary depending on the version installed). It is usualy in `C:\ProgramData\MySQL\MySQL Server 8.0\Data\`
+6.2 Search for the `MySql DESKTOP-7GMHQFV.log` log file (this file name may change depending on the version installed). It is usualy in `C:\ProgramData\MySQL\MySQL Server 8.0\Data\`
 
 6.3 After checking the query, disable logging using the `SET GLOBAL general_log = 'OFF'` command.
 
