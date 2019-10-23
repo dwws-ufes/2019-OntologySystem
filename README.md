@@ -72,7 +72,7 @@ search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x
 
 4. Sending email through GMail's server;
 
-5. Sends a form to the printer;
+5. Sends a `form` to the printer;
 
 6. To see the queries that MySql performs:
 
