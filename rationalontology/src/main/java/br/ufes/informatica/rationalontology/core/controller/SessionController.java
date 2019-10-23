@@ -27,16 +27,12 @@ import br.ufes.informatica.rationalontology.core.exception.LoginFailedException.
 public class SessionController extends JSFController {
 	/** Serialization id. */
 	private static final long serialVersionUID = 1L;
-
-	/** Information on the current visitor. */
-	//@EJB
-	//private SessionInformation sessionInformation;
 	
 	@EJB
 	private LoginService loginService;
-
 	
 	private String email;
+	
 	private String password;
 	
 	private User currentUser;
@@ -63,7 +59,7 @@ public class SessionController extends JSFController {
 	 * @return <code>true</code> if the user is logged in, <code>false</code> otherwise.
 	 */
 	public boolean isLoggedIn() {
-		return currentUser != null; //sessionInformation.getCurrentUser() != null;
+		return currentUser != null; 
 	}
 	
 	/**
@@ -72,65 +68,13 @@ public class SessionController extends JSFController {
 	 * @return The Academic object that represents the user that has been authenticated in this session.
 	 */
 	public User getCurrentUser() {
-		return currentUser;//sessionInformation.getCurrentUser();
+		return currentUser;
 	}
-
-	/**
-	 * Provides the current date/time.
-	 * 
-	 * @return A Date object representing the date/time the method was called.
-	 */
-	//public Date getNow() {
-	//	return new Date(System.currentTimeMillis());
-	//}
-
-	/**
-	 * Provides the expiration date/time for the user session. This makes it possible to warn the user when his session
-	 * will expire.
-	 * 
-	 * @return A Date object representing the date/time of the user's session expiration.
-	 */
-	/*public Date getSessionExpirationTime() {
-		Date expTime = null;
-
-		// Attempts to retrieve this information from the external context.
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-		if (session != null) {
-			long expTimeMillis = session.getLastAccessedTime() + session.getMaxInactiveInterval() * 1000;
-			expTime = new Date(expTimeMillis);
-		}
-
-		// If it could not be retrieved from the external context, use default of 30 minutes.
-		if (expTime == null) {
-			expTime = new Date(System.currentTimeMillis() + 30 * 60000);
-		}
-		
-		return expTime;
-	}*/
 
 	/**
 	 * Accesses the Login service to authenticate the user given his email and password.
 	 */
-	public String login() {		
-		/*
-		try {
-			sessionInformation.login(email, password);
-		}
-		catch (LoginFailedException e) {
-			// Checks if it's a normal login exception (wrong username or password) or not.
-			switch (e.getReason()) {
-			case INCORRECT_PASSWORD:
-			case UNKNOWN_USERNAME:
-				addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "login.error.nomatch.summary", "login.error.nomatch.detail");
-				return null;
-
-			default:
-				addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_FATAL, "login.error.nomatch.summary", new Object[0], "login.error.nomatch.detail", new Object[] { new Date(System.currentTimeMillis()) });
-				return null;
-			}
-		}
-
-		// If everything is OK, redirect back to the home screen.*/
+	public String login() {
 		try {
 			// Uses the Session Information bean to authenticate the user.
 			
@@ -166,12 +110,6 @@ public class SessionController extends JSFController {
 		currentUser = loginService.getCurrentUser();
 		return "core/home.xhtml?faces-redirect=true";
 	}
-	
-	/*
-	public String logout() {
-		sessionInformation.logout();
-		return "/index.xhtml?faces-redirect=true";
-	}
-	*/
+
 }
 
