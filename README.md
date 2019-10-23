@@ -1,5 +1,7 @@
 # Rational Ontology System
-Assignment for the 2019 edition of the "Web Development and the Semantic Web" course, by Alexandre and Gustavo Ludovico Guidoni
+Assignment for the 2019 edition of the "Web Development and the Semantic Web" course, developed by:
+* **Alexandre**
+* **Gustavo Ludovico Guidoni**
 
 ## How to deploy
 
@@ -81,8 +83,3 @@ search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x
 6.3 After checking the query, disable logging using the `SET GLOBAL general_log = 'OFF'` command.
 
 NOTE: Viewing queries executed by the server consumes relevant database resources in addition to the size of this file grows quickly. So, remember to disable it.
-
-## Authors
-
-* **Alexandre**
-* **Gustavo Ludovico Guidoni**
