@@ -68,7 +68,7 @@ search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x
 
 2. All interfaces filter by the logged in user;
 
-3. There are examples of how to implement `join`, `exists`, `in`, `equal`, and `notEqual` through `CriteriaBuilder` queries;
+3. There are examples of how to implement `join`, `exists`, `in`, `equal`, `notEqual`, and `subQuery` through `CriteriaBuilder` queries;
 
 4. Sending email through GMail's server;
 
