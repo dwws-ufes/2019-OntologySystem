@@ -1,5 +1,6 @@
 package br.ufes.informatica.rationalontology.core.persistence;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -10,10 +11,13 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaBuilder.In;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Subquery;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseJPADAO;
+import br.ufes.informatica.rationalontology.TypeOfAccess;
 import br.ufes.informatica.rationalontology.core.domain.Access;
 import br.ufes.informatica.rationalontology.core.domain.Access_;
 import br.ufes.informatica.rationalontology.core.domain.CompetencyQuestion;
@@ -72,9 +76,6 @@ public class OntologyJPADAO extends BaseJPADAO<Ontology> implements OntologyDAO{
     	long id = user.getId();
  	    //main query
     	CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-    		
-    	   
-    	//main query
     	CriteriaQuery<Ontology> ontologyQuery = criteriaBuilder.createQuery(Ontology.class);
     	Root<Ontology> rootOntology = ontologyQuery.from(Ontology.class);
     	
@@ -113,13 +114,22 @@ public class OntologyJPADAO extends BaseJPADAO<Ontology> implements OntologyDAO{
     	//subquery
     	Subquery<Access> accessSubquery = ontologyQuery.subquery(Access.class);
     	Root<Access> access = accessSubquery.from(Access.class);
+    	/*
     	In<String> inClause = criteriaBuilder.in(access.get("accessType"));
     	inClause.value("1");
     	inClause.value("3");
+    	*/
+    	List<Short> myList = new ArrayList<Short> ();
+    	myList.add(TypeOfAccess.CRIADOR); //Criador
+    	myList.add(TypeOfAccess.COLABORADOR); //Colaborador
+    	
+    	Expression<String> exp = access.get("accessType");
+    	Predicate predicate = exp.in(myList);
     	
     	accessSubquery.select(access)//subquery selection
     	         .where(	criteriaBuilder.equal(access.get(Access_.Target), rootOntology.get(Ontology_.id))
     	        		 ,	criteriaBuilder.equal(access.get(Access_.Source), id) //projetos pertencentes ao usuário logado
+    	        		 ,	predicate
     	        		 );//subquery restriction
     	
     	//main query selection

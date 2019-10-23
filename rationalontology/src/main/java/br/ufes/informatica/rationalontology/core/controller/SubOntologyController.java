@@ -2,7 +2,6 @@ package br.ufes.informatica.rationalontology.core.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;

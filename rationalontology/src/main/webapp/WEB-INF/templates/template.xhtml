@@ -26,6 +26,12 @@
 				</p:link></li>
 			<!-- <li class="header">Header</li>  -->
 			
+			<li><p:link outcome="/core/registration/editProfilePage.xhtm"
+					onclick="clearBreadCrumbs()">
+					<i class="fa fa-user-circle-o"></i>
+					<span><h:outputText value="#{msgs['menu.register']}" /></span>
+			</p:link></li>
+			
 			<li><p:link outcome="/core/ontology/ontologySelectPage.xhtm"
 					onclick="clearBreadCrumbs()">
 					<i class="fa fa-cubes"></i>
@@ -62,6 +68,9 @@
 
 	<ui:define name="top-menu">
 
+
+						
+						
 	</ui:define>
 
 	<ui:define name="footer">

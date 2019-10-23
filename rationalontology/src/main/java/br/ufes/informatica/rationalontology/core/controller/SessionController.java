@@ -152,12 +152,12 @@ public class SessionController extends JSFController {
 			case INCORRECT_PASSWORD:
 			case UNKNOWN_USERNAME:
 				// Normal login exception (invalid usernaem or password). Report the error to the user.
-				addGlobalI18nMessage("msgsCore", FacesMessage.SEVERITY_ERROR, "login.error.nomatch.summary", "login.error.nomatch.detail");
+				addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "login.error.nomatch.summary", "login.error.nomatch.detail");
 				return null;
 
 			default:
 				// System failure exception. Report a fatal error and ask the user to contact the administrators.
-				addGlobalI18nMessage("msgsCore", FacesMessage.SEVERITY_FATAL, "login.error.fatal.summary", new Object[0], "login.error.fatal.detail", new Object[] { new Date(System.currentTimeMillis()) });
+				addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_FATAL, "login.error.fatal.summary", e.toString());
 				return null;
 			}
 		}
