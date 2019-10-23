@@ -1,7 +1,7 @@
 # Rational Ontology System
 Assignment for the 2019 edition of the "Web Development and the Semantic Web" course, by Alexandre and Gustavo Ludovico Guidoni
 
-### How to deploy
+## How to deploy
 
 Instructions on how to deploy from scratch are listed below. If you need detailed instructions on how to set up Eclipse, WildFly and MySQL, please refer to this [tutorial at JButler's wiki](https://github.com/dwws-ufes/jbutler/wiki/Tutorial%3A-a-Java-EE-Web-Profile-application-with-JButler%2C-part-1).
 
@@ -74,6 +74,7 @@ Instructions on how to deploy from scratch are listed below. If you need detaile
 * With the root user, type the command `SET GLOBAL general_log = 'ON'`;
 * Search for the `MySql DESKTOP-7GMHQFV.log` log file (this file name may vary depending on the version installed). It is usualy in `C:\ProgramData\MySQL\MySQL Server 8.0\Data\`
 * After checking the query, disable logging using the `SET GLOBAL general_log = 'OFF'` command.
+* NOTE: Viewing queries executed by the server consumes relevant database resources in addition to the size of this file grows quickly. So, remember to disable it.
 
 ## Authors
 
