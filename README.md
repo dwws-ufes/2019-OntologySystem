@@ -42,7 +42,7 @@ Instructions on how to deploy from scratch are listed below. If you need detaile
 
 6.3 JAAS Configuration (Authentication and Authorization)
 ```XML
-search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x"> tag and add:
+search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x"> tag (x.x is the version), and add:
 	
 	<security-domain name="RationalOntology">
 		<authentication>
