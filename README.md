@@ -64,7 +64,7 @@ search for <security-domains> in <subsystem xmlns="urn:jboss:domain:security:x.x
 8. You might have to adjust the server settings in the imported project: right-click the _rationalontology_ project and select _Properties_. In the _Server_ section, select the _WildFly 17.x_ server. In the _Targeted Runtimes_ section, select the _WildFly 17.x Runtime_;
 
 ## Main contributions of this work:
-1. All interfaces were developed without using JBOSS CrudControlle;
+1. All interfaces were developed without using JButler CrudControlle;
 
 2. All interfaces filter by the logged in user;
 
