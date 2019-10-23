@@ -64,7 +64,16 @@ Instructions on how to deploy from scratch are listed below. If you need detaile
 
 2. All interfaces filter by the logged in user;
 
-3. There are examples of how to implement `join`, `exists`, `in`, `equal`, and `notEqual` through `CriteriaBuilder` queries.
+3. There are examples of how to implement `join`, `exists`, `in`, `equal`, and `notEqual` through `CriteriaBuilder` queries;
+
+4. Sending email through GMail's server;
+
+5. Sends a form to the printer;
+
+6. To see the queries that MySql performs:
+* With the root user, type the command `SET GLOBAL general_log = 'ON'`;
+* Search for the `MySql DESKTOP-7GMHQFV.log` log file (this file name may vary depending on the version installed). It is usualy in `C:\ProgramData\MySQL\MySQL Server 8.0\Data\`
+* After checking the query, disable logging using the `SET GLOBAL general_log = 'OFF'` command.
 
 ## Authors
 
