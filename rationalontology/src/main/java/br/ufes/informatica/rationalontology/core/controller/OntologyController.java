@@ -63,6 +63,7 @@ public class OntologyController extends JSFController { // implements OntologyJP
 	}
 	
 	private void putOntologies() {
+		checkAuthorization();
 		ontologies = ontologyManagementApp.getOntologiesByUser(SessionInformation.getInstance().getUsuarioLogado());
 	}
 	
@@ -106,7 +107,7 @@ public class OntologyController extends JSFController { // implements OntologyJP
 		newOntology = false;
 		
 		if(selectedOntology == null) {
-			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "ontologyProject.notSelected");
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "jbutler.message.notSelected");
 			return null;
 		}
 		else {
@@ -118,7 +119,7 @@ public class OntologyController extends JSFController { // implements OntologyJP
 	
 	public String showSubOntologies() {
 		if(selectedOntology == null) {
-			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "ontologyProject.notSelected");
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "jbutler.message.notSelected");
 			return null;
 		}
 		else {
@@ -129,7 +130,7 @@ public class OntologyController extends JSFController { // implements OntologyJP
 	
 	public String showDataDictionary() {
 		if(selectedOntology == null) {
-			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "ontologyProject.notSelected");
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "jbutler.message.notSelected");
 			return null;
 		}
 		else {
@@ -140,7 +141,7 @@ public class OntologyController extends JSFController { // implements OntologyJP
 	
 	public String deleteOntology() {
 		if(selectedOntology == null) {
-			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "ontologyProject.notSelected");
+			addGlobalI18nMessage("msgs", FacesMessage.SEVERITY_ERROR, "jbutler.message.notSelected");
 			return null;
 		}
 		try {

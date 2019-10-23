@@ -18,19 +18,28 @@
 
 	<ui:define name="menu">
 		<ul class="sidebar-menu">
+				
 			<li><p:link outcome="/core/home.xhtml"
 					onclick="clearBreadCrumbs()">
 					<i class="fa fa-home"></i>
 					
 					<span><h:outputText value="#{msgs['menu.home']}" /></span>
 				</p:link></li>
-			<!-- <li class="header">Header</li>  -->
-			
-			<li><p:link outcome="/core/registration/editProfilePage.xhtm"
+				
+					<li><p:link outcome="/core/registration/editProfilePage.xhtm"
 					onclick="clearBreadCrumbs()">
 					<i class="fa fa-user-circle-o"></i>
-					<span><h:outputText value="#{msgs['menu.register']}" /></span>
-			</p:link></li>
+					
+					<span><h:outputText value="#{sessionController.currentUser.name} " /></span>
+				</p:link></li>
+				
+			<!-- <li class="header">Header</li>  -->
+			
+<!-- 			<li><p:link outcome="/core/registration/editProfilePage.xhtm" -->
+<!-- 					onclick="clearBreadCrumbs()"> -->
+<!-- 					<i class="fa fa-user-circle-o"></i> -->
+<!-- 					<span><h:outputText value="#{msgs['menu.register']}" /></span> -->
+<!-- 			</p:link></li> -->
 			
 			<li><p:link outcome="/core/ontology/ontologySelectPage.xhtm"
 					onclick="clearBreadCrumbs()">
@@ -67,10 +76,7 @@
 	</ui:define>
 
 	<ui:define name="top-menu">
-	
-
-
-
+	 
 
 	</ui:define>
 
@@ -80,4 +86,11 @@
 			<i>1.0.0</i>
 		</div>
 	</ui:define>
+	
+		<!-- REQUIRED JS SCRIPTS -->
+
+	<!-- Bootstrap 3.3.5 -->
+	<h:outputScript name="frameworks/bootstrap-3.3.5-dist/js/bootstrap.min.js" library="admin-lte" />
+	<!-- AdminLTE App -->
+	<h:outputScript name="frameworks/AdminLTE-2.3.0/dist/js/app.min.js" library="admin-lte" />
 </ui:composition>
