@@ -52,10 +52,18 @@ public class DictionaryController extends JSFController {
 		this.terms = terms;
 	}
 	
+	public Ontology getOntology() {
+		return ontology;
+	}
+
+	public void setOntology(Ontology ontology) {
+		this.ontology = ontology;
+	}
+	
 	//***********************************************
 	//*** Métodos de negócio
 	//***********************************************
-	
+
 	public void onLoadForm() {
 		setDictionary();
 	}

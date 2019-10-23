@@ -12,6 +12,10 @@
         <h:outputText value="#{msgs['competencyQuestionDevelopmentPage.title']}: #{competencyQuestionController.subOntology.getName()} "/>
     </ui:define>
     
+    <ui:define name="description">
+        <h:outputText value="#{msgs['competencyQuestionDevelopmentPage.title.description']} : #{competencyQuestionController.subOntology.getName()}" />
+    </ui:define>
+    
     <f:metadata>  
     	<f:event type="preRenderView" listener="#{competencyQuestionController.checkAuthorization}"/>  
 	</f:metadata>
