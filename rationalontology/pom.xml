@@ -70,6 +70,13 @@
 			<version>2.3.25-incubating</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<type>pom</type>
+			<version>3.3.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<repositories>

@@ -7,6 +7,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.inject.Named;
 
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Literal;
+
 import br.ufes.inf.nemo.jbutler.ejb.controller.JSFController;
 import br.ufes.informatica.rationalontology.core.application.DataDictionaryApp;
 import br.ufes.informatica.rationalontology.core.application.login.SessionInformation;
@@ -127,5 +133,49 @@ public class DictionaryController extends JSFController {
 
 	public void checkAuthorization() {
 		dataDictionaryApp.checkAuthorization();
+	}
+	
+	public void getSuggestDefinition() {
+		String name = selectedTerm.getConcept();
+		
+		if (name != null && name.length() > 3) {
+			String query = 
+					  "PREFIX dbo: <http://dbpedia.org/ontology/> " 
+					+ "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " 
+					+ "SELECT ?desc ?x " 
+					+ "WHERE { "
+					+ "    ?x a dbo:Place ; " 
+					+ "       rdfs:label ?name ; " 
+					+ "       dbo:abstract ?desc . " 
+					+ "    FILTER (?name = \"" + name + "\"@en) " 
+					+ "    FILTER (langMatches(lang(?desc), \"PT\")) " 
+					+ "}";
+			/*
+			 PREFIX dbo: <http://dbpedia.org/ontology/>
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+			
+			SELECT *
+			WHERE { 
+			
+			   ?x  a             dbo:Person .
+			   ?x  rdfs:label    ?name .
+			   ?x dbo:profession ?y
+			
+			   FILTER (langMatches(lang(?name), "EN"))
+			}
+			 
+			 */
+			
+			
+			QueryExecution queryExecution = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
+			ResultSet results = queryExecution.execSelect();
+			if (results.hasNext()) {
+				QuerySolution querySolution = results.next();
+				Literal literal = querySolution.getLiteral("desc");
+				selectedTerm.setDefinition( ("" + literal.getValue()).substring(0, 199) );//.replaceAll("[^\\p{ASCII}]", "")
+				selectedTerm.setSource( querySolution.get("x").toString());
+				queryExecution.close();
+			}
+		}
 	}
 }

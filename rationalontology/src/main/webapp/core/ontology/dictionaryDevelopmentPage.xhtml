@@ -24,7 +24,9 @@
 				layout="grid" styleClass="ui-panelgrid-blank">
 				
 				<p:outputLabel for="concept" value="#{msgs['dictionaryDevelopmentPage.concept']}" />
-				<p:inputText id="concept" value="#{dictionaryController.selectedTerm.concept}" style="width: 100%;" />
+				<p:inputText id="concept" value="#{dictionaryController.selectedTerm.concept}" style="width: 100%;" >
+					<f:ajax event="blur" listener="#{dictionaryController.getSuggestDefinition}" execute="@this" render="definition source" />
+				</p:inputText>
 				
 				<p:outputLabel for="definition" value="#{msgs['dictionaryDevelopmentPage.definition']}" />
 				<p:inputText id="definition" value="#{dictionaryController.selectedTerm.definition}" style="width: 100%;" />
