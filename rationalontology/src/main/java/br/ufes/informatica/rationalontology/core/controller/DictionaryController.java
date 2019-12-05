@@ -140,32 +140,17 @@ public class DictionaryController extends JSFController {
 		
 		if (name != null && name.length() > 3) {
 			String query = 
+					
 					  "PREFIX dbo: <http://dbpedia.org/ontology/> " 
-					+ "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " 
-					+ "SELECT ?desc ?x " 
-					+ "WHERE { "
-					+ "    ?x a dbo:Place ; " 
-					+ "       rdfs:label ?name ; " 
-					+ "       dbo:abstract ?desc . " 
-					+ "    FILTER (?name = \"" + name + "\"@en) " 
-					+ "    FILTER (langMatches(lang(?desc), \"PT\")) " 
-					+ "}";
-			/*
-			 PREFIX dbo: <http://dbpedia.org/ontology/>
-			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			
-			SELECT *
-			WHERE { 
-			
-			   ?x  a             dbo:Person .
-			   ?x  rdfs:label    ?name .
-			   ?x dbo:profession ?y
-			
-			   FILTER (langMatches(lang(?name), "EN"))
-			}
-			 
-			 */
-			
+								+ "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " 
+								+ "SELECT ?name ?type ?x ?desc " 
+								+ "WHERE { "
+								+ "    ?x a ?type . " 
+								+ "    ?x rdfs:label ?name ." 
+								+ "    ?x dbo:abstract ?desc . " 
+								+ "    FILTER ((?name = \"" + name + "\"@en) || (?name = \"" + name + "\"@pt))" 
+								+ "    FILTER (langMatches(lang(?desc), \"PT\")) " 
+								+ "}";
 			
 			QueryExecution queryExecution = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
 			ResultSet results = queryExecution.execSelect();
