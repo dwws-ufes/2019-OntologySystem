@@ -57,4 +57,17 @@ public class CompetencyQuestionJPADAO extends BaseJPADAO<CompetencyQuestion> imp
 		return q.getResultList();
 	}
 	
+	@Override
+	public List<CompetencyQuestion>  getCompetenceQuestionBySubOntology(SubOntology subOntology) {
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+    	
+		CriteriaQuery<CompetencyQuestion> cq = cb.createQuery(CompetencyQuestion.class);		
+		Root<CompetencyQuestion> root = cq.from(CompetencyQuestion.class);
+		
+		cq.where( root.get(CompetencyQuestion_.Source).in(subOntology) ) ;
+		
+		TypedQuery<CompetencyQuestion> q = entityManager.createQuery(cq);
+		return q.getResultList();
+	}
+	
 }

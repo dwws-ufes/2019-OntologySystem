@@ -137,6 +137,7 @@ public class DictionaryController extends JSFController {
 	
 	public void getSuggestDefinition() {
 		String name = selectedTerm.getConcept();
+		String aux;
 		
 		if (name != null && name.length() > 3) {
 			String query = 
@@ -149,7 +150,7 @@ public class DictionaryController extends JSFController {
 								+ "    ?x rdfs:label ?name ." 
 								+ "    ?x dbo:abstract ?desc . " 
 								+ "    FILTER ((?name = \"" + name + "\"@en) || (?name = \"" + name + "\"@pt))" 
-								+ "    FILTER (langMatches(lang(?desc), \"PT\")) " 
+								+ "    FILTER (langMatches(lang(?desc), \"EN\")) " 
 								+ "}";
 			
 			QueryExecution queryExecution = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
@@ -157,7 +158,15 @@ public class DictionaryController extends JSFController {
 			if (results.hasNext()) {
 				QuerySolution querySolution = results.next();
 				Literal literal = querySolution.getLiteral("desc");
-				selectedTerm.setDefinition( ("" + literal.getValue()).substring(0, 199) );//.replaceAll("[^\\p{ASCII}]", "")
+				
+				aux = "" + literal.getValue();
+				if(aux.length() > 199) {
+					selectedTerm.setDefinition( aux.substring(0, 199) );//.replaceAll("[^\\p{ASCII}]", "")
+				}
+				else {
+					selectedTerm.setDefinition( aux );//.replaceAll("[^\\p{ASCII}]", "")
+				}
+				
 				selectedTerm.setSource( querySolution.get("x").toString());
 				queryExecution.close();
 			}

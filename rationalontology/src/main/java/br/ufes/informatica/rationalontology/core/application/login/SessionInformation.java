@@ -11,6 +11,7 @@ import br.ufes.informatica.rationalontology.core.domain.User;
 public class SessionInformation {
      
     private static SessionInformation instance;
+    private static User usuarioLogado;
      
     public static SessionInformation getInstance(){
          if (instance == null){
@@ -34,9 +35,14 @@ public class SessionInformation {
     public User getUsuarioLogado(){
          return (User) getAttribute("usuarioLogado");
     }
+    
+    public User getUsuarioLogado2() {
+    	return usuarioLogado;
+    }
      
     public void setUsuarioLogado(User usuario){
         setAttribute("usuarioLogado", usuario);
+        usuarioLogado = usuario;
     }
     
     public Ontology getOntology(){
